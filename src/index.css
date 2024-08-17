@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1152px;
+  width: 100%;
+  padding: 0 25px;
+  margin: 0 auto;
+}
+
+button {
+  outline: none;
+  border: none;
+  background: transparent;
+  display: inline-block;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+/* common css start */
+.t-align {
+  text-align: center;
+}
+.all-sections {
+  padding: 40px 0;
+}
+.all-btns {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #422659;
+  border-radius: 30px;
+  padding: 8px 22px;
+}
+
+/* ==============display css =============== */
+.display-block-none-1100 {
+  display: block;
+}
+.display-none-block-1100 {
+  display: none;
+}
+.display-block-none-700 {
+  display: block;
+}
+.display-none-block-700 {
+  display: none;
+}
+.display-block-none-375 {
+  display: block;
+}
+.display-none-block-375 {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .display-block-none-1100 {
+    display: none;
+  }
+  .display-none-block-1100 {
+    display: block;
+  }
+}
+@media (max-width: 700px) {
+  .display-block-none-700 {
+    display: none;
+  }
+  .display-none-block-700 {
+    display: block;
+  }
+  .all-btns {
+    padding: 6px 16px;
+  }
+}
+@media (max-width: 375px) {
+  .display-block-none-375 {
+    display: none;
+  }
+  .display-none-block-375 {
+    display: block;
+  }
+}
