@@ -1,14 +1,18 @@
 [
     {
-        "name":"Home"
+        "name":"Home",
+        "to": "/"
     },
     {
-        "name":"Top deals"
+        "name":"Top deals",
+        "to": "/topDeals"
     },
     {
-        "name":"Hot offers"
+        "name":"Hot offers",
+        "to": "/hotOffers"
     },
     {
-        "name":"Pages"
+        "name":"Pages",
+        "to": "/pages"
     }
 ]

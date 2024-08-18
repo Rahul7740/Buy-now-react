@@ -50,10 +50,10 @@
 .nav-link:hover {
   border-bottom: 2px solid #44285b80;
 }
-/* .nav-link.active {
-  border-bottom: 2px solid #44285B; 
-  color: #44285B; 
-} */
+.nav-link.active {
+  border-bottom: 2px solid #321b46; 
+  color: #281736; 
+}
 
 /* ========searchbar css============ */
 .searchBar-and-user-container {
