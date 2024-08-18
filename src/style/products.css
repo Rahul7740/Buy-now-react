@@ -112,18 +112,71 @@
   justify-content: space-between;
   gap: 10px;
   margin-bottom: 40px;
-  font-size: 34px;
   font-weight: 500;
   font-family: "Heebo", sans-serif;
   white-space: nowrap;
+}
+.product-head h2 {
+  font-size: 34px;
 }
 .product-head div {
   display: flex;
   gap: 10px;
   align-items: center;
 }
+.top-product-heading{
+  font-size: 34px;
+}
+.product-head p {
+  font-size: 16px;
+  color: #495F6A;
+  font-weight: 400;
+}
+
+/* =========products by category - section============ */
+.Products-By-Category-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  overflow: auto;
+}
+.Products-By-Category-section .product-card {
+  width: 260px;
+}
+.categorys-btn-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: auto;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.categorys-btn {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  color: #495f6a;
+  padding: 12px 8px;
+  border-bottom: 1px solid #f0eef2;
+  white-space: nowrap;
+}
+.categorys-btn.selected {
+  color: #422659;
+  border-bottom: 1px solid #422659;
+}
+/* ==========screen media quary============== */
 @media (max-width: 1000px) {
   .product-head {
+    margin-bottom: 30px;
+  }
+  .product-head h2 {
+    font-size: 30px;
+  }
+  .top-product-heading{
     font-size: 30px;
   }
 }
@@ -144,9 +197,18 @@
     display: none;
   }
   .product-head {
+    margin-bottom: 20px;
+  }
+  .product-head h2 {
     font-size: 28px;
   }
-  .product-shop-btn{
+  .product-head p {
+    font-size: 14px;
+  }
+  .top-product-heading{
+    font-size: 28px;
+  }
+  .product-shop-btn {
     height: 36px;
   }
   .add-cart {
@@ -160,6 +222,11 @@
     width: 0;
     opacity: 0;
   }
+  .categorys-btn-container {
+    margin-bottom: 20px;
+  }
+
+  
 }
 @media (max-width: 375px) {
   .product-content h3 {
@@ -169,7 +236,13 @@
     font-size: 20px;
   }
   .product-head {
-    font-size: 20px;
     white-space: wrap;
+    margin-bottom: 10px;
+  }
+  .product-head h2 {
+    font-size: 24px;
+  }
+  .top-product-heading{
+    font-size: 24px;
   }
 }

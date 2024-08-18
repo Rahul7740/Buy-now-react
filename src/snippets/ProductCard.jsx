@@ -1,6 +1,5 @@
 
-import React, { PureComponent } from 'react'
-import ImgPath from "../assets/images/ImgPath";
+import React from 'react'
 import SvgPath from "../assets/svg/SvgPath";
 
 
@@ -12,7 +11,10 @@ function ProductCard(props) {
             <div className='product-img'>
                 <img src={require(`../assets/images/${props.img}`)} alt='product-card' />
             </div>
-            <button className='product-like-btn'><p className='new'>New</p><img src={SvgPath.productLikeBTN} alt='like' /></button>
+            <button className='product-like-btn'>
+                {props.new ? <p className='new'>New</p> : ""}
+                <img src={SvgPath.productLikeBTN} alt='like' />
+            </button>
             <div className='product-content'>
                 <h3>{props.name}</h3>
                 {props.ratting ?

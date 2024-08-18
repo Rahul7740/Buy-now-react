@@ -38,6 +38,17 @@ body {
   font-family: "Inter", sans-serif;
 }
 /* common css start */
+body::-webkit-scrollbar {
+  width: 13px;
+  height: 13px;
+  border: none; 
+}
+
+
+body::-webkit-scrollbar-thumb {
+  background-color: #553C6A; 
+  border-radius: 10px; 
+}
 .t-align {
   text-align: center;
 }

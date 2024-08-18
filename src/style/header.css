@@ -159,6 +159,9 @@
   .user-container {
     gap: 10px;
   }
+  .menuIcon-show{
+    display: none;
+  }
 }
 @media (max-width: 375px) {
   .header-top-bar-sectoin {

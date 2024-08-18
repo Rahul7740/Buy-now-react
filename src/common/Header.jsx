@@ -6,8 +6,7 @@ import { useState } from "react";
 
 
 function Header() {
-  const [menu,setMenu]=useState(false)
- 
+  const [menu, setMenu] = useState(false);
   return (
     <>
       <div className="header-top-bar-sectoin ">
@@ -33,7 +32,7 @@ function Header() {
             <div className="main-logo-container">
               <img className="display-block-none-700" src={SvgPath.mainLogo} alt="logo" />
               <img className="display-none-block-700" src={SvgPath.mainLogoRes} alt="logo" />
-              <ul className={`navbar-nav ${menu===true && "show-navbar"}`} >
+              <ul className={`navbar-nav ${menu === true && "show-navbar"}`} >
                 {menuLinks.map((i, index) => (
                   <li className="nav-item" key={index}>
                     <NavLink className="nav-link" activeclassname="active" >{i.name}</NavLink>
@@ -58,8 +57,8 @@ function Header() {
                 <button><img src={SvgPath.headerCartIcon} alt="cart" /></button>
                 <img className="display-block-none-700" src={SvgPath.verticalLine20px} alt="vertical" />
                 <button className="display-block-none-375"><img src={SvgPath.headerUserIcon} alt="user" /></button>
-                <button onClick={()=>{setMenu(true)}} style={{display:`${menu===true ? "none":"block"} `}} className="display-none-block-700"><img src={SvgPath.menuIcon} alt="menu" /></button>
-                <button onClick={()=>{setMenu(false)}} style={{display:`${menu===false ? "none":"block"} `}} className="display-none-block-700"><img src={SvgPath.closeBtn} alt="menu" /></button>
+                <button onClick={() => { setMenu(true) }} className={`display-none-block-700 ${menu===true? "menuIcon-show" :""}`} ><img src={SvgPath.menuIcon} alt="menu" /></button>
+                <button onClick={() => { setMenu(false) }}  className={`display-none-block-700 ${menu===false? "menuIcon-show" :""}`}><img src={SvgPath.closeBtn} alt="menu" /></button>
               </div>
             </div>
           </div>
