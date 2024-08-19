@@ -104,7 +104,18 @@
     font-size: 14px;
   }
   .searchBar-container {
-    display: none;
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-200%);
+    transition: all 0.3s ease-in-out;
+  }
+  .showSearch{
+    transform: translate(-50%,0%);
+  }
+  .serach-close-show{
+    display: none ;
   }
   .user-container {
     gap: 15px;

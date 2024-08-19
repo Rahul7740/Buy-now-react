@@ -34,8 +34,6 @@
   border-radius: 30px;
   font-size: 15px;
   font-family: "Inter", sans-serif;
-  white-space: nowrap;
-
 }
 .product-offer-container{
     display: flex;

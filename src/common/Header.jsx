@@ -7,6 +7,9 @@ import { useState } from "react";
 
 function Header() {
   const [menu, setMenu] = useState(false);
+
+  const [search, setSearch] = useState(false)
+
   return (
     <>
       <div className="header-top-bar-sectoin ">
@@ -41,24 +44,27 @@ function Header() {
               </ul>
             </div>
             <div className="searchBar-and-user-container">
-              <div className="searchBar-container">
+              <div className={`searchBar-container ${search === true && "showSearch"}`}>
                 <img src={SvgPath.searchIcon} alt="searchIcon" />
                 <input type="text" placeholder="Search" />
                 <button className="search-all-btn">
                   <p>ALL</p>
                   <img src={SvgPath.downArrowWhite} alt="downArrow" />
                 </button>
+                <button onClick={() => { setSearch(false) }} className={`display-none-block-1100 ${search === false ? "serach-close-show" : ""}`}><img src={SvgPath.closeBtn} alt="CLOSE" /></button>
+
               </div>
               <div className="user-container">
-                <button className="display-none-block-1100"><img src={SvgPath.searchGray} alt="search" /></button>
+                <button onClick={() => { setSearch(true) }} className={`display-none-block-1100 ${search === true ? "serach-close-show" : ""}`}><img src={SvgPath.searchGray} alt="search" /></button>
+
                 <img className="display-none-block-1100 display-block-none-700" src={SvgPath.verticalLine20px} alt="vertical" />
                 <button className="display-block-none-700"><img src={SvgPath.headerLangaugeicon} alt="langauge" /></button>
                 <img className="display-block-none-700" src={SvgPath.verticalLine20px} alt="vertical" />
                 <button><img src={SvgPath.headerCartIcon} alt="cart" /></button>
                 <img className="display-block-none-700" src={SvgPath.verticalLine20px} alt="vertical" />
                 <button className="display-block-none-375"><img src={SvgPath.headerUserIcon} alt="user" /></button>
-                <button onClick={() => { setMenu(true) }} className={`display-none-block-700 ${menu===true? "menuIcon-show" :""}`} ><img src={SvgPath.menuIcon} alt="menu" /></button>
-                <button onClick={() => { setMenu(false) }}  className={`display-none-block-700 ${menu===false? "menuIcon-show" :""}`}><img src={SvgPath.closeBtn} alt="menu" /></button>
+                <button onClick={() => { setMenu(true) }} className={`display-none-block-700 ${menu === true ? "menuIcon-show" : ""}`} ><img src={SvgPath.menuIcon} alt="menu" /></button>
+                <button onClick={() => { setMenu(false) }} className={`display-none-block-700 ${menu === false ? "menuIcon-show" : ""}`}><img src={SvgPath.closeBtn} alt="CLOSE" /></button>
               </div>
             </div>
           </div>
