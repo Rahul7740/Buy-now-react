@@ -26,11 +26,15 @@ const SvgPath = {
     arrowBack : require("./ArrowBack.svg").default,
     horizontalLine31px : require("./horizontal-line-31px.svg").default,
     arrowForword : require("./ArrowForword.svg").default,
-    // o : require(".").default,
-    // o : require(".").default,
-    // o : require(".").default,
-    // o : require(".").default,
-    // o : require(".").default,
+    
+    
+    footerLogo : require("./footer-logo.svg").default,
+    footerMail : require("./footer-mail.svg").default,
+    footerMap : require("./footer-map.svg").default,
+    playStore : require("./Download-playStore.svg").default,
+    appStore : require("./Download-appStore.svg").default,
+
+
     // o : require(".").default,
     // o : require(".").default,
     // o : require(".").default,
