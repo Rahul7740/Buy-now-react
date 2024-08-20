@@ -92,6 +92,12 @@ function ProductsFilter() {
                 </summary>
               </details>
             </div>
+            <div className="products-view-all-contianer">
+                  <div className="products-view-all-head">
+                    <p>Showing 1–9 of 200 results</p>
+                    <div>Sort by <img src={SvgPath.downArrowperpal} alt="down-arrow"  /></div>
+                  </div>
+            </div>
           </div>
         </div>
       </section>
