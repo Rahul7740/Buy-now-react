@@ -1,13 +1,23 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import "../style/productFilter.css";
 import { Link } from "react-router-dom";
 import SvgPath from "../assets/svg/SvgPath";
 import colosArray from "../json/filter-color.json";
+import filterProducts from "../json/filterProducts.json"
 import FeaturedProducts from "../home/FeaturedProducts";
-
+import ProductCard from "../snippets/ProductCard";
 function ProductsFilter() {
+  const [filter, setFilter] = useState(false)
+
+  const [value, setValue] = useState(20);
+
+  const handleSliderChange = (event) => {
+    setValue(event.target.value);
+  };
   return (
     <>
+      <div onClick={() => { setFilter(false) }} className={`filter-background-overlay ${filter === true ? "showFIlter" : ""}`}></div>
+
       <section className="all-sections">
         <div className="container">
           <div className="sections-header">
@@ -19,10 +29,11 @@ function ProductsFilter() {
             </div>
           </div>
           <div className="filter_and_viewAll-container">
-            <div className="filter-container">
+            <div className={`filter-container ${filter === true ? "showFIlter" : ""}`}>
               <div className="filter-head">
                 <h2>Filter</h2>
-                <button>CLEAR ALL</button>
+                <button className="display-block-none-1100">CLEAR ALL</button>
+                <button onClick={() => { setFilter(false) }} className={`display-none-block-1100 }`}><img src={SvgPath.closeBtn} alt="CLOSE" /></button>
               </div>
               <details className="filter-category" open>
                 <summary className="filter-summary">
@@ -46,8 +57,19 @@ function ProductsFilter() {
                   <h3 className="filter-headings">Price</h3>
                   <img className="down-svg" src={SvgPath.upArrow} alt="upArrow" />
                 </summary>
+
                 <div className="filter-price-range">
-                  <input type="range" />
+                  <input
+                    type="range"
+                    min="50"
+                    max="500"
+                    value={value}
+                    className="slider"
+                    onChange={handleSliderChange}
+                  />
+                  <div className="tooltip" style={{ left: `calc(${(value - 50) / 4.9}% - 10px)` }}>
+                    {value}
+                  </div>
                 </div>
                 <div className="filter-low-high-prices">
                   <p>low: $50.00</p>
@@ -62,10 +84,10 @@ function ProductsFilter() {
                 <div className="category-div">
                   <form className="filter-form">
                     {colosArray.map((i, index) => (
-                      <Fragment>
-                        <input className="filter-color-input" id={i.id} type="radio" name="asdf"/>
-                        <label className="filter-color-label" for={i.id}>
-                          <div style={{background:`rgb(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255})`}} className="colors color1"></div>
+                      <Fragment key={index}>
+                        <input className="filter-color-input" id={i.id} type="radio" name="asdf" />
+                        <label className="filter-color-label" htmlFor={i.id}>
+                          <div style={{ background: `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})` }} className="colors color1"></div>
                         </label>
                       </Fragment>
                     ))}
@@ -93,15 +115,40 @@ function ProductsFilter() {
               </details>
             </div>
             <div className="products-view-all-contianer">
-                  <div className="products-view-all-head">
-                    <p>Showing 1–9 of 200 results</p>
-                    <div>Sort by <img src={SvgPath.downArrowperpal} alt="down-arrow"  /></div>
-                  </div>
+              <div className="products-view-all-head">
+                <p>Showing 1–9 of 200 results</p>
+                <div className="filter-btns-container">
+                  <button onClick={() => { setFilter(true) }} className="filter-btn">FILTER <img src={SvgPath.downArrowperpal} alt="down-arrow" /></button>
+                  <button className="sortBy-btn">SORT BY <img src={SvgPath.downArrowperpal} alt="down-arrow" /></button>
+                </div>
+
+              </div>
+              <div className="view-all-products-grid">
+                {filterProducts.map((i, index) => (
+                  <Fragment key={index}>
+                    <ProductCard
+                      img={i.img}
+                      name={i.name}
+                      price={i.price}
+                      ratting={i.ratting}
+                      new={i.new}
+                    />
+                  </Fragment>
+                ))}
+              </div>
+              <div className="products-pages-controler">
+                <button><img src={SvgPath.leftVictor} alt="back" /></button>
+                <button className="page-select">1</button>
+                <button>2</button>
+                <img src={SvgPath.threeDOts} alt="dots" />
+                <button>10</button>
+                <button><img src={SvgPath.rightVictor} alt="next" /></button>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <FeaturedProducts name="Related item your search" /> 
+      <FeaturedProducts name="Related item your search" />
     </>
   );
 }

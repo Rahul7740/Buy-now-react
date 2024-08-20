@@ -38,6 +38,23 @@ const SvgPath = {
     arrowLIneRight : require("./Arrow-line-right.svg").default,
     upArrow : require("./up-arrow.svg").default,
     downArrowperpal : require("./down-arrow-perpal.svg").default,
+    
+    leftVictor : require("./left-victor.svg").default,
+    threeDOts : require("./three-dots.svg").default,
+    rightVictor : require("./right-victor.svg").default,
+
+    // o : require(".").default,
+    // o : require(".").default,
+    // o : require(".").default,
+    // o : require(".").default,
+    // o : require(".").default,
+    // o : require(".").default,
+    // o : require(".").default,
+    // o : require(".").default,
+    // o : require(".").default,
+    // o : require(".").default,
+    // o : require(".").default,
+    // o : require(".").default,
     // o : require(".").default,
     // o : require(".").default,
     

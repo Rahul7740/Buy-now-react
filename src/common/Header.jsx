@@ -47,11 +47,11 @@ function Header() {
               <div className={`searchBar-container ${search === true && "showSearch"}`}>
                 <img src={SvgPath.searchIcon} alt="searchIcon" />
                 <input type="text" placeholder="Search" />
+                <button onClick={() => { setSearch(false) }} className={`display-none-block-1100 ${search === false ? "serach-close-show" : ""}`}><img src={SvgPath.closeBtn} alt="CLOSE" /></button>
                 <button className="search-all-btn">
                   <p>ALL</p>
                   <img src={SvgPath.downArrowWhite} alt="downArrow" />
                 </button>
-                <button onClick={() => { setSearch(false) }} className={`display-none-block-1100 ${search === false ? "serach-close-show" : ""}`}><img src={SvgPath.closeBtn} alt="CLOSE" /></button>
 
               </div>
               <div className="user-container">
