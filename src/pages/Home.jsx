@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <> 
       <BannerSection />
-      <FeaturedProducts name="Featured products" />
+      <FeaturedProducts name="Featured products" btn="true" />
       <ProductsByCategory />
       <ArrivalsProducts />
       <ProductPromotion />

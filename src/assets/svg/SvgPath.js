@@ -35,8 +35,8 @@ const SvgPath = {
     appStore : require("./Download-appStore.svg").default,
 
 
-    // o : require(".").default,
-    // o : require(".").default,
+    arrowLIneRight : require("./Arrow-line-right.svg").default,
+    upArrow : require("./up-arrow.svg").default,
     // o : require(".").default,
     // o : require(".").default,
     // o : require(".").default,

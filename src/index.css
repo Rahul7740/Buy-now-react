@@ -39,16 +39,26 @@ body {
 }
 /* common css start */
 body::-webkit-scrollbar {
-  width: 13px;
-  height: 13px;
-  border: none; 
+  width: 9px;
+  height: 9px;
+  border: none;
 }
-
-
+body::-webkit-scrollbar:vertical {
+  background-color: transparent;
+  border-radius: 20px;
+  overflow: hidden;
+  border: none;
+}
 body::-webkit-scrollbar-thumb {
-  background-color: #553C6A; 
-  border-radius: 10px; 
+  background-color: #553c6a;
+  border-radius: 20px;
 }
+body::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.05);
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+
 .t-align {
   text-align: center;
 }

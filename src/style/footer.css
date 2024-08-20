@@ -161,4 +161,7 @@
   .footer {
     flex-direction: column;
   }
+  .footer-about-container,.footer-mail-section,.footer-contects-container{
+    max-width: 100%;
+  }
 }

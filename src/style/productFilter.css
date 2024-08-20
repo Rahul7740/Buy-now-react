@@ -1,0 +1,130 @@
+.sections-header {
+  border-bottom: 1px solid #f0eef2;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+.sections-header h2 {
+  font-size: 34px;
+  font-family: "Heebo", sans-serif;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.sections-header a {
+  font-size: 16px;
+  font-weight: 400;
+}
+.sections-header .pages-directions-div {
+  display: flex;
+  align-items: center;
+}
+.filter_and_viewAll-container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  /* font-family: "Heebo", sans-serif; */
+  font-family: "Inter", sans-serif;
+}
+/* =========filter========== */
+.filter-container {
+  max-width: 270px;
+  width: 100%;
+  border: 1px solid #f0eef2;
+  border-radius: 20px;
+}
+.filter-head {
+  padding: 22px 20px 32px 20px;
+  border-bottom: 1px solid #f0eef2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.filter-head h2 {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Heebo", sans-serif;
+}
+.filter-head button {
+  font-size: 14px;
+  font-weight: 500;
+}
+.filter-headings {
+  font-size: 16px;
+  font-weight: 500;
+}
+/* ======details summary======= */
+.filter-category {
+  padding: 22px 20px 32px 20px;
+  border-bottom: 1px solid #f0eef2;
+}
+.filter-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.summary123 {
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+}
+.filter-category-div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+  margin: 10px 0;
+}
+.filter-category-div button {
+  padding: 8px 16px;
+  border: 1px solid #f7f6f8;
+  border-radius: 30px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: start;
+}
+.filter-category-div button:hover {
+  background-color: #f7f6f8;
+}
+.filter-viewALl-btn {
+  font-size: 16px;
+  font-weight: 400;
+  color: #422659;
+}
+/* ======price========= */
+.filter-price-range {
+  padding: 21px 0;
+}
+.filter-low-high-prices {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.filter-low-high-prices p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #495f6a;
+}
+.colors{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rebeccapurple;
+  cursor: pointer;
+}
+.filter-form {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(6,1fr) ;
+  gap: 7px;
+  margin-bottom: 10px;
+}
+
+.filter-color-input {
+  display: none;
+}
+
+.filter-form input:checked + label div {
+  border: 2px solid white;
+  outline: 1px solid black;
+}
