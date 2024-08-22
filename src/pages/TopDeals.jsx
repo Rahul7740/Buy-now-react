@@ -8,6 +8,8 @@ import filterProducts from "../json/filterProducts.json"
 import FeaturedProducts from "../home/FeaturedProducts";
 import ProductCard from "../snippets/ProductCard";
 import AllButtons from "../snippets/AllButtons";
+import NewsLetter from "../home/NewsLetter";
+
 function TopDeals() {
   const [filter, setFilter] = useState(false)
 
@@ -23,11 +25,11 @@ function TopDeals() {
       <section className="all-sections">
         <div className="container">
           <div className="sections-header">
-            <h2>Top Deals</h2>
+            <h2>Help Center</h2>
             <div className="pages-directions-div">
               <Link to={"/"}>Home</Link>
               <img src={SvgPath.arrowLIneRight} alt="forword" />
-              <Link to={"/productsFilter"}>Products</Link>
+              <Link to={"/helpCenter"}>Help Center</Link>
             </div>
           </div>
           <div className="filter_and_viewAll-container">
@@ -182,6 +184,7 @@ function TopDeals() {
         </div>
       </section>
       <FeaturedProducts name="Related item your search" />
+      <NewsLetter />
     </>
   );
 }

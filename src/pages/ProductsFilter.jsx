@@ -6,6 +6,7 @@ import colosArray from "../json/filter-color.json";
 import filterProducts from "../json/filterProducts.json"
 import FeaturedProducts from "../home/FeaturedProducts";
 import ProductCard from "../snippets/ProductCard";
+import NewsLetter from "../home/NewsLetter";
 function ProductsFilter() {
   const [filter, setFilter] = useState(false)
 
@@ -149,6 +150,7 @@ function ProductsFilter() {
         </div>
       </section>
       <FeaturedProducts name="Related item your search" />
+      <NewsLetter />
     </>
   );
 }

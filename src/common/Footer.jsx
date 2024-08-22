@@ -70,7 +70,7 @@ function Footer() {
               <div className="copyright-section">
                 <a href="https://www.google.com" target="_blank" rel="noreferrer">© 2021. All rights reserved</a>
                 <div>
-                  <Link to={""}><span className="footer-link">Help Center</span></Link>
+                  <Link to={"/helpCenter"}><span className="footer-link">Help Center</span></Link>
                   <Link to={""}><span className="footer-link">Terms of Service</span></Link>
                 </div>
               </div>

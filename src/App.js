@@ -7,6 +7,7 @@ import TopDeals from "./pages/TopDeals"
 import HotOffers from "./pages/HotOffers"
 import Pages from "./pages/Pages"
 import ProductsFilter from "./pages/ProductsFilter";
+import HelpCenter from "./pages/HelpCenter";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/hotOffers" element={<HotOffers />} />
           <Route path="/pages" element={<Pages />} />
           <Route path="/productsFilter" element={<ProductsFilter />} />
+          <Route path="/helpCenter" element={<HelpCenter />} />
         </Routes>
         <Footer />
       </BrowserRouter>

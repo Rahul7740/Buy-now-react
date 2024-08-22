@@ -42,8 +42,8 @@ const SvgPath = {
     leftVictor : require("./left-victor.svg").default,
     threeDOts : require("./three-dots.svg").default,
     rightVictor : require("./right-victor.svg").default,
-
-    // o : require(".").default,
+    
+    downArrow : require("./down-arrow-perpal.svg").default,
     // o : require(".").default,
     // o : require(".").default,
     // o : require(".").default,

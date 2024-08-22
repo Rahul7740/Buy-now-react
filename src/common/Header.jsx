@@ -20,7 +20,7 @@ function Header() {
               <p>Free delivery on $100.00</p>
             </div>
             <div className="display-flex">
-              <Link className="header-topBar-Links">Help center</Link>
+              <Link to={"/helpCenter"} className="header-topBar-Links">Help center</Link>
               <img src={SvgPath.verticalLine20px} alt="vertical-line" />
               <Link className="header-topBar-Links display-block-none-700">Returns policy</Link>
               <img src={SvgPath.verticalLine20px} alt="vertical-line" />
