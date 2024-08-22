@@ -38,7 +38,7 @@ function Header() {
               <ul className={`navbar-nav ${menu === true && "show-navbar"}`} >
                 {menuLinks.map((i, index) => (
                   <li className="nav-item" key={index}>
-                    <NavLink to={i.to} className="nav-link" activeclassname="active" >{i.name}</NavLink>
+                    <NavLink to={i.to} className={`nav-link ${menu === true && "start-navlink-animation"}`} activeclassname="active" >{i.name}</NavLink>
                   </li>
                 ))}
               </ul>
