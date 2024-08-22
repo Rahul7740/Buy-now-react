@@ -1,0 +1,72 @@
+.contectUs-container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 24px;
+}
+.contactUS-content {
+  max-width: 662px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+  margin: 0 auto;
+}
+.contactUS-content label {
+  font-size: 20px;
+  font-family: "Heebo", sans-serif;
+  font-weight: 500;
+}
+.contactUS-content input,
+.contactUS-content textarea,
+.contactUS-content select {
+  width: 100%;
+  padding: 16px 20px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  border: 1px solid #d8d6e8;
+  border-radius: 30px;
+}
+.contactUS-content div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.contactUS-content div input {
+  width: 20px;
+}
+
+.contactUS-content div label {
+  font-size: 16px;
+  color: #495f6a;
+}
+.contactUS-content select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+select {
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    background-position: right 10px center; 
+    background-repeat: no-repeat;
+    background-color: white; 
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%22292.4%22 height%3D%22292.4%22%3E%3Cpath fill%3D%22%23000000%22 d%3D%22M287 69.4c5.9-5.9 5.9-15.4 0-21.2L244.2 5.1c-5.9-5.9-15.4-5.9-21.2 0L146.2 81.9 69.4 5.1c-5.9-5.9-15.4-5.9-21.2 0L5.1 48.2c-5.9 5.9-5.9 15.4 0 21.2l122.6 122.6c5.9 5.9 15.4 5.9 21.2 0L287 69.4z%22/%3E%3C/svg%3E');
+    background-size: 10px;    
+  }
+select option[disabled] {
+  display: none;
+}
+@media (max-width:800px){
+    .contectUs-container {
+        flex-direction: column;
+    }
+    .contectUs-container img{
+        margin: 0 auto;
+    }
+}
