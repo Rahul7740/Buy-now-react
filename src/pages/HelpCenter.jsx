@@ -25,7 +25,7 @@ function HelpCenter() {
               <div className="pages-directions-div">
                 <Link to={"/"}>Home</Link>
                 <img src={SvgPath.arrowLIneRight} alt="forward" />
-                <Link to={"/productsFilter"}>Products</Link>
+                <Link to={"/productsFilter"}>Help Center</Link>
               </div>
             </div>
             <div className="helpCenter-SearchBar">

@@ -1,0 +1,145 @@
+.product-detail-container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 24px;
+}
+.prodcut-detail-main-img {
+  position: relative;
+  background-color: #fef9f9;
+  border-radius: 20px;
+  padding: 50px;
+}
+.prodcut-detail-main-img div {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #495f6a;
+}
+
+.like-btn {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+.prodcut-detail-imgs-types {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.prodcut-detail-imgs-types div {
+  padding: 7px;
+  position: relative;
+  background-color: #fef9f9;
+  border-radius: 20px;
+}
+/* =======product-detail-content====== */
+.product-detail-content {
+  max-width: 564px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 30px;
+}
+.product-detail-content hr{
+  width: 100%;
+}
+
+.product-detail-header{
+  width: 100%;
+}
+.product-detail-para{
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 466px;
+  width: 100%;
+  line-height: 24px;
+  color: #495F6A;
+}
+.product-detail-header  div{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+ 
+  margin-bottom: 10px;
+}
+.product-detail-header  div h3{
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32.02px;
+  font-family: "Heebo", sans-serif;
+}
+
+/* ==========color====== */
+.productDetail-divs{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.productDetail-colors{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.productDetail-colors input{
+  display: none;
+}
+
+.productDetail-colors label div{
+  /* position: relative; */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: gray;
+}
+.productDetail-colors input:checked + label div{
+  border: 3px solid white;
+  outline: 3px solid #422659;
+}
+/* ====size==== */
+.productDetail-size{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.productDetail-size div{
+  display: block;
+  max-width: 277px;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #F0EEF2;
+  padding: 10px 20px;
+}
+.productDetail-size div h3{
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 500;
+  font-family: "Heebo", sans-serif;
+}
+.productDetail-size div p{
+  font-size: 14px;
+  line-height: 20.02px;
+  font-weight: 400;
+}
+/* =====style name========= */
+.productDetail-style{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.productDetail-style div{
+  max-width: 277px;
+  width: 100%;
+}

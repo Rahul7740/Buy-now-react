@@ -9,6 +9,7 @@ import Pages from "./pages/Pages"
 import ProductsFilter from "./pages/ProductsFilter";
 import HelpCenter from "./pages/HelpCenter";
 import ContactUS from "./pages/ContactUS";
+import ProductDetail from "./pages/ProductDetail";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/productsFilter" element={<ProductsFilter />} />
           <Route path="/helpCenter" element={<HelpCenter />} />
           <Route path="/contectUS" element={<ContactUS />} />
+          <Route path="/productDetail" element={<ProductDetail />} />
         </Routes>
         <Footer />
       </BrowserRouter>

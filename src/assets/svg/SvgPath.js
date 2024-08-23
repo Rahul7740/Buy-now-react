@@ -44,9 +44,11 @@ const SvgPath = {
     rightVictor : require("./right-victor.svg").default,
     
     downArrow : require("./down-arrow-perpal.svg").default,
-    // o : require(".").default,
-    // o : require(".").default,
-    // o : require(".").default,
+
+    productDetailLikeBtn : require("./productDetail-like-icon.svg").default,
+    productDetailDelivery : require("./productDetail-delivery-icon.svg").default,
+
+    exportIcon: require("./export-icon.svg").default,
     // o : require(".").default,
     // o : require(".").default,
     // o : require(".").default,
