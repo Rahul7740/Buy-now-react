@@ -6,9 +6,9 @@ import NewsLetter from "../home/NewsLetter";
 import helpCenterContent from "../json/helpCenterContents.json";
 
 function HelpCenter() {
-  // Initialize the openIndex based on helpCenterContent
+
   const [openIndex, setOpenIndex] = useState(
-    helpCenterContent.findIndex(item => item.o) // Find the index where item.o is true
+    helpCenterContent.findIndex(item => item.o) 
   );
 
   const handleToggle = (index, isOpen) => {

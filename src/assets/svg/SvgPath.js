@@ -49,8 +49,8 @@ const SvgPath = {
     productDetailDelivery : require("./productDetail-delivery-icon.svg").default,
 
     exportIcon: require("./export-icon.svg").default,
-    // o : require(".").default,
-    // o : require(".").default,
+    appleLogo : require("./apple-logo.svg").default,
+    starGray : require("./starGray.svg").default,
     // o : require(".").default,
     // o : require(".").default,
     // o : require(".").default,

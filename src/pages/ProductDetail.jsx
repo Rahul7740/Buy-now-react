@@ -7,6 +7,12 @@ import ImgPath from "../assets/images/ImgPath";
 import imagess from "../json/productDetailImgs.json";
 import colors from "../json/prodcutDetail-colors.json";
 import sizee from "../json/prodcutDetail-size.json";
+import AllButtons from "../snippets/AllButtons";
+import ProductInformation from "../productDetails/ProductInformation";
+import ProductDetailss from "../productDetails/ProductDetailss";
+import CustomerReviews from "../productDetails/CustomerReviews";
+import FAQ from "../productDetails/FAQ";
+import FeaturedProducts from "../home/FeaturedProducts";
 function ProductDetail() {
   return (
     <>
@@ -23,7 +29,7 @@ function ProductDetail() {
             </div>
           </div>
           <div className="product-detail-container">
-            <div className="product-detail-imgs">
+            <div className="product-detail-imgs display-block-none-700">
               <div className="prodcut-detail-main-img">
                 <img
                   className="like-btn"
@@ -59,6 +65,32 @@ function ProductDetail() {
                   Band - Regular
                 </p>
               </div>
+              <hr className="display-none-block-700" />
+              <div className="product-detail-imgs display-none-block-700">
+              <div className="prodcut-detail-main-img">
+                <img
+                  className="like-btn"
+                  src={SvgPath.productDetailLikeBtn}
+                  alt="like"
+                />
+                <img src={ImgPath.procutDetailMain} alt="product" />
+                <div>
+                  <img src={SvgPath.productDetailDelivery} alt="freeDelivery" />
+                  <p>Free delivered</p>
+                </div>
+              </div>
+              <div className="prodcut-detail-imgs-types">
+                {imagess.map((i, index) => (
+                  <div>
+                    <img
+                      src={require(`../assets/images/${i.img}`)}
+                      alt="product"
+                    />
+                  </div>
+                ))}
+                <img src={SvgPath.rightVictor} alt="" />
+              </div>
+            </div>
               <hr />
               <div className="productDetail-divs">
                 <p className="product-detail-para">Color</p>
@@ -69,7 +101,7 @@ function ProductDetail() {
                         type="radio"
                         id={index}
                         name="colr"
-                        checked={i.check ? "checked" : ""}
+                        checked
                       />
                       <label htmlFor={index}>
                         <div style={{ background: i.color }}></div>
@@ -95,7 +127,7 @@ function ProductDetail() {
                 <p className="product-detail-para">Style name</p>
                 <div className="productDetail-style">
                   <div>
-                    <input type="radio" name="style" id="style1" />
+                    <input type="radio" name="style" id="style1" checked />
                     <label htmlFor="style1">GPS</label>
                   </div>
                   <div>
@@ -104,10 +136,40 @@ function ProductDetail() {
                   </div>
                 </div>
               </div>
+              <hr />
+              <div className="productDetail-texes-div">
+                <div>
+                  <h3>$320.00</h3>
+                  <p>Inclusive of all taxes</p>
+                </div>
+                <div className="texes-ratting-contaienr">
+                  <p>4.5</p>
+                  <div className="ratting-div">
+                    <img src={SvgPath.star} alt="star" />
+                    <img src={SvgPath.star} alt="star" />
+                    <img src={SvgPath.star} alt="star" />
+                    <img src={SvgPath.star} alt="star" />
+                    <img src={SvgPath.helfStar} alt="half-star" />
+                  </div>
+                </div>
+              </div>
+              <div className="productDetail-readMore">
+                <p>10-day replacement only</p>
+                <Link style={{ color: "black" }}>Read more</Link>
+              </div>
+              <div className="productDetail-readMore">
+                <AllButtons name="Add to cart" />
+                <AllButtons name="Buy now" />
+              </div>
             </div>
           </div>
         </div>
       </section>
+      <ProductInformation />
+      <ProductDetailss />
+      <CustomerReviews />
+      <FAQ />
+      <FeaturedProducts name="Related item your search" />
     </>
   );
 }
