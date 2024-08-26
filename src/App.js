@@ -10,6 +10,7 @@ import ProductsFilter from "./pages/ProductsFilter";
 import HelpCenter from "./pages/HelpCenter";
 import ContactUS from "./pages/ContactUS";
 import ProductDetail from "./pages/ProductDetail";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/helpCenter" element={<HelpCenter />} />
           <Route path="/contectUS" element={<ContactUS />} />
           <Route path="/productDetail" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <Footer />
       </BrowserRouter>

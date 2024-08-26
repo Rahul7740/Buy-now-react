@@ -29,7 +29,7 @@ function TopDeals() {
             <div className="pages-directions-div">
               <Link to={"/"}>Home</Link>
               <img src={SvgPath.arrowLIneRight} alt="forword" />
-              <Link to={"/helpCenter"}>Help Center</Link>
+              <Link to={"/topDeals"}>Help Center</Link>
             </div>
           </div>
           <div className="filter_and_viewAll-container">

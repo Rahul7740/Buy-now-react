@@ -101,7 +101,7 @@ function ProductDetail() {
                         type="radio"
                         id={index}
                         name="colr"
-                        checked
+                        defaultChecked
                       />
                       <label htmlFor={index}>
                         <div style={{ background: i.color }}></div>
@@ -127,12 +127,12 @@ function ProductDetail() {
                 <p className="product-detail-para">Style name</p>
                 <div className="productDetail-style">
                   <div>
-                    <input type="radio" name="style" id="style1" checked />
+                    <input type="radio" name="style" id="style1" defaultChecked />
                     <label htmlFor="style1">GPS</label>
                   </div>
                   <div>
-                    <input type="radio" name="style" id="style1" />
-                    <label htmlFor="style1">GPS + Cellular</label>
+                    <input type="radio" name="style" id="style2" />
+                    <label htmlFor="style2">GPS + Cellular</label>
                   </div>
                 </div>
               </div>

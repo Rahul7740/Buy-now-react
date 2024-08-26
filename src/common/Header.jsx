@@ -33,8 +33,12 @@ function Header() {
         <div className="container">
           <div className="header-section">
             <div className="main-logo-container">
-              <img className="display-block-none-700" src={SvgPath.mainLogo} alt="logo" />
-              <img className="display-none-block-700" src={SvgPath.mainLogoRes} alt="logo" />
+              <Link to={"/"}>
+                  <img className="display-block-none-700" src={SvgPath.mainLogo} alt="logo" />
+              </Link>
+              <Link to={"/"}>
+                  <img className="display-none-block-700" src={SvgPath.mainLogoRes} alt="logo" />
+              </Link>
               <ul className={`navbar-nav ${menu === true && "show-navbar"}`} >
                 {menuLinks.map((i, index) => (
                   <li className="nav-item" key={index}>
@@ -60,7 +64,7 @@ function Header() {
                 <img className="display-none-block-1100 display-block-none-700" src={SvgPath.verticalLine20px} alt="vertical" />
                 <button className="display-block-none-700"><img src={SvgPath.headerLangaugeicon} alt="langauge" /></button>
                 <img className="display-block-none-700" src={SvgPath.verticalLine20px} alt="vertical" />
-                <button><img src={SvgPath.headerCartIcon} alt="cart" /></button>
+                <Link to={"/cart"}><img src={SvgPath.headerCartIcon} alt="cart" /></Link>
                 <img className="display-block-none-700" src={SvgPath.verticalLine20px} alt="vertical" />
                 <button className="display-block-none-375"><img src={SvgPath.headerUserIcon} alt="user" /></button>
                 <button onClick={() => { setMenu(true) }} className={`display-none-block-700 ${menu === true ? "menuIcon-show" : ""}`} ><img src={SvgPath.menuIcon} alt="menu" /></button>

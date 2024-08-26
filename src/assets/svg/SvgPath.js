@@ -51,9 +51,10 @@ const SvgPath = {
     exportIcon: require("./export-icon.svg").default,
     appleLogo : require("./apple-logo.svg").default,
     starGray : require("./starGray.svg").default,
-    // o : require(".").default,
-    // o : require(".").default,
-    // o : require(".").default,
+    
+    plus : require("./plus.svg").default,
+    minus : require("./minus.svg").default,
+    debitCredit : require("./debitCredit.svg").default,
     // o : require(".").default,
     // o : require(".").default,
     // o : require(".").default,
