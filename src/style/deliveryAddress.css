@@ -1,0 +1,116 @@
+.deliveryAdress-section {
+  display: flex;
+  align-items: start;
+  gap: 24px;
+}
+.deliveryAddress-container {
+  max-width: 760px;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 20px;
+}
+.deliveryAddress-container h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.delivery-a-inputs,
+select {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  line-height: 24px;
+  padding: 16px 20px;
+  border: 1px solid #d8d6e8;
+  border-radius: 30px;
+  width: 100%;
+}
+.delivery-A-input-div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%22292.4%22 height%3D%22292.4%22%3E%3Cpath fill%3D%22%23000000%22 d%3D%22M287 69.4c5.9-5.9 5.9-15.4 0-21.2L244.2 5.1c-5.9-5.9-15.4-5.9-21.2 0L146.2 81.9 69.4 5.1c-5.9-5.9-15.4-5.9-21.2 0L5.1 48.2c-5.9 5.9-5.9 15.4 0 21.2l122.6 122.6c5.9 5.9 15.4 5.9 21.2 0L287 69.4z%22/%3E%3C/svg%3E");
+  background-size: 10px;
+  color: gray;
+}
+select option[disabled] {
+  display: none;
+}
+.delivery-a-checkbox-div {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+  gap: 10px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ebe9f3;
+}
+.saveAddress-btn {
+  font-size: 15px;
+  color: #422659;
+  font-weight: 500;
+  line-height: 26px;
+  padding: 8px 22px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+  border: 1px solid #a093ac;
+}
+/* improtant noticee */
+.deliveryAdress-improtantNotice {
+  padding-top: 40px;
+  border-top: 1px solid #ebe9f3;
+  margin-top: 40px;
+}
+.deliveryAdress-improtantNotice h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  font-family: "Heebo", sans-serif;
+}
+.deliveryAdress-improtantNotice p {
+  font-size: 16px;
+  color: #495f6a;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 20px 0;
+}
+.deliveryAdress-improtantNotice div {
+  text-align: end;
+}
+
+.deliveryAdress-improtantNotice button {
+  font-size: 16px;
+  color: #422659;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* media */
+@media (max-width: 830px) {
+  .deliveryAdress-section {
+    flex-direction: column;
+  }
+}
+@media (max-width: 600px) {
+  .rsponcv-delivery-inputs {
+    flex-direction: column;
+  }
+}
+@media (max-width: 800px) {
+}

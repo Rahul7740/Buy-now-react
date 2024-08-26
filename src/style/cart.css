@@ -60,7 +60,7 @@
   border-top: 1px solid #f0eef2;
   border-bottom: 1px solid #f0eef2;
 }
-.cart-style-collections div {
+.style-collections {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -155,6 +155,8 @@
 .debit-credit {
   border: 1px solid white;
   border-radius: 6px;
+  display: flex;
+  align-items: center;
 }
 .debit-credit button {
   color: white;
@@ -173,6 +175,9 @@
   padding: 30px;
   border-radius: 20px;
   border: 1px solid #f0eef2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .check-Out-card h3 {
@@ -202,10 +207,127 @@
   gap: 10px;
 }
 .cart-checkOut-btn {
+  width: 100%;
   background-color: #422659;
   font-size: 15px;
   color: white;
   line-height: 26px;
+  padding: 8px 22px;
+  border-radius: 30px;
+  text-align: center;
+  text-transform: uppercase;
   font-weight: 500;
   font-family: "Inter", sans-serif;
+}
+@media (max-width: 1100px) {
+  .cart-products-price {
+    gap: 15px;
+    padding: 40px 0 40px 70.5px;
+  }
+  .cart-products-price h2 {
+    font-size: 28px;
+    line-height: 35px;
+  }
+}
+@media (max-width: 950px) {
+  .cart-EMI-checkOut-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .cart-products-price {
+    gap: 15px;
+    padding: 30px 0 30px 60.5px;
+  }
+  .display-none-950 {
+    display: none;
+  }
+}
+@media (max-width: 820px) {
+  .cart-paras {
+    display: none;
+  }
+  .cart-prdt-details {
+    gap: 15px;
+  }
+  .cart-product-details-cont {
+    gap: 10px;
+  }
+  .cart-prdt-details h3 {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 6px;
+  }
+  .cart-prdt-details h4 {
+    line-height: 20.02px;
+    font-size: 14px;
+  }
+  .cart-prdt-details p {
+    font-size: 12px;
+    line-height: 19.92px;
+  }
+  .cart-products-price {
+    gap: 15px;
+    padding: 30px 0 30px 30.5px;
+  }
+  .cart-products-price h2 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .cart-products-quantity-cont p {
+    display: none;
+  }
+  .cart-main-container {
+    gap: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  .cart-style-collections {
+    gap: 6px;
+    padding: 0;
+    border: none;
+  }
+  .cart-products-quantity{
+    padding: 5px;
+    gap: 5px;
+  }
+}
+@media (max-width: 500px) {
+  .cart-products-price {
+    gap: 0px;
+    padding: 16px 0 16px 5.5px;
+    margin-left: 2px;
+  }
+  .cart-prdt-details {
+    gap: 8px;
+  }
+  .cart-products-price h2 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .debit-credit {
+    flex-direction: column;
+  }
+
+  .debit-btn {
+    border-left: none;
+    border-top: 1px solid white;
+  }
+
+  .debit-credit button {
+    padding: 6px;
+  }
+  .emi-header {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #abb5ba;
+    margin-bottom: 20px;
+  }
+  .check-Out-card{
+    gap: 10px;
+  }
+  .cart-product-details-cont{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }

@@ -11,6 +11,8 @@ import HelpCenter from "./pages/HelpCenter";
 import ContactUS from "./pages/ContactUS";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import DeliveryAdress from "./pages/DeliveryAdress";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path="/contectUS" element={<ContactUS />} />
           <Route path="/productDetail" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/deliveryAdress" element={<DeliveryAdress />} />
         </Routes>
         <Footer />
       </BrowserRouter>

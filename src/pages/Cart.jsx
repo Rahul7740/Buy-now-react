@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SvgPath from "../assets/svg/SvgPath";
 import "../style/cart.css";
 import productss from "../json/cart-procuts.json";
+import FeaturedProducts from "../home/FeaturedProducts";
 
 function Cart() {
     const [quantity, setQuantity] = useState(1);
@@ -34,17 +35,17 @@ function Cart() {
                                             <p className="cart-paras">{i.p}</p>
                                         </div>
                                         <div className="cart-style-collections">
-                                            <div>
+                                            <div className="style-collections">
                                                 <h4>{i.size}</h4>
                                                 <p>Size</p>
                                             </div>
-                                            <img src={SvgPath.verticalLine20px} alt="vertical" />
-                                            <div>
+                                            <img className="display-none-950" src={SvgPath.verticalLine20px} alt="vertical" />
+                                            <div className="style-collections display-none-950">
                                                 <h4>GPS</h4>
                                                 <p>Style</p>
                                             </div>
-                                            <img src={SvgPath.verticalLine20px} alt="vertical" />
-                                            <div>
+                                            <img className="display-none-950" src={SvgPath.verticalLine20px} alt="vertical" />
+                                            <div className="style-collections display-none-950">
                                                 <span
                                                     style={{ background: i.color }}
                                                     id="color1"
@@ -63,9 +64,8 @@ function Cart() {
                                                 >
                                                     <img src={SvgPath.minus} alt="minus" />
                                                 </button>
-                                                <button>
-                                                    <p>{quantity}</p>
-                                                </button>
+                                                <p style={{display:"block"}}>{quantity}</p>
+
                                                 <button
                                                     onClick={() => {
                                                         setQuantity(quantity + 1);
@@ -119,11 +119,14 @@ function Cart() {
                                 <p style={{ color: "black" }}>Total</p>
                                 <h3>$530.00</h3>
                             </div>
-                            <Link className="cart-checkOut-btn">Check out</Link>
+                            <Link to={"/checkout"} className="cart-checkOut-btn">Check out</Link>
+
                         </div>
                     </div>
                 </div>
             </section>
+            <FeaturedProducts name="Related item your search" />
+
         </>
     );
 }
