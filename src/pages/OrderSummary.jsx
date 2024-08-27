@@ -48,7 +48,7 @@ function OrderSummary() {
                             <h3>Order Summary</h3>
                             <div className="orderSummary-Main-container">
                                 {productss.map((i, index) => (
-                                        <div className="orderSummary-products">
+                                        <div key={index} className="orderSummary-products">
                                             <div className="orderSummary-imgs">
                                                 <img
                                                     src={require(`../assets/images/${i.img}`)}

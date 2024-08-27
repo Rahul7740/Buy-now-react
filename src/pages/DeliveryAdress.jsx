@@ -88,8 +88,10 @@ function DeliveryAdress() {
                                 <input className="delivery-a-inputs" placeholder="Address 1" type="text" />
                                 <input className="delivery-a-inputs" placeholder="Address 2" type="text" />
                                 <div className="delivery-a-checkbox-div">
-                                    <input type="checkbox" />
-                                    <p>Business Address</p>
+                                    <input id="checkss" type="checkbox" />
+                                    <label htmlFor="checkss">
+                                        <p>Business Address</p>
+                                    </label>
                                 </div>
                                 <div className="space-between">
                                     <button onClick={() => { setAddress(true); setshow(false) }} className="saveAddress-btn" type="submit">Save Address</button>

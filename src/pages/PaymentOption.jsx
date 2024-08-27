@@ -4,7 +4,10 @@ import SvgPath from "../assets/svg/SvgPath"
 import Summary from "../snippets/Summary";
 import "../style/payment-Option.css"
 import selectorss from "../json/paymentOption-selectrs.json"
-import debitcards from "../json/paymentOption-cards.json"
+import CardsDebitCredit from "../PaymentOptionss/CardsDebitCredit";
+import UpiPayments from "../PaymentOptionss/UpiPayments";
+import NEtBanking from "../PaymentOptionss/NEtBanking";
+import Emi from "../PaymentOptionss/Emi";
 function PaymentOption() {
 
     return (
@@ -53,52 +56,10 @@ function PaymentOption() {
                         <img src={SvgPath.debitCredit} alt="debit" />
                     </div>
                     <div className="payment-option-main-container">
-                        <div className="payment-option-cards-container">
-                            <div className="credit-Debit-card-div">
-                                {debitcards.map((i, index) => (
-                                    <label key={index} htmlFor={index} className="credit-Debit-card">
-                                        <div className="credit-Debit-card-head">
-                                            <div>
-                                                <input type="radio" name="debit" id={index} />
-                                                <p className="all-para-16">Shpping Card</p>
-                                            </div>
-                                            <img src={SvgPath.visa} alt="visa" />
-                                        </div>
-                                        <h6 className="credit-card-numbers">2356 2356 2356 2356</h6>
-                                        <div className="credit-Debit-card-foot">
-                                            <div>
-                                                <p>Card Holder</p>
-                                                <h3>{i.userName}</h3>
-                                            </div>
-                                            <div className="card-exp">
-                                                <p>Exp</p>
-                                                <h3>{i.exp}</h3>
-                                            </div>
-                                        </div>
-                                    </label>
-                                ))}
-                                <div className="add-more-cards">
-                                    <img src={SvgPath.plus} alt="plus" />
-                                    <p>Add Card</p>
-                                </div>
-                            </div>
-                            <div className="otherCard-container">
-                                <h3 style={{color:"#1F292D"}} className="all-para-16">Other Card</h3>
-                                <div className="delivery-A-input-div rsponcv-delivery-inputs">
-                                    <input className="delivery-a-inputs" placeholder="Card name" type="text" />
-                                    <input className="delivery-a-inputs" placeholder="Card Number" type="tel" />
-                                </div>
-                                <div className="delivery-A-input-div rsponcv-delivery-inputs">
-                                    <input className="delivery-a-inputs" placeholder="CVV" type="text" />
-                                    <input className="delivery-a-inputs" placeholder="Exp Date"  type="date" />
-                                </div>
-                                <hr style={{width:"100%"}} />
-                                <div className="space-between">
-                                    <button className="saveAddress-btn">Save card</button>
-                                    <button>Cencel</button> 
-                                </div>
-                            </div>
-                        </div>
+                        {/* <CardsDebitCredit /> */}
+                        {/* <UpiPayments /> */}
+                        {/* <NEtBanking /> */}
+                        <Emi />
                         <Summary />
                     </div>
                 </div>

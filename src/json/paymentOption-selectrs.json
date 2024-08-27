@@ -1,17 +1,22 @@
 [
     {
-        "name":"Cards(Debit, Credit)"
+        "name":"Cards(Debit, Credit)",
+        "path":"CardsDebitCredit"
     },
     {
-        "name":"UPI Payment"
+        "name":"UPI Payment",
+        "path":""
     },
     {
-        "name":"NEt Banking"
+        "name":"NEt Banking",
+        "path":""
     },
     {
-        "name":"EMI"
+        "name":"EMI",
+        "path":""
     },
     {
-        "name":"Cash on delivery"
+        "name":"Cash on delivery",
+        "path":""
     }
 ]
