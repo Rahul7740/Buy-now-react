@@ -1,0 +1,17 @@
+[
+    {
+        "name":"Cards(Debit, Credit)"
+    },
+    {
+        "name":"UPI Payment"
+    },
+    {
+        "name":"NEt Banking"
+    },
+    {
+        "name":"EMI"
+    },
+    {
+        "name":"Cash on delivery"
+    }
+]

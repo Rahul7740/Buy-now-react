@@ -45,9 +45,6 @@ select {
   background-size: 10px;
   color: gray;
 }
-select option[disabled] {
-  display: none;
-}
 .delivery-a-checkbox-div {
   display: flex;
   align-items: center;
@@ -99,6 +96,60 @@ select option[disabled] {
   color: #422659;
   font-weight: 400;
   line-height: 24px;
+}
+/* ========save-addess===== */
+
+.save-adress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.save-adress {
+  border: 1px solid #ebe9f3;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.save-adress-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.save-adress-heading h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  font-family: "Heebo", sans-serif;
+  color: black;
+}
+.save-adress-heading span {
+  color: #ffffff;
+  font-size: 12px;
+  font-family: "Inter", sans-serif;
+  line-height: 20px;
+  padding: 0 6.5px;
+  font-weight: 500;
+  background: #ffb900;
+  border-radius: 50px;
+}
+.save-adress p {
+  font-size: 16px;
+  color: #495f6a;
+  font-weight: 400;
+  line-height: 24px;
+}
+.save-adress button {
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 500;
+  color: #422659;
+  font-family: "Inter", sans-serif;
 }
 
 /* media */

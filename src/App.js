@@ -13,6 +13,8 @@ import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import DeliveryAdress from "./pages/DeliveryAdress";
+import OrderSummary from "./pages/OrderSummary";
+import PaymentOption from "./pages/PaymentOption";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/deliveryAdress" element={<DeliveryAdress />} />
+          <Route path="/orderSummary" element={<OrderSummary />} />
+          <Route path="/paymentOption" element={<PaymentOption />} />
         </Routes>
         <Footer />
       </BrowserRouter>

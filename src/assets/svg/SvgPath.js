@@ -55,7 +55,7 @@ const SvgPath = {
     plus : require("./plus.svg").default,
     minus : require("./minus.svg").default,
     debitCredit : require("./debitCredit.svg").default,
-    // o : require(".").default,
+    visa : require("./visa.icon.svg").default,
     // o : require(".").default,
     // o : require(".").default,
     // o : require(".").default,

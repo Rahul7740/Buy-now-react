@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SvgPath from "../assets/svg/SvgPath";
 import "../style/deliveryAddress.css";
 import Summary from "../snippets/Summary";
+import selects from "../json/deliveryAdress-selects.json"
+import saveAdresss from "../json/saveAdress.json"
 
 function DeliveryAdress() {
+    const [Address, setAddress] = useState(false)
+    const [show, setshow] = useState(false)
     return (
         <>
             <section className="all-sections">
@@ -41,38 +45,58 @@ function DeliveryAdress() {
                         </div>
                     </div>
                     <div className="deliveryAdress-section">
-                        <form className="deliveryAddress-container">
+                        <div className="deliveryAddress-container">
                             <h3>Delivery Address</h3>
-                            <div className="delivery-A-input-div rsponcv-delivery-inputs">
-                                <input className="delivery-a-inputs" placeholder="First Name" type="text" />
-                                <input className="delivery-a-inputs" placeholder="Mobile Number" type="tel" />
+                            <div style={{ display: Address === false ? "none" : "flex" }} className="save-adress-container">
+                                {saveAdresss.map((i, index) => (
+                                    <div key={index} className="save-adress">
+                                        <div>
+                                            <div className="save-adress-heading">
+                                                <h3>{i.name}</h3>
+                                                <span>{i.place}</span>
+                                            </div>
+                                            <p>{i.adress}</p>
+                                        </div>
+                                        <Link to={"/orderSummary"}>
+                                            <button>Select address</button>
+                                        </Link>
+                                    </div>
+                                ))}
+                                <button style={{ display: show === true ? "none" : "block" }} onClick={() => { setshow(true) }} className="saveAddress-btn" type="submit">Add new address</button>
                             </div>
-                            <div className="delivery-A-input-div rsponcv-delivery-inputs">
-                                <input className="delivery-a-inputs" placeholder="Email Address" type="text" />
-                                <input className="delivery-a-inputs" placeholder="PIN Code" type="number" />
+                            <div style={{ display: show === false && Address === true ? "none" : "flex" }} className="deliveryAddress-container">
+                                <h3 style={{ display: show === true ? "block" : "none" }}>New Address</h3>
+
+                                <div className="delivery-A-input-div rsponcv-delivery-inputs">
+                                    <input className="delivery-a-inputs" placeholder="First Name" type="text" />
+                                    <input className="delivery-a-inputs" placeholder="Mobile Number" type="tel" />
+                                </div>
+                                <div className="delivery-A-input-div rsponcv-delivery-inputs">
+                                    <input className="delivery-a-inputs" placeholder="Email Address" type="text" />
+                                    <input className="delivery-a-inputs" placeholder="PIN Code" type="number" />
+                                </div>
+                                <div className="delivery-A-input-div">
+                                    {selects.map((i, index) => (
+                                        <select key={index} name="selects"  >
+                                            <option defaultValue="state">{i.head}</option>
+                                            <option defaultValue="a">{i.option1}</option>
+                                            <option defaultValue="b">{i.option2}</option>
+                                            <option defaultValue="c">{i.option3}</option>
+                                        </select>
+                                    ))}
+                                </div>
+                                <input className="delivery-a-inputs" placeholder="Address 1" type="text" />
+                                <input className="delivery-a-inputs" placeholder="Address 2" type="text" />
+                                <div className="delivery-a-checkbox-div">
+                                    <input type="checkbox" />
+                                    <p>Business Address</p>
+                                </div>
+                                <div className="space-between">
+                                    <button onClick={() => { setAddress(true); setshow(false) }} className="saveAddress-btn" type="submit">Save Address</button>
+                                    <button style={{ display: show === true ? "block" : "none" }} onClick={() => { setshow(false) }}>Cencel</button>
+                                </div>
                             </div>
-                            <div className="delivery-A-input-div">
-                                <select name="" id="">
-                                    <option value="state" selected disabled>City,State</option>
-                                    <option value="a">a</option>
-                                    <option value="b">b</option>
-                                    <option value="c">c</option>
-                                </select>
-                                <select name="" id="" >
-                                    <option value="country" selected disabled>Country</option>
-                                    <option value="a">a</option>
-                                    <option value="b">b</option>
-                                    <option value="c">c</option>
-                                </select>
-                            </div>
-                            <input className="delivery-a-inputs" placeholder="Address 1" type="text" />
-                            <input className="delivery-a-inputs" placeholder="Address 2" type="text" />
-                            <div className="delivery-a-checkbox-div">
-                                <input type="checkbox" />
-                                <p>Business Address</p>
-                            </div>
-                            <button className="saveAddress-btn" type="submit">Save Address</button>
-                        </form>
+                        </div>
                         <Summary />
                     </div>
                     <div className="deliveryAdress-improtantNotice">

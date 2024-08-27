@@ -28,6 +28,9 @@
   height: 4px;
   background-color: #ece9ee;
 }
+.activeline{
+  background-color: #422659;
+}
 .stepper-line-container {
   display: flex;
   align-items: center;
