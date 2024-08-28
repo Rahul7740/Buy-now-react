@@ -87,6 +87,7 @@ body::-webkit-scrollbar-track {
   color: #495f6a;
   font-weight: 400;
   line-height: 24px;
+  letter-spacing: 0.15px;
 }
 .all-para-14{
   font-size: 14px;

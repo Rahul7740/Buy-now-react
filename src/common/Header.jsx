@@ -17,7 +17,7 @@ function Header() {
           <div className="header-top-bar-content">
             <div className="display-flex">
               <img className="display-block-none-375" src={SvgPath.headerTopBarLogo} alt="free delivery logo" />
-              <p>Free delivery on $100.00</p>
+              <p className="header-topBar-Links">Free delivery on $100.00</p>
             </div>
             <div className="display-flex">
               <Link to={"/helpCenter"} className="header-topBar-Links">Help center</Link>
@@ -34,10 +34,10 @@ function Header() {
           <div className="header-section">
             <div className="main-logo-container">
               <Link to={"/"}>
-                  <img className="display-block-none-700" src={SvgPath.mainLogo} alt="logo" />
+                <img className="display-block-none-700" src={SvgPath.mainLogo} alt="logo" />
               </Link>
               <Link to={"/"}>
-                  <img className="display-none-block-700" src={SvgPath.mainLogoRes} alt="logo" />
+                <img className="display-none-block-700" src={SvgPath.mainLogoRes} alt="logo" />
               </Link>
               <ul className={`navbar-nav ${menu === true && "show-navbar"}`} >
                 {menuLinks.map((i, index) => (
@@ -49,19 +49,18 @@ function Header() {
             </div>
             <div className="searchBar-and-user-container">
               <div className={`searchBar-container ${search === true && "showSearch"}`}>
-                <img src={SvgPath.searchIcon} alt="searchIcon" />
-                <input type="text" placeholder="Search" />
-                <button onClick={() => { setSearch(false) }} className={`display-none-block-1100 ${search === false ? "serach-close-show" : ""}`}><img src={SvgPath.closeBtn} alt="CLOSE" /></button>
-                <button className="search-all-btn">
-                  <p>ALL</p>
-                  <img src={SvgPath.downArrowWhite} alt="downArrow" />
-                </button>
+                <div>
+                  <img src={SvgPath.searchIcon} alt="searchIcon" />
+                  <input type="text" placeholder="Search" />
+                  <button onClick={() => { setSearch(false) }} className={`display-none-block-1100 ${search === false ? "serach-close-show" : ""}`}><img style={{paddingRight:"5px"}} src={SvgPath.closeBtn} alt="CLOSE" /></button>
+                </div>
 
+                <button className="search-all-btn">ALL<img src={SvgPath.downArrowWhite} alt="downArrow" /></button>
               </div>
               <div className="user-container">
                 <button onClick={() => { setSearch(true) }} className={`display-none-block-1100 ${search === true ? "serach-close-show" : ""}`}><img src={SvgPath.searchGray} alt="search" /></button>
+                <img className="search-icon-vertical-line" src={SvgPath.verticalLine20px} alt="vertical" />
 
-                <img className="display-none-block-1100 display-block-none-700" src={SvgPath.verticalLine20px} alt="vertical" />
                 <button className="display-block-none-700"><img src={SvgPath.headerLangaugeicon} alt="langauge" /></button>
                 <img className="display-block-none-700" src={SvgPath.verticalLine20px} alt="vertical" />
                 <Link to={"/cart"}><img src={SvgPath.headerCartIcon} alt="cart" /></Link>

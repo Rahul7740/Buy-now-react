@@ -11,7 +11,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
-.upiPayment-methods-div .upi-methods {
+.upi-methods {
   padding: 14px 20px;
   border: 1px solid #ebe9f3;
   border-radius: 10px;
@@ -21,7 +21,7 @@
   gap: 10px;
   cursor: pointer;
 }
-.upiPayment-methods-div .upi-methods div {
+.upi-methods div {
   display: flex;
   align-items: center;
   gap: 10px;

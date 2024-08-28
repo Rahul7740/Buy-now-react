@@ -17,12 +17,7 @@
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
-.product-card:hover {
-  box-shadow:inset 0 0 20px #80808086;
-}
-.product-card:hover .product-content{
-  box-shadow:inset 0 -15px 20px #80808086;
-}
+
 
 .product-card .product-img {
   height: 270px;
