@@ -7,7 +7,6 @@ import { useState } from "react";
 
 function Header() {
   const [menu, setMenu] = useState(false);
-
   const [search, setSearch] = useState(false)
 
   return (
@@ -40,11 +39,29 @@ function Header() {
                 <img className="display-none-block-700" src={SvgPath.mainLogoRes} alt="logo" />
               </Link>
               <ul className={`navbar-nav ${menu === true && "show-navbar"}`} >
+                <div className="res-menu-header">
+                  <div className="menu-user-div">
+                    <img src={SvgPath.menuUserImg} alt="user" />
+                    <div>
+                      <h3>Tiana Baptista</h3>
+                      <p>tim.jennings@example.com</p>
+                    </div>
+                  </div>
+                  <button onClick={() => { setMenu(false) }} ><img src={SvgPath.menuCLoseBtn} alt="CLOSE" /></button>
+                </div>
                 {menuLinks.map((i, index) => (
-                  <li className="nav-item" key={index}>
-                    <NavLink to={i.to} className={`nav-link ${menu === true && "start-navlink-animation"}`} activeclassname="active" >{i.name}</NavLink>
+                  <li onClick={() => { setMenu(false) }} className={`nav-item ${i.clas && "show-menu-links"}`} key={index}>
+                    <NavLink to={i.to} className="nav-link" activeclassname="active" >
+                      <img className="show-menu-links" src={require(`../assets/svg/${i.img}`)} alt="menu-imgs" />
+                      {i.name}
+                    </NavLink>
                   </li>
                 ))}
+                <div className="menu-login-signUp-container">
+                  <Link>Log In</Link>
+                  <Link>Sign Up</Link>
+                </div>
+                <a className="menu-support-Btn" href="tel:(+00) 0123456789">Support (+00) 0123456789</a>
               </ul>
             </div>
             <div className="searchBar-and-user-container">
@@ -52,7 +69,7 @@ function Header() {
                 <div>
                   <img src={SvgPath.searchIcon} alt="searchIcon" />
                   <input type="text" placeholder="Search" />
-                  <button onClick={() => { setSearch(false) }} className={`display-none-block-1100 ${search === false ? "serach-close-show" : ""}`}><img style={{paddingRight:"5px"}} src={SvgPath.closeBtn} alt="CLOSE" /></button>
+                  <button onClick={() => { setSearch(false) }} className={`display-none-block-1100 ${search === false ? "serach-close-show" : ""}`}><img style={{ paddingRight: "5px" }} src={SvgPath.closeBtn} alt="CLOSE" /></button>
                 </div>
 
                 <button className="search-all-btn">ALL<img src={SvgPath.downArrowWhite} alt="downArrow" /></button>
@@ -67,7 +84,6 @@ function Header() {
                 <img className="display-block-none-700" src={SvgPath.verticalLine20px} alt="vertical" />
                 <button className="display-block-none-375"><img src={SvgPath.headerUserIcon} alt="user" /></button>
                 <button onClick={() => { setMenu(true) }} className={`display-none-block-700 ${menu === true ? "menuIcon-show" : ""}`} ><img src={SvgPath.menuIcon} alt="menu" /></button>
-                <button onClick={() => { setMenu(false) }} className={`display-none-block-700 ${menu === false ? "menuIcon-show" : ""}`}><img src={SvgPath.closeBtn} alt="CLOSE" /></button>
               </div>
             </div>
           </div>
