@@ -1,7 +1,17 @@
+.banner-main-section {
+  background: linear-gradient(
+    102.46deg,
+    rgba(66, 38, 89, 0.04) 3.38%,
+    rgba(66, 38, 89, 0) 84%
+  );
+}
 .banner-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.banner-main-img {
+  mix-blend-mode: color-burn;
 }
 .banner-content {
   width: 100%;
@@ -12,16 +22,39 @@
   font-size: 20px;
   font-weight: 500;
 }
+.banner-content-child1 p {
+  margin-bottom: 20px;
+  font-family: "Heebo", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0.15px;
+  color: #422659;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
 .banner-heading {
-  margin-top: 10px;
+  color: #1f292d;
   font-size: 60px;
   font-weight: 500;
+  line-height: 72px;
+  letter-spacing: -0.5px;
   font-family: "Heebo", sans-serif;
 }
-.banner-btn-container{
-    display: flex;
-    align-items: center;
-    gap: 30px;
+.banner-content-benifit {
+  color: #1f292d;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 500;
+  font-family: "Heebo", sans-serif;
+  letter-spacing: 0.15px;
+}
+.banner-btn-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 .banner-shop-now-btn {
   display: flex;
@@ -35,52 +68,71 @@
   font-size: 15px;
   font-family: "Inter", sans-serif;
 }
-.product-offer-container{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #422659;
-
+.product-offer-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #422659;
 }
 
-
-@media (max-width:1100px){
-    .banner-heading {
-        margin-top: 9px;
-        font-size: 50px;
-    }
+@media (max-width: 1100px) {
+  .banner-heading {
+    font-size: 54px;
+    line-height: 60.99px;
+    letter-spacing: 0.5px;
+  }
+  
 }
-@media (max-width:1000px){
+@media (max-width: 1000px) {
+  
+  .banner-main-img {
+    margin: 0 auto;
+  }
+  .banner-content {
+    margin-top: 30px;
+    font-size: 16px;
+  }
+  .banner-heading {
+    font-size: 42px;
+    line-height: 50.99px;
+    letter-spacing: 0.10px;
+  }
+  .banner-btn-container {
+    gap: 15px;
+  }
+  .product-offer-container {
+    font-size: 14px;
+  }
+}
+@media (max-width: 900px) {
     .banner-section {
         flex-direction: column;
-        gap: 10px;
-    }
-    .banner-section img{
-        margin: 0 auto;
-    }
-    .banner-content{
-        margin: 30px auto;
-        font-size: 16px;
-    }
-    .banner-heading {
-        margin-top: 9px;
-        font-size: 40px;
-    }
-    .banner-btn-container{
-        gap: 15px;
-    }
-    .product-offer-container{
-        font-size: 14px;
-    }
-}
-@media (max-width:452px){
-    .banner-heading {
-        margin-top: 5px;
-        font-size: 34px;
-    }
-    .banner-shop-now-btn {
-        gap: 5px;
-        padding: 9px 12px;
-        font-size: 12px;
+        gap: 40px;
       }
+}
+
+@media (max-width: 700px) {
+  .banner-content {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 452px) {
+  .banner-heading {
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 41.99px;
+    letter-spacing: 0.25px;
+  }
+  .banner-content-child1 p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+  }
+  .banner-shop-now-btn {
+    gap: 5px;
+    padding: 9px 12px;
+    font-size: 12px;
+  }
 }

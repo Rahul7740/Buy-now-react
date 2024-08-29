@@ -6,27 +6,21 @@ import SvgPath from "../assets/svg/SvgPath";
 function BannerSection() {
   return (
     <>
-      <section>
+      <section className="banner-main-section">
         <div className="container">
           <div className="banner-section">
             <div className="banner-content">
-              <div>
-                <p>
-                  {" "}
-                  <span style={{ color: "#422659" }}>
-                    Exclusive products
-                  </span>{" "}
-                  🔥
-                </p>
+              <div className="banner-content-child1">
+                <p>Exclusive products<img src={require("../assets/svg/fire-icon.svg").default} alt="fire" /></p>
                 <h1 className="banner-heading">
-                  Find Top{" "}
-                  <span style={{ color: "#67517A" }}>Amazing Products,</span>{" "}
+                  Find Top
+                  <span style={{ color: "#67517A" }}> Amazing Products, </span> 
                   Start Shopping Now
                 </h1>
               </div>
-              <p className="display-block-none-700">
-                For First Pruches{" "}
-                <span style={{ color: "#FFB400" }}>Get 30% Off</span>
+              <p className="banner-content-benifit">
+                For First Pruches 
+                <span style={{ color: "#FFB400" }}> Get 30% Off </span>
               </p>
               <div className="banner-btn-container">
                 <button className="banner-shop-now-btn">
@@ -43,10 +37,10 @@ function BannerSection() {
                 </div>
               </div>
             </div>
-            <img src={ImgPath.bannerMain} alt="banner" />
+            <img className="banner-main-img" src={ImgPath.bannerMain} alt="banner" />
           </div>
         </div>
-      </section>
+      </section >
     </>
   );
 }
