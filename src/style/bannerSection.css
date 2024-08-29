@@ -55,17 +55,21 @@
   display: flex;
   align-items: center;
   gap: 30px;
+  flex-wrap: wrap;
 }
 .banner-shop-now-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 9px 16px;
+  padding: 8px 22px;
   background-color: #422659;
-  color: white;
+  color: #ffffff;
   text-transform: uppercase;
   border-radius: 30px;
   font-size: 15px;
+  letter-spacing: 0.46px;
+  line-height: 26px;
   font-family: "Inter", sans-serif;
 }
 .product-offer-container {
@@ -73,6 +77,11 @@
   align-items: center;
   gap: 8px;
   color: #422659;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0.46px;
+  text-align: left;
 }
 
 @media (max-width: 1100px) {
@@ -81,10 +90,8 @@
     line-height: 60.99px;
     letter-spacing: 0.5px;
   }
-  
 }
 @media (max-width: 1000px) {
-  
   .banner-main-img {
     margin: 0 auto;
   }
@@ -95,25 +102,36 @@
   .banner-heading {
     font-size: 42px;
     line-height: 50.99px;
-    letter-spacing: 0.10px;
-  }
-  .banner-btn-container {
-    gap: 15px;
+    letter-spacing: 0.1px;
   }
   .product-offer-container {
     font-size: 14px;
   }
+  .banner-content-benifit {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
 @media (max-width: 900px) {
-    .banner-section {
-        flex-direction: column;
-        gap: 40px;
-      }
+  .banner-section {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .banner-content-benifit {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 @media (max-width: 700px) {
   .banner-content {
     gap: 30px;
+  }
+  .banner-content-benifit {
+    display: none;
+  }
+  .banner-btn-container {
+    gap: 25px;
   }
 }
 

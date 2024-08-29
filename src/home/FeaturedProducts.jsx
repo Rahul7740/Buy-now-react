@@ -7,12 +7,13 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { Pagination, Navigation } from "swiper/modules";
+import {Autoplay, Pagination, Navigation } from "swiper/modules";
 
 import featuredProducts from "../json/FeaturedProducts.json";
 import ProductCard from "../snippets/ProductCard";
 import AllButtons from "../snippets/AllButtons";
 import { Link } from "react-router-dom";
+import ProductCard1 from "../snippets/ProductCard1";
 
 const FeaturedProducts = (props) => {
   const swiperRef = useRef(null);
@@ -37,30 +38,55 @@ const FeaturedProducts = (props) => {
             ref={swiperRef}
             pagination={false}
             navigation={false}
-            modules={[Pagination, Navigation]}
+            autoplay={{
+              delay: 1900,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay, Pagination, Navigation]}
             className="mySwiper"
-            // slidesPerView={4}
             breakpoints={{
-              540: {
-                slidesPerView: 1,
+              350: {
+                slidesPerView: 1.25,
+                spaceBetween: 10,
               },
-              650: {
-                slidesPerView: 2,
+              540: {
+                slidesPerView: 1.8,
+                spaceBetween: 15,
+              },
+              700: {
+                slidesPerView: 2.3,
+                spaceBetween: 20,
               },
               900: {
-                slidesPerView: 3,
+                slidesPerView: 2.8,
+                spaceBetween: 20,
               },
-              1100: {
+              1000: {
+                slidesPerView: 3.1,
+                spaceBetween: 24,
+              },
+              1140: {
+                slidesPerView: 3.5,
+                spaceBetween: 24,
+              },
+              1141: {
+                slidesPerView: 3.7,
+                spaceBetween: 24,
+              },
+              1250: {
                 slidesPerView: 4,
+                spaceBetween: 24,
               },
-              1440: {
+              1400: {
                 slidesPerView: 4,
-              },
+                spaceBetween: 24,
+              }
+
             }}
           >
             {featuredProducts.map((i, index) => (
               <SwiperSlide key={index}>
-                <ProductCard
+                <ProductCard1
                   img={i.img}
                   name={i.name}
                   price={i.price}
@@ -73,8 +99,7 @@ const FeaturedProducts = (props) => {
           {props.btn ? (
             <Link
               to={"/productsFilter"}
-              style={{ margin: "20px auto", display: "block" }}
-              className="t-align"
+              className="featuredProducts-btn"
             >
               <AllButtons name="View all Products" />
             </Link>

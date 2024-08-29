@@ -29,29 +29,50 @@ const TopProducts = () => {
                         </div>
                     </div>
                     <Swiper
-                        ref={swiperRef}
-                        pagination={false}
-                        navigation={false}
-                        modules={[Pagination, Navigation]}
-                        className="mySwiper"
-                        // slidesPerView={4} 
-                        breakpoints={{
-                            540: {
-                                slidesPerView: 1,
-                            },
-                            650: {
-                                slidesPerView: 2,
-                            },
-                            900: {
-                                slidesPerView: 3,
-                            },
-                            1100: {
-                                slidesPerView: 4,
-                            },
-                            1440: {
-                                slidesPerView: 4,
-                            },
-                        }}
+                         ref={swiperRef}
+                         pagination={false}
+                         navigation={false}
+                         modules={[Pagination, Navigation]}
+                         className="mySwiper"
+                         breakpoints={{
+                           350: {
+                             slidesPerView: 1.25,
+                             spaceBetween: 10,   
+                           },
+                           540: {
+                             slidesPerView: 1.8, 
+                             spaceBetween: 15,
+                           },
+                           700: {
+                             slidesPerView: 2.3, 
+                             spaceBetween: 20,
+                           },
+                           900: {
+                             slidesPerView: 2.8,  
+                             spaceBetween: 20,
+                           },
+                           1000: {
+                             slidesPerView: 3.1, 
+                             spaceBetween: 24,   
+                           },
+                           1140: {
+                             slidesPerView: 3.5,  
+                             spaceBetween: 24,   
+                           },
+                           1141: {
+                             slidesPerView: 3.7,  
+                             spaceBetween: 24,    
+                           },
+                           1250: {
+                             slidesPerView: 4,    
+                             spaceBetween: 24,    
+                           },
+                           1400: {
+                             slidesPerView: 4,    
+                             spaceBetween: 24,    
+                           }
+                       
+                       }}
                     >
                         {topProductsss.map((i, index) => (
                             <SwiperSlide key={index}>

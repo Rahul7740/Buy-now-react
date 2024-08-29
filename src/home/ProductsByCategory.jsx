@@ -9,16 +9,19 @@ const ProductsByCategory = () => {
         <>
             <section className='all-sections'>
                 <div className='container'>
-                    <div className='product-head'>
+                    <div className='product-head productByCategory-head'>
                         <h2>Shop products by category</h2>
                     </div>
-                    <div className='categorys-btn-container'>
-                        {categorys.map((c, index) => (
-                            <button
-                                onClick={() => { setCategory(c.name)}} key={index}
-                                className={`categorys-btn ${category === c.name ? 'selected' : ''}`}
-                            >{c.name}</button>
-                        ))}
+                    <div className='categorys-btn-main-container'>
+                        <div className='categorys-btn-container'>
+                            {categorys.map((c, index) => (
+                                <button
+                                    onClick={() => { setCategory(c.name) }} key={index}
+                                    className={`categorys-btn ${category === c.name ? 'selected' : ''}`}
+                                >{c.name}</button>
+                            ))}
+                        </div>
+                        <button className='caregory-forword-btn'><img src={require("../assets/svg/category-forword-btn.svg").default} alt="forword" /></button>
                     </div>
                     <div className='Products-By-Category-section'>
                         {productCategory[category].map((p, index) => (

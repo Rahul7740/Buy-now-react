@@ -68,28 +68,30 @@ body::-webkit-scrollbar-track {
 .all-btns {
   color: white;
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
   background-color: #422659;
   border-radius: 30px;
+  line-height: 26px;
+  letter-spacing: 0.46px;
   padding: 8px 22px;
 }
-.all-headings{
+.all-headings {
   font-size: 20px;
   color: black;
   font-family: "Heebo", sans-serif;
   font-weight: 500;
   line-height: 32px;
 }
-.all-para-16{
+.all-para-16 {
   font-size: 16px;
   color: #495f6a;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.15px;
 }
-.all-para-14{
+.all-para-14 {
   font-size: 14px;
   color: #495f6a;
   font-weight: 400;
@@ -123,6 +125,9 @@ body::-webkit-scrollbar-track {
   .display-none-block-1100 {
     display: block;
   }
+  .all-sections {
+    padding: 35px 0;
+  }
 }
 @media (max-width: 700px) {
   .display-block-none-700 {
@@ -134,19 +139,31 @@ body::-webkit-scrollbar-track {
   .all-btns {
     padding: 6px 16px;
   }
-  .all-headings{
+  .all-headings {
     font-size: 18px;
     line-height: 28px;
   }
-  .all-para-16{
+  .all-para-16 {
     font-size: 14px;
     line-height: 22px;
   }
-  .all-para-14{
+  .all-para-14 {
     font-size: 12px;
     line-height: 18px;
   }
+  .all-sections {
+    padding: 30px 0;
+  }
+  .all-btns {
+    padding: 6px 16px;
+  }
 }
+@media (max-width: 500px) {
+  .all-sections {
+    padding: 25px 0;
+  }
+}
+
 @media (max-width: 375px) {
   .display-block-none-375 {
     display: none;
@@ -154,7 +171,7 @@ body::-webkit-scrollbar-track {
   .display-none-block-375 {
     display: block;
   }
-  .all-headings{
+  .all-headings {
     font-size: 16px;
     line-height: 24px;
   }
