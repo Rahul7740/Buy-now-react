@@ -17,7 +17,7 @@ function OrderSummary() {
                         <div className="pages-directions-div">
                             <Link to={"/"}>Home</Link>
                             <img src={SvgPath.arrowLIneRight} alt="forword" />
-                            <Link to={"/checkout"}>Checkout</Link>
+                            <Link style={{ color: "#1F292D" }}  to={"/checkout"}>Checkout</Link>
                         </div>
                     </div>
                     <div className="stepper">

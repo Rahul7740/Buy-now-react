@@ -14,7 +14,7 @@ function ContactUS() {
                         <div className="pages-directions-div">
                             <Link to={"/"}>Home</Link>
                             <img src={SvgPath.arrowLIneRight} alt="forword" />
-                            <Link to={"/contectUS"}>Contact Us</Link>
+                            <Link style={{ color: "#1F292D" }}  to={"/contectUS"}>Contact Us</Link>
                         </div>
                     </div>
                     <div className="contectUs-container">

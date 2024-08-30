@@ -25,7 +25,7 @@ function ProductDetail() {
               <img src={SvgPath.arrowLIneRight} alt="forword" />
               <Link to={"/productsFilter"}>Products</Link>
               <img src={SvgPath.arrowLIneRight} alt="forword" />
-              <Link to={"/productDetail"}>Products details</Link>
+              <Link style={{ color: "#1F292D" }}  to={"/productDetail"}>Products details</Link>
             </div>
           </div>
           <div className="product-detail-container">

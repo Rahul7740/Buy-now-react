@@ -26,7 +26,7 @@ function ProductsFilter() {
             <div className="pages-directions-div">
               <Link to={"/"}>Home</Link>
               <img src={SvgPath.arrowLIneRight} alt="forword" />
-              <Link to={"/productsFilter"}>Products</Link>
+              <Link style={{ color: "#1F292D" }}  to={"/productsFilter"}>Products</Link>
             </div>
           </div>
           <div className="filter_and_viewAll-container">

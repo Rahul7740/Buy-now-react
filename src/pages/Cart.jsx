@@ -16,7 +16,7 @@ function Cart() {
                         <div className="pages-directions-div">
                             <Link to={"/"}>Home</Link>
                             <img src={SvgPath.arrowLIneRight} alt="forword" />
-                            <Link to={"/cart"}>Cart</Link>
+                            <Link style={{ color: "#1F292D" }}  to={"/cart"}>Cart</Link>
                         </div>
                     </div>
                     <div className="cart-main-container">

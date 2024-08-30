@@ -25,11 +25,11 @@ function TopDeals() {
       <section className="all-sections">
         <div className="container">
           <div className="sections-header">
-            <h2>Help Center</h2>
+            <h2>Top deals</h2>
             <div className="pages-directions-div">
               <Link to={"/"}>Home</Link>
               <img src={SvgPath.arrowLIneRight} alt="forword" />
-              <Link to={"/topDeals"}>Help Center</Link>
+              <Link style={{ color: "#1F292D" }}  to={"/topDeals"}>Top Deals</Link>
             </div>
           </div>
           <div className="filter_and_viewAll-container">
