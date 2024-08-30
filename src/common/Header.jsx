@@ -42,16 +42,16 @@ function Header() {
         <div className="container">
           <div className="header-section">
             <div className="main-logo-container">
-              <Link to={"/"}>
+              <Link to={"/"} className="display-block-none-700" >
                 <img
-                  className="display-block-none-700"
+                  
                   src={SvgPath.mainLogo}
                   alt="logo"
                 />
               </Link>
-              <Link to={"/"}>
+              <Link to={"/"} className="display-none-block-700">
                 <img
-                  className="display-none-block-700"
+                  
                   src={SvgPath.mainLogoRes}
                   alt="logo"
                 />

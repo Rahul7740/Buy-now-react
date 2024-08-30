@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "../style/footer.css"
 import SvgPath from '../assets/svg/SvgPath'
 import linkss from "../json/footer-contects.json"
+import downloadMethods from "../json/download-methods.json"
 
 function Footer() {
   return (
@@ -20,17 +21,17 @@ function Footer() {
                   <img src={SvgPath.footerMail} alt="email" />
                   <a href="mailto:debra.holt@example.com" target="_blank"  rel="noreferrer">debra.holt@example.com</a>
                 </div>
-                <hr />
-                <div>
+                <div className="footer-mail">
                   <img src={SvgPath.footerMap} alt="map-location" />
                   <a href="https://maps.app.goo.gl/Umk1EAijfqpU9XES8" target="_blank"  rel="noreferrer">6391 Elgin St. Celina, Delaware 10299</a>
                 </div>
               </div>
               <div className="download-container">
                 <p>Download the app</p>
-                <div>
-                  <button><img src={SvgPath.playStore} alt="playstore" /></button>
-                  <button><img src={SvgPath.appStore} alt="appstore" /></button>
+                <div className="download-btns-container">
+                  <button>
+
+                  </button>
                 </div>
               </div>
             </div>
@@ -66,7 +67,7 @@ function Footer() {
                   </div>
                 </div>
               </div>
-              <hr />
+              
               <div className="copyright-section">
                 <a href="https://www.google.com" target="_blank" rel="noreferrer">© 2021. All rights reserved</a>
                 <div>
@@ -74,7 +75,7 @@ function Footer() {
                   <Link to={""}><span className="footer-link">Terms of Service</span></Link>
                 </div>
               </div>
-              <hr />
+              
             </div>
           </div>
         </div>

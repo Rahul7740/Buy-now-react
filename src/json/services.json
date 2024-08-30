@@ -7,17 +7,17 @@
     {
         "img": "services-Easy-return.svg",
         "heading":"Easy Return",
-        "para":"Money back after 5days "
+        "para":"Money back after 5days"
     },
     {
         "img": "services-24-suport.svg",
         "heading":"24/7 Support",
-        "para":"We available all time for you"
+        "para":"We available all time for you "
     },
     {
         "img": "services-flexible-payment.svg",
         "heading":"Flexible Payment",
-        "para":"Multiple credit cards options Support"
+        "para":"Multiple credit cards options Support   "
     }
     
 ]

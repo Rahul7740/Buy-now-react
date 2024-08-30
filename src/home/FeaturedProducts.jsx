@@ -10,7 +10,6 @@ import "swiper/css/navigation";
 import {Autoplay, Pagination, Navigation } from "swiper/modules";
 
 import featuredProducts from "../json/FeaturedProducts.json";
-import ProductCard from "../snippets/ProductCard";
 import AllButtons from "../snippets/AllButtons";
 import { Link } from "react-router-dom";
 import ProductCard1 from "../snippets/ProductCard1";
