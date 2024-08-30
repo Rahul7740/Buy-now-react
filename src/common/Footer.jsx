@@ -19,19 +19,28 @@ function Footer() {
               <div className="footer-mail-section">
                 <div>
                   <img src={SvgPath.footerMail} alt="email" />
-                  <a href="mailto:debra.holt@example.com" target="_blank"  rel="noreferrer">debra.holt@example.com</a>
+                  <a href="mailto:debra.holt@example.com" target="_blank" rel="noreferrer">debra.holt@example.com</a>
                 </div>
                 <div className="footer-mail">
                   <img src={SvgPath.footerMap} alt="map-location" />
-                  <a href="https://maps.app.goo.gl/Umk1EAijfqpU9XES8" target="_blank"  rel="noreferrer">6391 Elgin St. Celina, Delaware 10299</a>
+                  <a href="https://maps.app.goo.gl/Umk1EAijfqpU9XES8" target="_blank" rel="noreferrer">6391 Elgin St. Celina, Delaware 10299</a>
                 </div>
               </div>
               <div className="download-container">
                 <p>Download the app</p>
                 <div className="download-btns-container">
-                  <button>
+                  {
+                    downloadMethods.map((item, index) => (
+                      <button key={index}>
+                        <img src={require(`../assets/svg/${item.img}`)} alt="download" />
+                        <div>
+                          <h6>{item.title}</h6>
+                          <h3>{item.name}</h3>
+                        </div>
+                      </button>
+                    ))
+                  }
 
-                  </button>
                 </div>
               </div>
             </div>
@@ -67,7 +76,7 @@ function Footer() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="copyright-section">
                 <a href="https://www.google.com" target="_blank" rel="noreferrer">© 2021. All rights reserved</a>
                 <div>
@@ -75,7 +84,7 @@ function Footer() {
                   <Link to={""}><span className="footer-link">Terms of Service</span></Link>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </div>

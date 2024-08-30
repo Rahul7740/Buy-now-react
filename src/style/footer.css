@@ -78,19 +78,39 @@
   letter-spacing: 0.17000000178813934px;
   color: #c4cfd4;
 }
-.download-container .download-btns-container {
+.download-btns-container {
   margin-top: 8px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
 }
-.download-btns-container{
+.download-btns-container button {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 13px 15px;
   border-radius: 10px;
-  border: 1px solid #E1E1FE
+  border: 1px solid #e1e1fe;
+}
+.download-btns-container button div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.download-btns-container h6 {
+  font-size: 7.5px;
+  line-height: 10px;
+  color: #ffffff;
+}
+.download-btns-container h3 {
+  font-size: 10px;
+  line-height: 12px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.15000000596046448px;
+  font-family: "Heebo", sans-serif;
 }
 
 /* =========footet-contect-sectoin============ */
@@ -156,7 +176,7 @@
   }
   .footer-section p {
     font-size: 12px;
-    letter-spacing: 0.30px;
+    letter-spacing: 0.3px;
   }
   .footer-about-logo {
     gap: 35px;
@@ -247,3 +267,24 @@
     gap: 14px;
   }
 }
+@media (max-width: 400px) {
+  .download-container {
+    width: 100%;
+  }
+  .download-container button{
+    width: 100%;
+    justify-content: center;
+  }
+
+}
+@media (max-width: 325px) {
+  .download-btns-container{
+    flex-direction: column;
+    align-items: start;
+  }
+  .download-container button{
+    width: auto;
+    justify-content: center;
+  }
+}
+
