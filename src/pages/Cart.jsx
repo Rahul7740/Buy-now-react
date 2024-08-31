@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SvgPath from "../assets/svg/SvgPath";
 import "../style/cart.css";
 import productss from "../json/cart-procuts.json";
-import FeaturedProducts from "../home/FeaturedProducts";
+import RelatedItemYourSearch from "../snippets/RelatedItemYourSearch";
 
 function Cart() {
     const [quantity, setQuantity] = useState(1);
@@ -125,7 +125,7 @@ function Cart() {
                     </div>
                 </div>
             </section>
-            <FeaturedProducts name="Related item your search" />
+            <RelatedItemYourSearch name="Related item your search" />
 
         </>
     );

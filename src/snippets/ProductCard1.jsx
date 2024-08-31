@@ -13,10 +13,10 @@ function ProductCard1(props) {
               alt="product-card"
             />
           </div>
-          <button className="product-like-btn">
-            {props.new ? <p className="new">New</p> : ""}
-            <img src={SvgPath.productLikeBTN} alt="like" />
-          </button>
+          <div className="product1-like-btn">
+            {props.new ? <button className="new">New</button> : ""}
+            <buttom><img src={SvgPath.productLikeBTN} alt="like" /></buttom>
+          </div>
           <div className="product-card1-content">
             <h3>{props.name}</h3>
             {props.ratting ? (

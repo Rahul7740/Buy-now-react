@@ -12,7 +12,8 @@ import ProductInformation from "../productDetails/ProductInformation";
 import ProductDetailss from "../productDetails/ProductDetailss";
 import CustomerReviews from "../productDetails/CustomerReviews";
 import FAQ from "../productDetails/FAQ";
-import FeaturedProducts from "../home/FeaturedProducts";
+import RelatedItemYourSearch from "../snippets/RelatedItemYourSearch";
+
 function ProductDetail() {
   return (
     <>
@@ -169,7 +170,7 @@ function ProductDetail() {
       <ProductDetailss />
       <CustomerReviews />
       <FAQ />
-      <FeaturedProducts name="Related item your search" />
+      <RelatedItemYourSearch name="Related item your search" />
     </>
   );
 }

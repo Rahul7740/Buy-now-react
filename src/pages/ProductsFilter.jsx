@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import SvgPath from "../assets/svg/SvgPath";
 import colosArray from "../json/filter-color.json";
 import filterProducts from "../json/filterProducts.json"
-import FeaturedProducts from "../home/FeaturedProducts";
+import RelatedItemYourSearch from "../snippets/RelatedItemYourSearch";
 import ProductCard from "../snippets/ProductCard";
 import NewsLetter from "../home/NewsLetter";
 function ProductsFilter() {
@@ -149,7 +149,8 @@ function ProductsFilter() {
           </div>
         </div>
       </section>
-      <FeaturedProducts name="Related item your search" />
+      <RelatedItemYourSearch name="Related item your search" />
+
       <NewsLetter />
     </>
   );

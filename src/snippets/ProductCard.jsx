@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SvgPath from "../assets/svg/SvgPath";
 import { Link } from "react-router-dom";
 
@@ -13,10 +13,10 @@ function ProductCard(props) {
               alt="product-card"
             />
           </div>
-          <button className="product-like-btn">
-            {props.new ? <p className="new">New</p> : ""}
-            <img src={SvgPath.productLikeBTN} alt="like" />
-          </button>
+          <div className="product-like-btn">
+            {props.new ? <button className="new">New</button> : ""}
+            <button><img src={SvgPath.productLikeBTN} alt="like" /></button>
+          </div>
           <div className="product-content">
             <h3>{props.name}</h3>
             {props.ratting ? (
@@ -46,5 +46,4 @@ function ProductCard(props) {
     </>
   );
 }
-
 export default ProductCard;
