@@ -14,6 +14,7 @@
   border-radius: 20px;
   margin: 0 auto;
   transition: all 0.2s ease-in-out;
+  height: 190px;
 }
 .services-card:hover {
   transform: translateY(-10px);
@@ -114,7 +115,15 @@
 .newsletter-email input::placeholder {
   color: #abb5ba;
 }
+.newspaper-submit-svg {
+  stroke:#574B9B;
+  stroke-opacity:0.54;
+  transition: all 0.3s ease-in-out;
+}
+.newspaper-submit-btn:hover .newspaper-submit-svg{
+  stroke-opacity:0.95;
 
+}
 /* ======media=========== */
 @media (max-width: 926px) {
   .services-container {
@@ -159,6 +168,9 @@
   }
   .newslette-colors {
     margin-top: 25px;
+  }
+  .services-card {
+    border-radius: 10px;
   }
 }
 @media (max-width: 576px) {

@@ -4,7 +4,6 @@ const SvgPath = {
     
     mainLogo : require("./main-logo.svg").default,
     mainLogoRes : require("./main-logo-res.svg").default,
-    headerLangaugeicon : require("./header-Langauge.svg").default,
     headerCartIcon : require("./header-cart-icon.svg").default,
     headerUserIcon : require("./header-User-icon.svg").default,
     verticalLine20px : require("./vertical-line-20px.svg").default,

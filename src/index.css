@@ -29,7 +29,6 @@ img {
   display: block;
 }
 
-
 input {
   border: none;
   outline: none;
@@ -67,17 +66,37 @@ body::-webkit-scrollbar-track {
   padding: 40px 0;
 }
 .all-btns {
+  border-radius: 30px;
+  padding: 8px 22px;
+  background-color: #422659;
+  border: 1px solid transparent;
+  transition: 0.3s ease-in-out;
+}
+.all-btn-headings{
+  font-size: 15px;
   color: white;
   font-family: "Inter", sans-serif;
-  font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
-  background-color: #422659;
-  border-radius: 30px;
   line-height: 26px;
   letter-spacing: 0.46px;
-  padding: 8px 22px;
+  transition: 0.3s ease-in-out;
 }
+.all-btns:hover {
+  background-color: white;
+  border: 1px solid #422659;
+  box-shadow: 0px 0px 42px 0px #B0BEC533,  0px 22px 35px 3px #B0BEC524,  0px 10px 14px -4px #B0BEC533;
+}
+
+.all-btns:hover .all-btn-headings{
+  transform: scale(1.06);
+  text-shadow: 0 0 10px #422659;
+  font-weight: 700;
+  color: #422659;
+}
+
+
+
 .all-headings {
   font-size: 20px;
   color: black;

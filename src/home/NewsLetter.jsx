@@ -15,7 +15,11 @@ const NewsLetter = () => {
                         </div>
                         <form className='newsletter-email'>
                             <input type="email" placeholder='Enter Your Email...' />
-                            <button><img src={require(`../assets/svg/newsletter-submit-btn.svg`).default} alt="submit" /></button>
+                            <button className='newspaper-submit-btn'>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path className='newspaper-submit-svg' d="M21 12.5L3 20V15.5L21 12.5ZM21 12.5L3 9.5V5L21 12.5Z"  stroke-width="2" stroke-linejoin="round" />
+                                </svg>
+                            </button>
                         </form>
                     </div>
                 </div>

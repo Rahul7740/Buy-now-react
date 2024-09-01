@@ -15,7 +15,7 @@ function ProductCard1(props) {
           </div>
           <div className="product1-like-btn">
             {props.new ? <button className="new">New</button> : ""}
-            <buttom><img src={SvgPath.productLikeBTN} alt="like" /></buttom>
+            <button><img src={SvgPath.productLikeBTN} alt="like" /></button>
           </div>
           <div className="product-card1-content">
             <h3>{props.name}</h3>

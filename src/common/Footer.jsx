@@ -5,6 +5,8 @@ import linkss from "../json/footer-contects.json"
 import downloadMethods from "../json/download-methods.json"
 
 function Footer() {
+  const year = new Date().getFullYear()
+  
   return (
     <>
       <footer className="footer-section">
@@ -78,7 +80,7 @@ function Footer() {
               </div>
 
               <div className="copyright-section">
-                <a href="https://www.google.com" target="_blank" rel="noreferrer">© 2021. All rights reserved</a>
+                <a href="https://www.google.com" target="_blank" rel="noreferrer">© {year}. All rights reserved</a>
                 <div>
                   <Link to={"/helpCenter"}><span className="footer-link">Help Center</span></Link>
                   <Link to={""}><span className="footer-link">Terms of Service</span></Link>

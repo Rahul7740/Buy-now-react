@@ -420,6 +420,9 @@
   .prodcut-card-2-buyBtn {
     font-size: 14px;
   }
+  .product-card{
+    border-radius: 10px;
+  }
 }
 @media (max-width: 500px) {
   .product-card1-content h3 {
