@@ -1,6 +1,6 @@
 import React from "react";
 import "../style/all-popup.css";
-import 
+
 
 function AllPopups() {
   return (
