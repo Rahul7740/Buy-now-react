@@ -1,14 +1,24 @@
 .all-popus {
   background-color: #ffffff;
   border-radius: 20px;
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  top: 100px;
   left: 50%;
-  transform: translate(-50%,-50%);
-  padding: 40px;
+  transform: translateX(-50%);
+  padding: 20px;
   box-shadow: 0px 0px 42px 0px #b0bec533, 0px 22px 35px 3px #b0bec524,
   0px 10px 14px -4px #b0bec533;
+  z-index: -999;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.topDeal{
+  padding: 40px;
+}
+
+.nav-link:hover .all-popus{
   z-index: 999;
+  opacity: 1;
 }
 .all-popus-container {
   display: flex;
@@ -28,10 +38,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 36px;
+  gap: 14px;
+  border-radius: 20px;
 }
-.all-popus-content-btns .right-arrrow{
-    opacity: 1;
+.all-popus-content-btns:hover{
+  background-color: #574b9b0a;
+  color: #422659;
+}
+.all-popus-content-btns:hover .right-arrrow{
+  opacity: 1;
 }
 .all-popus-content h3 {
   font-size: 16px;
@@ -39,6 +54,8 @@
   line-height: 24px;
   letter-spacing: 0.15000000596046448px;
   color: #495f6a;
+  text-align: start;
+  text-transform: capitalize;
 }
 .all-popus-content-headings{
     padding: 0 16px;
@@ -46,4 +63,25 @@
 .all-popus-content-headings h3{
     padding-bottom: 11px;
     border-bottom: 1px solid #574B9B1F;
+}
+
+/* =====pages popup===== */
+.pages-popup-container{
+  display: flex;
+  align-items: start;
+  gap: 30px;
+}
+.pages-popup-content{
+  display: flex;
+}
+.pages-popup-contents{
+  max-width: 244px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.pagesPopup-contents-2{
+  padding-left: 30px;
+  border-left: 1px solid #574B9B1F;
 }

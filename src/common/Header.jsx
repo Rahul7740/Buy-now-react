@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import SvgPath from "../assets/svg/SvgPath";
 import "../style/header.css";
+import "../style/all-popup.css"
 import menuLinks from "../json/menuLInks.json";
 import resMenuLInks from "../json/res-menuLinks.json";
 import { useState } from "react";
@@ -10,6 +11,7 @@ import accoutPopu from "../json/accoutPopupContent.json";
 import cartProduct from "../json/cart-popup-products.json";
 import AllButtons from "../snippets/AllButtons";
 import AllPopups from "../snippets/AllPopups";
+import { usePopup } from "../contaxt/PopupContext";
 function Header() {
   const [menu, setMenu] = useState(false);
   const [search, setSearch] = useState(false);
@@ -19,6 +21,8 @@ function Header() {
   function showLanguagePopup() {
     setLanguagPopup(langaugPopup === false ? true : false);
   }
+  const {popup, setPopup} = usePopup()
+  
   return (
     <>
       <div className="header-top-bar-sectoin ">
@@ -65,6 +69,8 @@ function Header() {
                       to={i.to}
                       className="nav-link"
                       activeclassname="active"
+                      onMouseOver={() => {setPopup(i.popup)}}
+                      onMouseLeave={()=>{setPopup(1)}}
                     >
                       {i.name}
                     </NavLink>
@@ -135,9 +141,8 @@ function Header() {
                     onClick={() => {
                       setSearch(false);
                     }}
-                    className={`display-none-block-1100 ${
-                      search === false ? "serach-close-show" : ""
-                    }`}
+                    className={`display-none-block-1100 ${search === false ? "serach-close-show" : ""
+                      }`}
                   >
                     <img
                       style={{ paddingRight: "5px" }}
@@ -342,7 +347,7 @@ function Header() {
                       width="43"
                       height="43"
                       rx="21.5"
-                      stroke-opacity="0.08"
+                      strokeOpacity="0.08"
                     />
                     <path
                       className="user-icon"

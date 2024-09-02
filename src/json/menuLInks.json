@@ -5,15 +5,18 @@
     },
     {
         "name":"Top deals",
-        "to": "/topDeals"
+        "to": "/topDeals",
+        "popup":"topDeal"
     },
     {
         "name":"Hot offers",
-        "to": "/hotOffers"
+        "to": "/hotOffers",
+        "popup":"hotOffer"
     },
     {
         "name":"Pages",
-        "to": "/pages"
+        "to": "/pages",
+        "popup": 225
     }
     
 ]
