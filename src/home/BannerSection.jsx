@@ -25,7 +25,7 @@ function BannerSection() {
               <div className="banner-btn-container">
                 <button className="banner-shop-now-btn">
                   <p>Shop Now</p>
-                  <img src={SvgPath.forwordArrow} alt="arrow" />
+                  <img className="banner-shop-now-btn-img" src={SvgPath.forwordArrow} alt="arrow" />
                 </button>
                 <div className="product-offer-container">
                   <img

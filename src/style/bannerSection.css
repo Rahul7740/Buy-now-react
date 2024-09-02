@@ -62,16 +62,26 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 8px 22px;
+  padding: 8px 10px;
   background-color: #422659;
-  color: #ffffff;
-  text-transform: uppercase;
   border-radius: 30px;
+  max-width: 172px;
+  width: 100%;
   font-size: 15px;
   letter-spacing: 0.46px;
   line-height: 26px;
   font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  color: #ffffff;
 }
+
+.banner-shop-now-btn-img {
+  transition: all 0.3s;
+}
+.banner-shop-now-btn:hover .banner-shop-now-btn-img {
+  transform: translateX(30%);
+}
+
 .product-offer-container {
   display: flex;
   align-items: center;

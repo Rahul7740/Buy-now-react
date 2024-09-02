@@ -4,7 +4,6 @@ import "../style/emi.css"
 import emiMethodss from "../json/emiMethods.json"
 import emiHeadings from "../json/emi-section-headings.json"
 import emiPlans from "../json/emiPlans.json"
-import SvgPath from '../assets/svg/SvgPath'
 function Emi() {
     return (
         <div className='upiPayment-container'>

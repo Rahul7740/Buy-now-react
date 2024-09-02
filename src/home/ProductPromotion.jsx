@@ -1,6 +1,5 @@
 import React from 'react'
 import ImgPath from "../assets/images/ImgPath";
-import AllButtons from "../snippets/AllButtons"
 
 
 function ProductPromotion() {

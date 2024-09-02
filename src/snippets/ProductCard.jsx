@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SvgPath from "../assets/svg/SvgPath";
 import { Link } from "react-router-dom";
 

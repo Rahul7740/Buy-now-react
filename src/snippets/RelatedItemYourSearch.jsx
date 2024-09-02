@@ -8,8 +8,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import {Autoplay, Pagination, Navigation } from "swiper/modules";
-
-import featuredProducts from "../json/FeaturedProducts.json";
 import AllButtons from "../snippets/AllButtons";
 import { Link } from "react-router-dom";
 import ProductCard2 from "../snippets/ProductCard2";
