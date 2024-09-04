@@ -21,8 +21,8 @@ function Header() {
   function showLanguagePopup() {
     setLanguagPopup(langaugPopup === false ? true : false);
   }
-  const {popup, setPopup} = usePopup()
-  
+  const { popup, setPopup } = usePopup()
+
   return (
     <>
       <div className="header-top-bar-sectoin ">
@@ -69,14 +69,15 @@ function Header() {
                       to={i.to}
                       className="nav-link"
                       activeclassname="active"
-                      onMouseOver={() => {setPopup(i.popup)}}
-                      onMouseLeave={()=>{setPopup(1)}}
+                      onMouseOver={() => { setPopup(i.popup) }}
+                      onMouseLeave={() => {setPopup(1)}}
                     >
                       {i.name}
                     </NavLink>
                   </li>
                 ))}
               </ul>
+              <AllPopups />
             </div>
             <div className={`res-menu-bar  ${menu === true && "show-navbar"}`}>
               <div className="res-menu-header">
@@ -398,7 +399,7 @@ function Header() {
               </div>
             </div>
           </div>
-          <AllPopups />
+          
         </div>
       </header>
     </>

@@ -7,11 +7,18 @@ import filterProducts from "../json/filterProducts.json"
 import RelatedItemYourSearch from "../snippets/RelatedItemYourSearch";
 import ProductCard from "../snippets/ProductCard";
 import NewsLetter from "../home/NewsLetter";
+import productCategorys from "../json/products-categorys.json"
 function ProductsFilter() {
   const [filter, setFilter] = useState(false)
-
+  const [categorys, setCategorys] = useState(8)
+  function categorysQuantity() {
+    setCategorys(categorys === 8 ? 11 : 8)
+  }
+  const [colors , setColor]= useState(12)
+  function colorQuantity(){
+    setColor(colors===12?24:12)
+  }
   const [value, setValue] = useState(20);
-
   const handleSliderChange = (event) => {
     setValue(event.target.value);
   };
@@ -26,7 +33,7 @@ function ProductsFilter() {
             <div className="pages-directions-div">
               <Link to={"/"}>Home</Link>
               <img src={SvgPath.arrowLIneRight} alt="forword" />
-              <Link style={{ color: "#1F292D" }}  to={"/productsFilter"}>Products</Link>
+              <Link style={{ color: "#1F292D" }} to={"/productsFilter"}>Products</Link>
             </div>
           </div>
           <div className="filter_and_viewAll-container">
@@ -42,16 +49,11 @@ function ProductsFilter() {
                   <img className="down-svg" src={SvgPath.upArrow} alt="upArrow" />
                 </summary>
                 <div className="filter-category-div">
-                  <button>Watches</button>
-                  <button>Mobiles</button>
-                  <button>Laptops</button>
-                  <button>Tablets</button>
-                  <button>Headphones</button>
-                  <button>Printers</button>
-                  <button>Scanners</button>
-                  <button>Speakers</button>
+                  {productCategorys.slice(0, categorys).map((item, index) => (
+                    <button key={index}>{item.name}</button>
+                  ))}
                 </div>
-                <button className="filter-viewALl-btn">View all</button>
+                <button onClick={categorysQuantity} className="filter-viewALl-btn">{categorys === 8 ? "View all" : "Show Less"}</button>
               </details>
               <details className="filter-category" open>
                 <summary className="filter-summary">
@@ -84,16 +86,16 @@ function ProductsFilter() {
                 </summary>
                 <div className="category-div">
                   <form className="filter-form">
-                    {colosArray.map((i, index) => (
+                    {colosArray.slice(0,colors).map((i, index) => (
                       <Fragment key={index}>
                         <input className="filter-color-input" id={i.id} type="radio" name="asdf" />
                         <label className="filter-color-label" htmlFor={i.id}>
-                          <div style={{ background: `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})` }} className="colors color1"></div>
+                          <div style={{ background: i.color }} className="colors color1"></div>
                         </label>
                       </Fragment>
                     ))}
                   </form>
-                  <button className="filter-viewALl-btn">+12 more</button>
+                  <button onClick={colorQuantity} className="filter-viewALl-btn">{colors===12?"+12 more":"Show Less"}</button>
                 </div>
               </details>
               <details className="filter-category" open>
