@@ -127,6 +127,10 @@
     flex-direction: column;
     gap: 40px;
   }
+/* .banner-content {
+  align-items: center;
+} */
+
   .banner-content-benifit {
     font-size: 16px;
     line-height: 24px;

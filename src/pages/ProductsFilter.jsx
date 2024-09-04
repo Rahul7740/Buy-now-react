@@ -135,6 +135,7 @@ function ProductsFilter() {
                       price={i.price}
                       ratting={i.ratting}
                       new={i.new}
+                      instock={i.instock}
                     />
                   </Fragment>
                 ))}

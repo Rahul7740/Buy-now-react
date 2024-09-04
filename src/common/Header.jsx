@@ -71,6 +71,7 @@ function Header() {
                       activeclassname="active"
                       onMouseOver={() => { setPopup(i.popup) }}
                       onMouseLeave={() => {setPopup(1)}}
+                      onClick={()=>{setPopup(1)}}
                     >
                       {i.name}
                     </NavLink>

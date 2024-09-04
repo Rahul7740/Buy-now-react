@@ -8,7 +8,6 @@
   width: 100%;
   border: 1px solid #efe8ec;
   border-radius: 20px;
-  background-color: #fef9f9;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,6 +17,8 @@
 }
 
 .product-card .product-img {
+  background-color: #fef9f9;
+
   /* height: 270px; */
   display: flex;
   justify-content: center;
@@ -28,7 +29,7 @@
   cursor: pointer;
 }
 .product-card:hover .product-img {
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 
 .product-content {
@@ -40,7 +41,7 @@
   flex-direction: column;
   transition: all 0.3s ease-in-out;
 }
-.product-content h3 {
+.prodcut-name {
   font-family: "Heebo", sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -78,7 +79,7 @@
 }
 .product-shop-btn {
   background-color: #422659;
-  padding: 6.67px;
+  padding: 0 6.67px;
   border-radius: 50px;
   position: absolute;
   bottom: 17%;
@@ -88,7 +89,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  /* height: 36px; */
+  height: 30px;
   justify-content: center;
 }
 .product-shop-btn img {
@@ -124,7 +125,82 @@
 .product-shop-btn:hover .cart-img {
   display: none;
 }
-/* prodcut-cart-1 css */
+/* =============in stock============= */
+.instock-product-name {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  text-align: left;
+  color: #495f6a;
+}
+.product-card:hover .instock-product-img{
+  transform: scale(1.05);
+}
+
+.instock-product-img {
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #f7f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.instock-product-content {
+  background-color: white;
+  position: relative;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.instock-content-head {
+  width: 100%;
+  padding: 20px 20px 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.instock-price-ratting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+.instock-price-ratting .ratting-div {
+  display: flex;
+}
+
+.instock-price-ratting p {
+  font-family: "Heebo";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32.02px;
+  text-align: left;
+  color: #1f292d;
+}
+.instock-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 20px 23px 20px;
+  border-top: 1px solid #42265914;
+}
+.instock-label .product-shop-btn {
+  position: static;
+}
+
+.instock-label p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.02px;
+  letter-spacing: 0.17000000178813934px;
+  text-align: left;
+  color: #422659;
+}
+/* ================prodcut-cart-1 css================== */
 .product-card1 {
   width: 100%;
   border: 1px solid #efe8ec;
@@ -199,7 +275,7 @@
   bottom: 5px;
   right: 0;
 }
-/* prodcut Card 2 */
+/* =========prodcut Card 2========== */
 .product-card2 {
   padding: 30px;
   border: 1px solid #42265914;
@@ -288,13 +364,14 @@
   overflow: auto;
 }
 .Products-By-Category-section .product-card {
-  width: 260px;
+  min-width: 260px;
 }
 .categorys-btn-main-container {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
   gap: 10px;
+  border-bottom: 1px solid #f0eef2;
 }
 .categorys-btn-container {
   display: flex;
@@ -302,24 +379,27 @@
   position: relative;
   overflow: auto;
   justify-content: space-between;
+  width: 100%;
 }
 .categorys-btn-container::-webkit-scrollbar {
   display: none;
 }
 .categorys-btn {
-  display: inline-block;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Inter", sans-serif;
-  text-transform: uppercase;
+  line-height: 24px;
+  letter-spacing: 0.4000000059604645px;
   color: #495f6a;
+  display: inline-block;
+  text-transform: uppercase;
   padding: 12px 8px;
-  border-bottom: 1px solid #f0eef2;
+  border-bottom: 1px solid transparent;
   white-space: nowrap;
 }
 .categorys-btn.selected {
   color: #422659;
-  border-bottom: 1px solid #422659;
+  border-bottom: 1.5px solid #422659;
 }
 /* ==========screen media quary============== */
 @media (max-width: 1000px) {
@@ -353,7 +433,7 @@
   .product-card1-ratting-div {
     display: none;
   }
-  .product-content h3 {
+  .prodcut-name {
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
@@ -420,8 +500,26 @@
   .prodcut-card-2-buyBtn {
     font-size: 14px;
   }
-  .product-card{
+  .product-card {
     border-radius: 10px;
+  }
+  .instock-product-name {
+    font-size: 14px;
+    line-height: 20.02px;
+    letter-spacing: 0.17px;
+  }
+  .instock-price-ratting p {
+    font-size: 20px;
+  }
+  .instock-label {
+    padding: 13px 15px 17px 15px;
+  }
+  .instock-content-head {
+    gap: 8px;
+    padding: 14px 15px 10px 15px;
+  }
+  .instock-product-img {
+    padding: 0;
   }
 }
 @media (max-width: 500px) {
@@ -455,7 +553,7 @@
 }
 
 @media (max-width: 375px) {
-  .product-content h3 {
+  .prodcut-name {
     font-size: 16px;
   }
   .product-content p {
