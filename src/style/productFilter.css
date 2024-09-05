@@ -10,7 +10,7 @@
   line-height: 41.99px;
   letter-spacing: 0.25px;
   margin-bottom: 10px;
-  color: #1F292D;
+  color: #1f292d;
 }
 .sections-header a {
   font-size: 16px;
@@ -55,12 +55,11 @@
   font-weight: 500;
 }
 .filter-headings {
-font-size: 16px;
-font-weight: 500;
-line-height: 24px;
-letter-spacing: 0.15000000596046448px;
-color: #1F292D;
-
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  color: #1f292d;
 }
 /* ======details summary======= */
 .filter-category {
@@ -85,6 +84,8 @@ color: #1F292D;
   align-items: start;
   gap: 5px;
   margin: 10px 0;
+  overflow: hidden;
+  height: auto;
 }
 .filter-category-div button {
   padding: 8px 16px;
@@ -98,12 +99,21 @@ color: #1F292D;
 .filter-category-div button:hover {
   background-color: #f7f6f8;
 }
+.height-0 {
+  height: 0px;
+  overflow: hidden;
+}
 .filter-viewALl-btn {
+  cursor: pointer;
   font-size: 16px;
   font-weight: 400;
   color: #422659;
 }
 /* ======price========= */
+.filter-price-container {
+  height: auto;
+}
+  
 .filter-price-range {
   padding: 21px 0;
   position: relative;
@@ -117,6 +127,11 @@ color: #1F292D;
   font-size: 14px;
   font-weight: 400;
   color: #495f6a;
+}
+/* ========colors======== */
+.filter-color-container{
+  overflow: hidden;
+  height: auto;
 }
 .colors {
   width: 25px;
@@ -328,7 +343,7 @@ color: #1F292D;
   }
 }
 @media (max-width: 530px) {
-  .pages-directions-div{
+  .pages-directions-div {
     display: none;
   }
   .sections-header h2 {
@@ -339,6 +354,4 @@ color: #1F292D;
   .view-all-products-grid {
     grid-template-columns: 1fr;
   }
-  
-
 }

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "../style/productFilter.css";
 import "../style/topDeal.css";
 import { Link } from "react-router-dom";
@@ -12,19 +12,52 @@ import NewsLetter from "../home/NewsLetter";
 import productCategorys from "../json/products-categorys.json";
 
 function TopDeals() {
-  function heidhgn(e) {
-    let sibling = e.nextElementSibling.style
-    console.log(sibling);
-    
-    // if(sibling){
+  useEffect(() => {
+    const elements = document.querySelectorAll(".filter-all-contents");
+    elements.forEach((element, index) => {
+      const imgElement = element.previousElementSibling;
 
-    // }
+      const img = imgElement.querySelector("img");
+      console.log(img);
+      const elementHeight = window.getComputedStyle(element).height;
+
+      if (elementHeight === "0px" || !elementHeight) {
+        img.style.transform = "rotate(0deg)";
+      } else {
+        img.style.transform = "rotate(180deg)";
+      }
+    });
+  }, []);
+
+  function heightControl(e) {
+    const sibling = e.currentTarget.nextElementSibling;
+    const imgElement = e.currentTarget.querySelector("img");
+
+    const computedHeight = window.getComputedStyle(sibling).height;
+    sibling.style.transition = "height 0.5s ease";
+
+    if (computedHeight !== "0px") {
+      sibling.style.height = sibling.scrollHeight + "px";
+      setTimeout(() => {
+        sibling.style.height = "0px";
+        sibling.style.overflow = "hidden";
+      }, 10);
+      imgElement.style.transform = "rotate(0deg)";
+    } else {
+      sibling.style.height = sibling.scrollHeight + "px";
+      sibling.style.overflow = "visible";
+
+      imgElement.style.transform = "rotate(180deg)";
+
+      sibling.addEventListener("transitionend", function handler() {
+        sibling.style.height = "auto";
+        sibling.style.overflow = "visible";
+
+        sibling.removeEventListener("transitionend", handler);
+      });
+    }
   }
 
-  const [arrow, setArrow] = useState(false);
-  function arrowRotate() {
-    setArrow(arrow === false ? true : false);
-  }
   const [filter, setFilter] = useState(false);
   const [categorys, setCategorys] = useState(8);
   function categorysQuantity() {
@@ -80,97 +113,106 @@ function TopDeals() {
                   <img src={SvgPath.closeBtn} alt="CLOSE" />
                 </button>
               </div>
-              <div className="top-deal-caterogy" open>
+              <div className="top-deal-caterogy">
                 <div
                   onClick={(e) => {
-                    arrowRotate();
-                    heidhgn(e);
+                    heightControl(e);
                   }}
                   className="top-deal-caterogy-content"
                 >
                   <h3 className="filter-headings">Top Deals</h3>
                   <img
-                    style={{
-                      transform: arrow === false ? "rotate(180deg)" : "",
-                    }}
                     className="down-svg"
-                    src={SvgPath.upArrow}
+                    src={SvgPath.downArrow}
                     alt="upArrow"
                   />
                 </div>
-                <div
-                  className={`topDeal-category-div ${
-                    arrow === true ? "heidfdf" : ""
-                  }`}
-                >
+                <div className="filter-all-contents topDeal-category-div">
                   <button>All Deals</button>
                   <button>Today Deals</button>
                   <button>Upcoming Deals</button>
                   <button>Available Products Only</button>
                 </div>
               </div>
-              <details className="filter-category" open>
-                <summary className="filter-summary">
+
+              <div className="top-deal-caterogy">
+                <div
+                  onClick={(e) => {
+                    heightControl(e);
+                  }}
+                  className="top-deal-caterogy-content"
+                >
                   <h3 className="filter-headings">Category</h3>
                   <img
                     className="down-svg"
-                    src={SvgPath.upArrow}
+                    src={SvgPath.downArrow}
                     alt="upArrow"
                   />
-                </summary>
-                <div className="filter-category-div">
+                </div>
+                <div className="filter-all-contents filter-category-div">
                   {productCategorys.slice(0, categorys).map((item, index) => (
                     <button key={index}>{item.name}</button>
                   ))}
+                  <div
+                    onClick={categorysQuantity}
+                    className="filter-viewALl-btn"
+                  >
+                    {categorys === 8 ? "View all" : "Show Less"}
+                  </div>
                 </div>
-                <button
-                  onClick={categorysQuantity}
-                  className="filter-viewALl-btn"
+              </div>
+              <div className="top-deal-caterogy">
+                <div
+                  onClick={(e) => {
+                    heightControl(e);
+                  }}
+                  className="top-deal-caterogy-content"
                 >
-                  {categorys === 8 ? "View all" : "Show Less"}
-                </button>
-              </details>
-              <details className="filter-category" open>
-                <summary className="filter-summary">
                   <h3 className="filter-headings">Price</h3>
                   <img
                     className="down-svg"
-                    src={SvgPath.upArrow}
+                    src={SvgPath.downArrow}
                     alt="upArrow"
                   />
-                </summary>
-
-                <div className="filter-price-range">
-                  <input
-                    type="range"
-                    min="50"
-                    max="500"
-                    value={value}
-                    className="slider"
-                    onChange={handleSliderChange}
-                  />
-                  <div
-                    className="tooltip"
-                    style={{ left: `calc(${(value - 50) / 4.9}% - 10px)` }}
-                  >
-                    {value}
+                </div>
+                <div className="filter-all-contents filter-price-container">
+                  <div className="filter-price-range">
+                    <input
+                      type="range"
+                      min="50"
+                      max="500"
+                      value={value}
+                      className="slider"
+                      onChange={handleSliderChange}
+                    />
+                    <div
+                      className="tooltip"
+                      style={{ left: `calc(${(value - 50) / 4.9}% - 10px)` }}
+                    >
+                      {value}
+                    </div>
+                  </div>
+                  <div className="filter-low-high-prices">
+                    <p>low: $50.00</p>
+                    <p>High: $500.00</p>
                   </div>
                 </div>
-                <div className="filter-low-high-prices">
-                  <p>low: $50.00</p>
-                  <p>High: $500.00</p>
-                </div>
-              </details>
-              <details className="filter-category" open>
-                <summary className="filter-summary">
+              </div>
+              <div className="top-deal-caterogy">
+                <div
+                  onClick={(e) => {
+                    heightControl(e);
+                  }}
+                  className="top-deal-caterogy-content"
+                >
                   <h3 className="filter-headings">Color</h3>
                   <img
                     className="down-svg"
-                    src={SvgPath.upArrow}
+                    src={SvgPath.downArrow}
                     alt="upArrow"
                   />
-                </summary>
-                <div className="category-div">
+                </div>
+                <div className="filter-all-contents filter-color-container">
                   <form className="filter-form">
                     {colosArray.slice(0, colors).map((i, index) => (
                       <Fragment key={index}>
@@ -196,37 +238,55 @@ function TopDeals() {
                     {colors === 12 ? "+12 more" : "Show Less"}
                   </button>
                 </div>
-              </details>
-              <details className="filter-category" open>
-                <summary className="filter-summary">
+              </div>
+              <div className="top-deal-caterogy">
+                <div
+                  onClick={(e) => {
+                    heightControl(e);
+                  }}
+                  className="top-deal-caterogy-content"
+                >
                   <h3 className="filter-headings">Brands</h3>
                   <img
                     className="down-svg"
-                    src={SvgPath.upArrow}
+                    src={SvgPath.downArrow}
                     alt="upArrow"
                   />
-                </summary>
-              </details>
-              <details className="filter-category" open>
-                <summary className="filter-summary">
+                </div>
+                <div className="filter-all-contents height-0">.......asdf</div>
+              </div>
+              <div className="top-deal-caterogy">
+                <div
+                  onClick={(e) => {
+                    heightControl(e);
+                  }}
+                  className="top-deal-caterogy-content"
+                >
                   <h3 className="filter-headings">Customer review</h3>
                   <img
                     className="down-svg"
-                    src={SvgPath.upArrow}
+                    src={SvgPath.downArrow}
                     alt="upArrow"
                   />
-                </summary>
-              </details>
-              <details className="filter-category" open>
-                <summary className="filter-summary">
+                </div>
+                <div className="filter-all-contents height-0">......asdf</div>
+              </div>
+              <div className="top-deal-caterogy">
+                <div
+                  onClick={(e) => {
+                    heightControl(e);
+                  }}
+                  className="top-deal-caterogy-content"
+                >
                   <h3 className="filter-headings">Discount</h3>
                   <img
                     className="down-svg"
-                    src={SvgPath.upArrow}
+                    src={SvgPath.downArrow}
                     alt="upArrow"
                   />
-                </summary>
-              </details>
+                </div>
+                <div className="filter-all-contents height-0">......asdf</div>
+              </div>
             </div>
             <div className="products-view-all-contianer">
               <h3 className="top-deals-products-heading">All deals</h3>

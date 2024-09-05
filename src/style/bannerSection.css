@@ -55,7 +55,6 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  flex-wrap: wrap;
 }
 .banner-shop-now-btn {
   display: flex;
@@ -100,6 +99,9 @@
     line-height: 60.99px;
     letter-spacing: 0.5px;
   }
+  .banner-btn-container {
+    gap: 25px;
+  }
 }
 @media (max-width: 1000px) {
   .banner-main-img {
@@ -121,6 +123,9 @@
     font-size: 18px;
     line-height: 28px;
   }
+  .banner-btn-container {
+    gap: 21px;
+  }
 }
 @media (max-width: 900px) {
   .banner-section {
@@ -135,6 +140,9 @@
     font-size: 16px;
     line-height: 24px;
   }
+  .banner-btn-container {
+    gap: 25px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -144,9 +152,7 @@
   .banner-content-benifit {
     display: none;
   }
-  .banner-btn-container {
-    gap: 25px;
-  }
+  
 }
 
 @media (max-width: 452px) {

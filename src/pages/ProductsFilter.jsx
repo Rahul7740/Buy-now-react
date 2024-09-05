@@ -1,22 +1,65 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "../style/productFilter.css";
 import { Link } from "react-router-dom";
 import SvgPath from "../assets/svg/SvgPath";
 import colosArray from "../json/filter-color.json";
-import filterProducts from "../json/filterProducts.json"
+import filterProducts from "../json/filterProducts.json";
 import RelatedItemYourSearch from "../snippets/RelatedItemYourSearch";
 import ProductCard from "../snippets/ProductCard";
 import NewsLetter from "../home/NewsLetter";
-import productCategorys from "../json/products-categorys.json"
+import productCategorys from "../json/products-categorys.json";
 function ProductsFilter() {
-  const [filter, setFilter] = useState(false)
-  const [categorys, setCategorys] = useState(8)
-  function categorysQuantity() {
-    setCategorys(categorys === 8 ? 11 : 8)
+  useEffect(() => {
+    const elements = document.querySelectorAll(".filter-all-contents");
+    elements.forEach((element) => {
+      const imgElement = element.previousElementSibling;
+
+      const img = imgElement.querySelector("img");
+      const elementHeight = window.getComputedStyle(element).height;
+
+      if (elementHeight === "0px" || !elementHeight) {
+        img.style.transform = "rotate(0deg)";
+      } else {
+        img.style.transform = "rotate(180deg)";
+      }
+    });
+  }, []);
+  function heightControl(e) {
+    const sibling = e.currentTarget.nextElementSibling;
+    const imgElement = e.currentTarget.querySelector("img");
+
+    const computedHeight = window.getComputedStyle(sibling).height;
+    sibling.style.transition = "height 0.5s ease";
+
+    if (computedHeight !== "0px") {
+      sibling.style.height = sibling.scrollHeight + "px";
+      setTimeout(() => {
+        sibling.style.height = "0px";
+        sibling.style.overflow = "hidden";
+      }, 10);
+      imgElement.style.transform = "rotate(0deg)";
+    } else {
+      sibling.style.height = sibling.scrollHeight + "px";
+      sibling.style.overflow = "visible";
+
+      imgElement.style.transform = "rotate(180deg)";
+
+      sibling.addEventListener("transitionend", function handler() {
+        sibling.style.height = "auto";
+        sibling.style.overflow = "visible";
+
+        sibling.removeEventListener("transitionend", handler);
+      });
+    }
   }
-  const [colors , setColor]= useState(12)
-  function colorQuantity(){
-    setColor(colors===12?24:12)
+  const [filter, setFilter] = useState(false);
+  const [categorys, setCategorys] = useState(8);
+  function categorysQuantity() {
+    setCategorys(categorys === 8 ? 11 : 8);
+  }
+  const [colors, setColor] = useState(12);
+  function colorQuantity() {
+    setColor(colors === 12 ? 24 : 12);
   }
   const [value, setValue] = useState(20);
   const handleSliderChange = (event) => {
@@ -24,7 +67,14 @@ function ProductsFilter() {
   };
   return (
     <>
-      <div onClick={() => { setFilter(false) }} className={`filter-background-overlay ${filter === true ? "showFIlter" : ""}`}></div>
+      <div
+        onClick={() => {
+          setFilter(false);
+        }}
+        className={`filter-background-overlay ${
+          filter === true ? "showFIlter" : ""
+        }`}
+      ></div>
 
       <section className="all-sections">
         <div className="container">
@@ -33,98 +83,200 @@ function ProductsFilter() {
             <div className="pages-directions-div">
               <Link to={"/"}>Home</Link>
               <img src={SvgPath.arrowLIneRight} alt="forword" />
-              <Link style={{ color: "#1F292D" }} to={"/productsFilter"}>Products</Link>
+              <Link style={{ color: "#1F292D" }} to={"/productsFilter"}>
+                Products
+              </Link>
             </div>
           </div>
           <div className="filter_and_viewAll-container">
-            <div className={`filter-container ${filter === true ? "showFIlter" : ""}`}>
+            <div
+              className={`filter-container ${
+                filter === true ? "showFIlter" : ""
+              }`}
+            >
               <div className="filter-head">
                 <h2>Filter</h2>
                 <button className="display-block-none-1100">CLEAR ALL</button>
-                <button onClick={() => { setFilter(false) }} className={`display-none-block-1100 }`}><img src={SvgPath.closeBtn} alt="CLOSE" /></button>
+                <button
+                  onClick={() => {
+                    setFilter(false);
+                  }}
+                  className={`display-none-block-1100 }`}
+                >
+                  <img src={SvgPath.closeBtn} alt="CLOSE" />
+                </button>
               </div>
-              <details className="filter-category" open>
-                <summary className="filter-summary">
+              <div className="top-deal-caterogy">
+                <div
+                  onClick={(e) => {
+                    heightControl(e);
+                  }}
+                  className="top-deal-caterogy-content"
+                >
                   <h3 className="filter-headings">Category</h3>
-                  <img className="down-svg" src={SvgPath.upArrow} alt="upArrow" />
-                </summary>
-                <div className="filter-category-div">
+                  <img
+                    className="down-svg"
+                    src={SvgPath.downArrow}
+                    alt="upArrow"
+                  />
+                </div>
+                <div className="filter-all-contents filter-category-div">
                   {productCategorys.slice(0, categorys).map((item, index) => (
                     <button key={index}>{item.name}</button>
                   ))}
-                </div>
-                <button onClick={categorysQuantity} className="filter-viewALl-btn">{categorys === 8 ? "View all" : "Show Less"}</button>
-              </details>
-              <details className="filter-category" open>
-                <summary className="filter-summary">
-                  <h3 className="filter-headings">Price</h3>
-                  <img className="down-svg" src={SvgPath.upArrow} alt="upArrow" />
-                </summary>
-
-                <div className="filter-price-range">
-                  <input
-                    type="range"
-                    min="50"
-                    max="500"
-                    value={value}
-                    className="slider"
-                    onChange={handleSliderChange}
-                  />
-                  <div className="tooltip" style={{ left: `calc(${(value - 50) / 4.9}% - 10px)` }}>
-                    {value}
+                  <div
+                    onClick={categorysQuantity}
+                    className="filter-viewALl-btn"
+                  >
+                    {categorys === 8 ? "View all" : "Show Less"}
                   </div>
                 </div>
-                <div className="filter-low-high-prices">
-                  <p>low: $50.00</p>
-                  <p>High: $500.00</p>
+              </div>
+              <div className="top-deal-caterogy">
+                <div
+                  onClick={(e) => {
+                    heightControl(e);
+                  }}
+                  className="top-deal-caterogy-content"
+                >
+                  <h3 className="filter-headings">Price</h3>
+                  <img
+                    className="down-svg"
+                    src={SvgPath.downArrow}
+                    alt="upArrow"
+                  />
                 </div>
-              </details>
-              <details className="filter-category" open>
-                <summary className="filter-summary">
+                <div className="filter-all-contents filter-price-container">
+                  <div className="filter-price-range">
+                    <input
+                      type="range"
+                      min="50"
+                      max="500"
+                      value={value}
+                      className="slider"
+                      onChange={handleSliderChange}
+                    />
+                    <div
+                      className="tooltip"
+                      style={{ left: `calc(${(value - 50) / 4.9}% - 10px)` }}
+                    >
+                      {value}
+                    </div>
+                  </div>
+                  <div className="filter-low-high-prices">
+                    <p>low: $50.00</p>
+                    <p>High: $500.00</p>
+                  </div>
+                </div>
+              </div>
+              <div className="top-deal-caterogy">
+                <div
+                  onClick={(e) => {
+                    heightControl(e);
+                  }}
+                  className="top-deal-caterogy-content"
+                >
                   <h3 className="filter-headings">Color</h3>
-                  <img className="down-svg" src={SvgPath.upArrow} alt="upArrow" />
-                </summary>
-                <div className="category-div">
+                  <img
+                    className="down-svg"
+                    src={SvgPath.downArrow}
+                    alt="upArrow"
+                  />
+                </div>
+                <div className="filter-all-contents filter-color-container">
                   <form className="filter-form">
-                    {colosArray.slice(0,colors).map((i, index) => (
+                    {colosArray.slice(0, colors).map((i, index) => (
                       <Fragment key={index}>
-                        <input className="filter-color-input" id={i.id} type="radio" name="asdf" />
+                        <input
+                          className="filter-color-input"
+                          id={i.id}
+                          type="radio"
+                          name="asdf"
+                        />
                         <label className="filter-color-label" htmlFor={i.id}>
-                          <div style={{ background: i.color }} className="colors color1"></div>
+                          <div
+                            style={{ background: i.color }}
+                            className="colors color1"
+                          ></div>
                         </label>
                       </Fragment>
                     ))}
                   </form>
-                  <button onClick={colorQuantity} className="filter-viewALl-btn">{colors===12?"+12 more":"Show Less"}</button>
+                  <button
+                    onClick={colorQuantity}
+                    className="filter-viewALl-btn"
+                  >
+                    {colors === 12 ? "+12 more" : "Show Less"}
+                  </button>
                 </div>
-              </details>
-              <details className="filter-category" open>
-                <summary className="filter-summary">
+              </div>
+              <div className="top-deal-caterogy">
+                <div
+                  onClick={(e) => {
+                    heightControl(e);
+                  }}
+                  className="top-deal-caterogy-content"
+                >
                   <h3 className="filter-headings">Brands</h3>
-                  <img className="down-svg" src={SvgPath.upArrow} alt="upArrow" />
-                </summary>
-              </details>
-              <details className="filter-category" open>
-                <summary className="filter-summary">
+                  <img
+                    className="down-svg"
+                    src={SvgPath.downArrow}
+                    alt="upArrow"
+                  />
+                </div>
+                <div className="filter-all-contents height-0">.......asdf</div>
+              </div>
+              <div className="top-deal-caterogy">
+                <div
+                  onClick={(e) => {
+                    heightControl(e);
+                  }}
+                  className="top-deal-caterogy-content"
+                >
                   <h3 className="filter-headings">Customer review</h3>
-                  <img className="down-svg" src={SvgPath.upArrow} alt="upArrow" />
-                </summary>
-              </details>
-              <details className="filter-category" open>
-                <summary className="filter-summary">
+                  <img
+                    className="down-svg"
+                    src={SvgPath.downArrow}
+                    alt="upArrow"
+                  />
+                </div>
+                <div className="filter-all-contents height-0">......asdf</div>
+              </div>
+              <div className="top-deal-caterogy">
+                <div
+                  onClick={(e) => {
+                    heightControl(e);
+                  }}
+                  className="top-deal-caterogy-content"
+                >
                   <h3 className="filter-headings">Discount</h3>
-                  <img className="down-svg" src={SvgPath.upArrow} alt="upArrow" />
-                </summary>
-              </details>
+                  <img
+                    className="down-svg"
+                    src={SvgPath.downArrow}
+                    alt="upArrow"
+                  />
+                </div>
+                <div className="filter-all-contents height-0">......asdf</div>
+              </div>
             </div>
             <div className="products-view-all-contianer">
               <div className="products-view-all-head">
                 <p>Showing 1–9 of 200 results</p>
                 <div className="filter-btns-container">
-                  <button onClick={() => { setFilter(true) }} className="filter-btn">FILTER <img src={SvgPath.downArrowperpal} alt="down-arrow" /></button>
-                  <button className="sortBy-btn">SORT BY <img src={SvgPath.downArrowperpal} alt="down-arrow" /></button>
+                  <button
+                    onClick={() => {
+                      setFilter(true);
+                    }}
+                    className="filter-btn"
+                  >
+                    FILTER{" "}
+                    <img src={SvgPath.downArrowperpal} alt="down-arrow" />
+                  </button>
+                  <button className="sortBy-btn">
+                    SORT BY{" "}
+                    <img src={SvgPath.downArrowperpal} alt="down-arrow" />
+                  </button>
                 </div>
-
               </div>
               <div className="view-all-products-grid">
                 {filterProducts.map((i, index) => (
@@ -141,12 +293,16 @@ function ProductsFilter() {
                 ))}
               </div>
               <div className="products-pages-controler">
-                <button><img src={SvgPath.leftVictor} alt="back" /></button>
+                <button>
+                  <img src={SvgPath.leftVictor} alt="back" />
+                </button>
                 <button className="page-select">1</button>
                 <button>2</button>
                 <img src={SvgPath.threeDOts} alt="dots" />
                 <button>10</button>
-                <button><img src={SvgPath.rightVictor} alt="next" /></button>
+                <button>
+                  <img src={SvgPath.rightVictor} alt="next" />
+                </button>
               </div>
             </div>
           </div>
