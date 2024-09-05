@@ -5,15 +5,60 @@
 }
 .topDeal-top-Products-container {
   display: flex;
-  /* grid-template-columns: 1fr 1fr; */
-  /* align-items: center; */
   gap: 24px;
-  /* justify-content: center; */
   margin-bottom: 40px;
   overflow: auto;
 }
+.topDeal-top-Products-container::-webkit-scrollbar {
+  display: none;
+}
+.top-deal-caterogy {
+  padding: 22px 20px 32px 20px;
+  border-bottom: 1px solid #f0eef2;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.top-deal-caterogy-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 2s ease-in-out;
+  cursor: pointer;
+}
+
+.topDeal-category-div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+  margin: 10px 0;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+  height: 0px;
+}
+
+/* .heidfdf {
+  height: 151px;
+} */
+.topDeal-category-div button {
+  padding: 8px 16px;
+  border: 1px solid #f7f6f8;
+  border-radius: 30px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: start;
+}
+.topDeal-category-div button:hover {
+  background-color: #f7f6f8;
+}
+.down-svg {
+  transition: all 0.3s ease-in-out;
+}
+
 .topDeal-top-Products-1 {
-    min-width: 417px;
+  min-width: 417px;
+  width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -30,13 +75,29 @@
 }
 .topDeal-top-Products-1 div h3 {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  text-align: left;
+  color: #1f292d;
 }
 .topDeal-top-Products-1 div p {
-  font-size: 24px;
   color: #495f6a;
-  font-weight: 400;
+  font-family: "Heebo";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32.02px;
+  text-align: left;
 }
+.top-deal-but-btn {
+  padding: 6px 16px;
+}
+.top-deal-but-btn h5 {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.4000000059604645px;
+}
+
 .topProduct-2 {
   background-color: #f7f1f3;
 }
@@ -58,9 +119,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-bottom: 30px;
-  }
-  .topDeal-top-Products-1 {
-    min-width: 380;
   }
   .topDeal-top-Products-1 div h3 {
     font-size: 15px;

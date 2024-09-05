@@ -134,10 +134,13 @@
   text-align: left;
   color: #495f6a;
 }
-.product-card:hover .instock-product-img{
+.product-card:hover .instock-product-img img{
   transform: scale(1.05);
-}
 
+}
+.instock-product-img img{
+  transition: all 0.3s ease-in-out;
+}
 .instock-product-img {
   border-radius: 20px;
   overflow: hidden;
