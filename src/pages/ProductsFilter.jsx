@@ -61,7 +61,7 @@ function ProductsFilter() {
   function colorQuantity() {
     setColor(colors === 12 ? 24 : 12);
   }
-  const [value, setValue] = useState(20);
+  const [value, setValue] = useState(50);
   const handleSliderChange = (event) => {
     setValue(event.target.value);
   };
@@ -96,7 +96,7 @@ function ProductsFilter() {
             >
               <div className="filter-head">
                 <h2>Filter</h2>
-                <button className="display-block-none-1100">CLEAR ALL</button>
+                <button className="filter-clear-all-btn">CLEAR ALL</button>
                 <button
                   onClick={() => {
                     setFilter(false);
@@ -106,21 +106,22 @@ function ProductsFilter() {
                   <img src={SvgPath.closeBtn} alt="CLOSE" />
                 </button>
               </div>
-              <div className="top-deal-caterogy">
+              {/* =============top-deal-categotys-filter============= */}
+              <div className="filter-all-container">
                 <div
                   onClick={(e) => {
                     heightControl(e);
                   }}
-                  className="top-deal-caterogy-content"
+                  className="filter-all-head"
                 >
                   <h3 className="filter-headings">Category</h3>
                   <img
                     className="down-svg"
                     src={SvgPath.downArrow}
-                    alt="upArrow"
+                    alt="downArrow"
                   />
                 </div>
-                <div className="filter-all-contents filter-category-div">
+                <div className="filter-all-contents filter-category-contents">
                   {productCategorys.slice(0, categorys).map((item, index) => (
                     <button key={index}>{item.name}</button>
                   ))}
@@ -132,18 +133,20 @@ function ProductsFilter() {
                   </div>
                 </div>
               </div>
-              <div className="top-deal-caterogy">
+              {/* =============Price-filter============= */}
+
+              <div className="filter-all-container">
                 <div
                   onClick={(e) => {
                     heightControl(e);
                   }}
-                  className="top-deal-caterogy-content"
+                  className="filter-all-head"
                 >
                   <h3 className="filter-headings">Price</h3>
                   <img
                     className="down-svg"
                     src={SvgPath.downArrow}
-                    alt="upArrow"
+                    alt="downArrow"
                   />
                 </div>
                 <div className="filter-all-contents filter-price-container">
@@ -158,7 +161,7 @@ function ProductsFilter() {
                     />
                     <div
                       className="tooltip"
-                      style={{ left: `calc(${(value - 50) / 4.9}% - 10px)` }}
+                      style={{ left: `calc(${(value - 50) / 4.9}% - 13px)` }}
                     >
                       {value}
                     </div>
@@ -169,18 +172,20 @@ function ProductsFilter() {
                   </div>
                 </div>
               </div>
-              <div className="top-deal-caterogy">
+              {/* =============Color-filter============= */}
+
+              <div className="filter-all-container">
                 <div
                   onClick={(e) => {
                     heightControl(e);
                   }}
-                  className="top-deal-caterogy-content"
+                  className="filter-all-head"
                 >
                   <h3 className="filter-headings">Color</h3>
                   <img
                     className="down-svg"
                     src={SvgPath.downArrow}
-                    alt="upArrow"
+                    alt="downArrow"
                   />
                 </div>
                 <div className="filter-all-contents filter-color-container">
@@ -210,55 +215,62 @@ function ProductsFilter() {
                   </button>
                 </div>
               </div>
-              <div className="top-deal-caterogy">
+              {/* =============Brands-filter============= */}
+
+              <div className="filter-all-container">
                 <div
                   onClick={(e) => {
                     heightControl(e);
                   }}
-                  className="top-deal-caterogy-content"
+                  className="filter-all-head"
                 >
                   <h3 className="filter-headings">Brands</h3>
                   <img
                     className="down-svg"
                     src={SvgPath.downArrow}
-                    alt="upArrow"
+                    alt="downArrow"
                   />
                 </div>
                 <div className="filter-all-contents height-0">.......asdf</div>
               </div>
-              <div className="top-deal-caterogy">
+              {/* =============Customer review-filter============= */}
+
+              <div className="filter-all-container">
                 <div
                   onClick={(e) => {
                     heightControl(e);
                   }}
-                  className="top-deal-caterogy-content"
+                  className="filter-all-head"
                 >
                   <h3 className="filter-headings">Customer review</h3>
                   <img
                     className="down-svg"
                     src={SvgPath.downArrow}
-                    alt="upArrow"
+                    alt="downArrow"
                   />
                 </div>
                 <div className="filter-all-contents height-0">......asdf</div>
               </div>
-              <div className="top-deal-caterogy">
+              {/* =============Discount-filter============= */}
+
+              <div className="filter-all-container">
                 <div
                   onClick={(e) => {
                     heightControl(e);
                   }}
-                  className="top-deal-caterogy-content"
+                  className="filter-all-head"
                 >
                   <h3 className="filter-headings">Discount</h3>
                   <img
                     className="down-svg"
                     src={SvgPath.downArrow}
-                    alt="upArrow"
+                    alt="downArrow"
                   />
                 </div>
                 <div className="filter-all-contents height-0">......asdf</div>
               </div>
             </div>
+            {/* ===============================filter-section end=============================== */}
             <div className="products-view-all-contianer">
               <div className="products-view-all-head">
                 <p>Showing 1–9 of 200 results</p>

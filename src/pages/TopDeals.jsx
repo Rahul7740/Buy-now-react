@@ -14,7 +14,7 @@ import productCategorys from "../json/products-categorys.json";
 function TopDeals() {
   useEffect(() => {
     const elements = document.querySelectorAll(".filter-all-contents");
-    elements.forEach((element, index) => {
+    elements.forEach((element) => {
       const imgElement = element.previousElementSibling;
 
       const img = imgElement.querySelector("img");
@@ -23,12 +23,14 @@ function TopDeals() {
 
       if (elementHeight === "0px" || !elementHeight) {
         img.style.transform = "rotate(0deg)";
+        element.style.paddingTop = "0";
       } else {
         img.style.transform = "rotate(180deg)";
+        element.style.paddingTop = "10px";
       }
     });
   }, []);
-
+  // ======height Control function ====== //
   function heightControl(e) {
     const sibling = e.currentTarget.nextElementSibling;
     const imgElement = e.currentTarget.querySelector("img");
@@ -41,17 +43,19 @@ function TopDeals() {
       setTimeout(() => {
         sibling.style.height = "0px";
         sibling.style.overflow = "hidden";
+        sibling.style.paddingTop = "0";
       }, 10);
       imgElement.style.transform = "rotate(0deg)";
     } else {
       sibling.style.height = sibling.scrollHeight + "px";
       sibling.style.overflow = "visible";
-
+      sibling.style.paddingTop = "10px";
       imgElement.style.transform = "rotate(180deg)";
 
       sibling.addEventListener("transitionend", function handler() {
         sibling.style.height = "auto";
         sibling.style.overflow = "visible";
+        sibling.style.paddingTop = "10px";
 
         sibling.removeEventListener("transitionend", handler);
       });
@@ -68,7 +72,7 @@ function TopDeals() {
     setColor(colors === 12 ? 24 : 12);
   }
 
-  const [value, setValue] = useState(20);
+  const [value, setValue] = useState(50);
   const handleSliderChange = (event) => {
     setValue(event.target.value);
   };
@@ -103,7 +107,7 @@ function TopDeals() {
             >
               <div className="filter-head">
                 <h2>Filter</h2>
-                <button className="display-block-none-1100">CLEAR ALL</button>
+                <button className="filter-clear-all-btn">CLEAR ALL</button>
                 <button
                   onClick={() => {
                     setFilter(false);
@@ -113,21 +117,22 @@ function TopDeals() {
                   <img src={SvgPath.closeBtn} alt="CLOSE" />
                 </button>
               </div>
-              <div className="top-deal-caterogy">
+              {/* =============top-deal-categorys-filter============= */}
+              <div className="filter-all-container">
                 <div
                   onClick={(e) => {
                     heightControl(e);
                   }}
-                  className="top-deal-caterogy-content"
+                  className="filter-all-head"
                 >
                   <h3 className="filter-headings">Top Deals</h3>
                   <img
                     className="down-svg"
                     src={SvgPath.downArrow}
-                    alt="upArrow"
+                    alt="downArrow"
                   />
                 </div>
-                <div className="filter-all-contents topDeal-category-div">
+                <div className="filter-all-contents filter-category-contents">
                   <button>All Deals</button>
                   <button>Today Deals</button>
                   <button>Upcoming Deals</button>
@@ -135,21 +140,22 @@ function TopDeals() {
                 </div>
               </div>
 
-              <div className="top-deal-caterogy">
+              {/* =============top-deal-categotys-filter============= */}
+              <div className="filter-all-container">
                 <div
                   onClick={(e) => {
                     heightControl(e);
                   }}
-                  className="top-deal-caterogy-content"
+                  className="filter-all-head"
                 >
                   <h3 className="filter-headings">Category</h3>
                   <img
                     className="down-svg"
                     src={SvgPath.downArrow}
-                    alt="upArrow"
+                    alt="downArrow"
                   />
                 </div>
-                <div className="filter-all-contents filter-category-div">
+                <div className="filter-all-contents filter-category-contents">
                   {productCategorys.slice(0, categorys).map((item, index) => (
                     <button key={index}>{item.name}</button>
                   ))}
@@ -161,18 +167,20 @@ function TopDeals() {
                   </div>
                 </div>
               </div>
-              <div className="top-deal-caterogy">
+              {/* =============Price-filter============= */}
+
+              <div className="filter-all-container">
                 <div
                   onClick={(e) => {
                     heightControl(e);
                   }}
-                  className="top-deal-caterogy-content"
+                  className="filter-all-head"
                 >
                   <h3 className="filter-headings">Price</h3>
                   <img
                     className="down-svg"
                     src={SvgPath.downArrow}
-                    alt="upArrow"
+                    alt="downArrow"
                   />
                 </div>
                 <div className="filter-all-contents filter-price-container">
@@ -187,7 +195,7 @@ function TopDeals() {
                     />
                     <div
                       className="tooltip"
-                      style={{ left: `calc(${(value - 50) / 4.9}% - 10px)` }}
+                      style={{ left: `calc(${(value - 50) / 4.9}% - 13px)` }}
                     >
                       {value}
                     </div>
@@ -198,18 +206,20 @@ function TopDeals() {
                   </div>
                 </div>
               </div>
-              <div className="top-deal-caterogy">
+              {/* =============Color-filter============= */}
+
+              <div className="filter-all-container">
                 <div
                   onClick={(e) => {
                     heightControl(e);
                   }}
-                  className="top-deal-caterogy-content"
+                  className="filter-all-head"
                 >
                   <h3 className="filter-headings">Color</h3>
                   <img
                     className="down-svg"
                     src={SvgPath.downArrow}
-                    alt="upArrow"
+                    alt="downArrow"
                   />
                 </div>
                 <div className="filter-all-contents filter-color-container">
@@ -239,55 +249,62 @@ function TopDeals() {
                   </button>
                 </div>
               </div>
-              <div className="top-deal-caterogy">
+              {/* =============Brands-filter============= */}
+
+              <div className="filter-all-container">
                 <div
                   onClick={(e) => {
                     heightControl(e);
                   }}
-                  className="top-deal-caterogy-content"
+                  className="filter-all-head"
                 >
                   <h3 className="filter-headings">Brands</h3>
                   <img
                     className="down-svg"
                     src={SvgPath.downArrow}
-                    alt="upArrow"
+                    alt="downArrow"
                   />
                 </div>
                 <div className="filter-all-contents height-0">.......asdf</div>
               </div>
-              <div className="top-deal-caterogy">
+              {/* =============Customer review-filter============= */}
+
+              <div className="filter-all-container">
                 <div
                   onClick={(e) => {
                     heightControl(e);
                   }}
-                  className="top-deal-caterogy-content"
+                  className="filter-all-head"
                 >
                   <h3 className="filter-headings">Customer review</h3>
                   <img
                     className="down-svg"
                     src={SvgPath.downArrow}
-                    alt="upArrow"
+                    alt="downArrow"
                   />
                 </div>
                 <div className="filter-all-contents height-0">......asdf</div>
               </div>
-              <div className="top-deal-caterogy">
+              {/* =============Discount-filter============= */}
+
+              <div className="filter-all-container">
                 <div
                   onClick={(e) => {
                     heightControl(e);
                   }}
-                  className="top-deal-caterogy-content"
+                  className="filter-all-head"
                 >
                   <h3 className="filter-headings">Discount</h3>
                   <img
                     className="down-svg"
                     src={SvgPath.downArrow}
-                    alt="upArrow"
+                    alt="downArrow"
                   />
                 </div>
                 <div className="filter-all-contents height-0">......asdf</div>
               </div>
             </div>
+            {/* ===============================filter-section end=============================== */}
             <div className="products-view-all-contianer">
               <h3 className="top-deals-products-heading">All deals</h3>
               <div className="products-view-all-head">
