@@ -42,7 +42,7 @@ const SvgPath = {
     threeDOts : require("./three-dots.svg").default,
     rightVictor : require("./right-victor.svg").default,
     
-    downArrow : require("./down-arrow-perpal.svg").default,
+    downArrow : require("./down-arrow.svg").default,
 
     productDetailLikeBtn : require("./productDetail-like-icon.svg").default,
     productDetailDelivery : require("./productDetail-delivery-icon.svg").default,

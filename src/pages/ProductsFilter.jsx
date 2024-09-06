@@ -19,11 +19,14 @@ function ProductsFilter() {
 
       if (elementHeight === "0px" || !elementHeight) {
         img.style.transform = "rotate(0deg)";
+        element.style.paddingTop = "0";
       } else {
         img.style.transform = "rotate(180deg)";
+        element.style.paddingTop = "10px";
       }
     });
   }, []);
+  // ======height Control function ====== //
   function heightControl(e) {
     const sibling = e.currentTarget.nextElementSibling;
     const imgElement = e.currentTarget.querySelector("img");
@@ -36,22 +39,23 @@ function ProductsFilter() {
       setTimeout(() => {
         sibling.style.height = "0px";
         sibling.style.overflow = "hidden";
+        sibling.style.paddingTop = "0";
       }, 10);
       imgElement.style.transform = "rotate(0deg)";
     } else {
       sibling.style.height = sibling.scrollHeight + "px";
       sibling.style.overflow = "visible";
-
+      sibling.style.paddingTop = "10px";
       imgElement.style.transform = "rotate(180deg)";
-
       sibling.addEventListener("transitionend", function handler() {
         sibling.style.height = "auto";
         sibling.style.overflow = "visible";
-
+        sibling.style.paddingTop = "10px";
         sibling.removeEventListener("transitionend", handler);
       });
     }
   }
+
   const [filter, setFilter] = useState(false);
   const [categorys, setCategorys] = useState(8);
   function categorysQuantity() {
@@ -198,12 +202,11 @@ function ProductsFilter() {
                           type="radio"
                           name="asdf"
                         />
-                        <label className="filter-color-label" htmlFor={i.id}>
-                          <div
-                            style={{ background: i.color }}
-                            className="colors color1"
-                          ></div>
-                        </label>
+                        <label
+                          style={{ background: i.color }}
+                          className="filter-color-label colors "
+                          htmlFor={i.id}
+                        ></label>
                       </Fragment>
                     ))}
                   </form>

@@ -18,7 +18,6 @@ function TopDeals() {
       const imgElement = element.previousElementSibling;
 
       const img = imgElement.querySelector("img");
-      console.log(img);
       const elementHeight = window.getComputedStyle(element).height;
 
       if (elementHeight === "0px" || !elementHeight) {
@@ -51,12 +50,10 @@ function TopDeals() {
       sibling.style.overflow = "visible";
       sibling.style.paddingTop = "10px";
       imgElement.style.transform = "rotate(180deg)";
-
       sibling.addEventListener("transitionend", function handler() {
         sibling.style.height = "auto";
         sibling.style.overflow = "visible";
         sibling.style.paddingTop = "10px";
-
         sibling.removeEventListener("transitionend", handler);
       });
     }
@@ -232,11 +229,9 @@ function TopDeals() {
                           type="radio"
                           name="asdf"
                         />
-                        <label className="filter-color-label" htmlFor={i.id}>
-                          <div
-                            style={{ background: i.color }}
-                            className="colors color1"
-                          ></div>
+                        <label style={{backgroundColor : i.color}} onClick={()=>{console.log(i.color);
+                        }} className="filter-color-label colors" htmlFor={i.id}>
+                          
                         </label>
                       </Fragment>
                     ))}
@@ -287,7 +282,7 @@ function TopDeals() {
               </div>
               {/* =============Discount-filter============= */}
 
-              <div className="filter-all-container">
+              <div className="filter-all-container" style={{borderBottom:"none"}}>
                 <div
                   onClick={(e) => {
                     heightControl(e);
