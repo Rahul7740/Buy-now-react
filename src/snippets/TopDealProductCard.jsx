@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../style/topDeal-product-card.css";
 import colorsDots from "../json/product-card-color-dots.json"
-import SvgPath from "../assets/svg/SvgPath";
 
 function TopDealProductCard(props) {
   return (

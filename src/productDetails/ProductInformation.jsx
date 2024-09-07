@@ -11,7 +11,7 @@ function ProductInformation() {
                 <div className='product-information-container'>
                     {
                         contentess.map((i,index)=>(
-                            <div key={index}>
+                            <div key={index}style={{borderBottom: i.borderBottom && "none"}} >
                                 <p style={{color:"black"}}>{i.head}</p>
                                 <p>{i.logo && <img src={SvgPath.appleLogo} alt='apple' />}{i.p}</p>
                             </div>

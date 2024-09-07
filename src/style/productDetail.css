@@ -8,7 +8,7 @@
   position: relative;
   background-color: #fef9f9;
   border-radius: 20px;
-  padding: 50px;
+  padding: 50px 50px 70px;
 }
 .prodcut-detail-main-img div {
   position: absolute;
@@ -17,8 +17,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 16px;
-  color: #495f6a;
 }
 
 .like-btn {
@@ -40,6 +38,14 @@
   border-radius: 20px;
 }
 /* =======product-detail-content====== */
+.product-detail-name {
+  font-family: "Heebo";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32.02px;
+  text-align: left;
+  color: #1f292d;
+}
 .product-detail-content {
   max-width: 564px;
   width: 100%;
@@ -49,35 +55,31 @@
   align-items: start;
   gap: 30px;
 }
-.product-detail-content hr {
-  width: 100%;
-}
 
 .product-detail-header {
   width: 100%;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #42265914;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .product-detail-para {
   font-size: 16px;
   font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
   max-width: 466px;
   width: 100%;
   line-height: 24px;
   color: #495f6a;
 }
-.product-detail-header div {
+.product-detail-name-container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-
-  margin-bottom: 10px;
-}
-.product-detail-header div h3 {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 32.02px;
-  font-family: "Heebo", sans-serif;
 }
 
 /* ==========color====== */
@@ -86,6 +88,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #42265914;
 }
 .productDetail-colors {
   display: flex;
@@ -96,16 +100,18 @@
   display: none;
 }
 
-.productDetail-colors label div {
-  /* position: relative; */
+.productDetail-colors label {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   background-color: gray;
 }
-.productDetail-colors input:checked + label div {
+.productDetail-colors input:checked + label {
   border: 3px solid white;
-  outline: 3px solid #422659;
+  outline: 2px solid #422659;
+  width: 38px;
+  height: 38px;
+  margin: 0 1px;
 }
 /* ====size==== */
 .productDetail-size {
@@ -119,10 +125,13 @@
   max-width: 277px;
   width: 100%;
   border-radius: 20px;
-  border: 1px solid #f0eef2;
+  border: 1px solid #42265914;
   padding: 10px 20px;
 }
 .productDetail-size div h3 {
+  font-weight: 500;
+  letter-spacing: 0.15000000596046448px;
+  text-align: left;
   font-size: 20px;
   line-height: 32px;
   font-weight: 500;
@@ -132,6 +141,10 @@
   font-size: 14px;
   line-height: 20.02px;
   font-weight: 400;
+  line-height: 20.02px;
+  letter-spacing: 0.17000000178813934px;
+  text-align: left;
+  color: #495f6a;
 }
 /* =====style name========= */
 .productDetail-style {
@@ -145,13 +158,21 @@
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 11px;
+  gap: 11px;
+  padding: 9px 11px;
+}
+.productDetail-style div label {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  text-align: left;
+  color: #495f6a;
 }
 
 .productDetail-texes-div {
   width: 100%;
-  padding: 8px 15px;
+  padding: 10px 20px;
   border-radius: 10px;
   border: 1px solid #f0eef2;
   display: flex;
@@ -160,48 +181,151 @@
   gap: 8px;
 }
 .productDetail-texes-div h3 {
-  font-size: 24px;
+  font-family: "Heebo";
+  font-size: 34px;
   font-weight: 500;
-  line-height: 32.02px;
+  line-height: 41.99px;
+  letter-spacing: 0.25px;
+  text-align: left;
+  color: #1f292d;
 }
 .productDetail-texes-div p {
-  font-size: 16px;
   color: #495f6a;
+  font-family: "Inter";
+  font-size: 14px;
   font-weight: 400;
-  line-height: 21.52px;
+  line-height: 20.02px;
+  letter-spacing: 0.17000000178813934px;
 }
 .texes-ratting-contaienr {
-  text-align: end;
-  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 4px;
 }
 .texes-ratting-contaienr .ratting-div {
   margin: 0;
+  display: flex;
 }
 .productDetail-readMore {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-family: "Inter";
   font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  text-align: left;
   color: #495f6a;
+  width: 100%;
 }
+.product-detail-addToCart-btn {
+  border: 1px solid #42265980;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.product-detial-buyNow-btn {
+  width: 100%;
+}
+.product-detail-addToCart-btn h5 {
+  color: #422659;
+}
+@media (max-width: 900px) {
+  .product-detail-header {
+    padding-bottom: 25px;
+    gap: 8px;
+  }
+  .productDetail-divs {
+    padding-bottom: 25px;
+  }
+  .prodcut-detail-main-img {
+    border-radius: 15px;
+    padding: 40px 40px 60px;
+  }
+  .prodcut-detail-imgs-types div {
+    border-radius: 10px;
+  }
+}
+
 @media (max-width: 700px) {
   .product-detail-container {
     flex-direction: column;
   }
+  .product-detail-header {
+    padding-bottom: 17px;
+    gap: 6px;
+  }
+  .productDetail-divs {
+    padding-bottom: 17px;
+  }
+  .product-detail-imgs {
+    padding: 16px 0 6px 0;
+  }
   .product-detail-content {
-    gap: 15px;
+    gap: 14px;
   }
   .productDetail-colors {
     gap: 15px;
   }
-  .productDetail-colors label div {
+  .productDetail-colors label {
     width: 36px;
     height: 36px;
   }
+  .productDetail-colors input:checked + label {
+    width: 34px;
+    height: 34px;
+    margin: 0 1px;
+  }
   .product-detail-para {
     font-size: 14px;
+    line-height: 20.02px;
+    letter-spacing: 0.17000000178813934px;
   }
-  .product-detail-header div h3 {
-    font-size: 20px;
+  productDetail-size div {
+    border-radius: 10px;
+  }
+  productDetail-size div h3 {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15000000596046448px;
+  }
+  productDetail-size div p {
+    font-size: 12px;
+    line-height: 19.92px;
+    letter-spacing: 0.4000000059604645px;
+  }
+  .productDetail-texes-div h3 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32.02px;
+  }
+  productDetail-texes-div {
+    padding: 8px 15px;
+  }
+  .productDetail-readMore {
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.02px;
+    letter-spacing: 0.17000000178813934px;
+    text-align: left;
+  }
+  .product-Detail-btns{
+    display: none;
+  }
+}
+@media (max-width: 450px) {
+  .product-detail-header {
+    padding-bottom: 14px;
+    gap: 4px;
+  }
+  .productDetail-divs {
+    padding-bottom: 14px;
+  }
+  .prodcut-detail-main-img {
+    border-radius: 15px;
+    padding: 30px 30px 40px;
   }
 }

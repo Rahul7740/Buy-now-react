@@ -26,7 +26,9 @@ function ProductDetail() {
               <img src={SvgPath.arrowLIneRight} alt="forword" />
               <Link to={"/productsFilter"}>Products</Link>
               <img src={SvgPath.arrowLIneRight} alt="forword" />
-              <Link style={{ color: "#1F292D" }}  to={"/productDetail"}>Products details</Link>
+              <Link style={{ color: "#1F292D" }} to={"/productDetail"}>
+                Products details
+              </Link>
             </div>
           </div>
           <div className="product-detail-container">
@@ -40,7 +42,7 @@ function ProductDetail() {
                 <img src={ImgPath.procutDetailMain} alt="product" />
                 <div>
                   <img src={SvgPath.productDetailDelivery} alt="freeDelivery" />
-                  <p>Free delivered</p>
+                  <p className="product-detail-para">Free delivered</p>
                 </div>
               </div>
               <div className="prodcut-detail-imgs-types">
@@ -57,42 +59,44 @@ function ProductDetail() {
             </div>
             <div className="product-detail-content">
               <div className="product-detail-header">
-                <div>
-                  <h2>Apple Watch SE </h2>
+                <div className="product-detail-name-container">
+                  <h2 className="product-detail-name">Apple Watch SE </h2>
                   <img src={SvgPath.exportIcon} alt="export" />
                 </div>
                 <p className="product-detail-para">
-                  Price: $600.00 - Silver Aluminium Case with Abyss Blue Sport
-                  Band - Regular
+                  <span style={{ color: "#1F292D" }}>Price: $600.00 - </span>
+                  Silver Aluminium Case with Abyss Blue Sport Band - Regular
                 </p>
-              </div>
-              <hr className="display-none-block-700" />
-              <div className="product-detail-imgs display-none-block-700">
-              <div className="prodcut-detail-main-img">
-                <img
-                  className="like-btn"
-                  src={SvgPath.productDetailLikeBtn}
-                  alt="like"
-                />
-                <img src={ImgPath.procutDetailMain} alt="product" />
-                <div>
-                  <img src={SvgPath.productDetailDelivery} alt="freeDelivery" />
-                  <p>Free delivered</p>
+                <div className="product-detail-imgs display-none-block-700">
+                  <div className="prodcut-detail-main-img">
+                    <img
+                      className="like-btn"
+                      src={SvgPath.productDetailLikeBtn}
+                      alt="like"
+                    />
+                    <img src={ImgPath.procutDetailMain} alt="product" />
+                    <div>
+                      <img
+                        src={SvgPath.productDetailDelivery}
+                        alt="freeDelivery"
+                      />
+                      <p className="product-detail-para">Free delivered</p>
+                    </div>
+                  </div>
+                  <div className="prodcut-detail-imgs-types">
+                    {imagess.map((i, index) => (
+                      <div>
+                        <img
+                          src={require(`../assets/images/${i.img}`)}
+                          alt="product"
+                        />
+                      </div>
+                    ))}
+                    <img src={SvgPath.rightVictor} alt="" />
+                  </div>
                 </div>
               </div>
-              <div className="prodcut-detail-imgs-types">
-                {imagess.map((i, index) => (
-                  <div>
-                    <img
-                      src={require(`../assets/images/${i.img}`)}
-                      alt="product"
-                    />
-                  </div>
-                ))}
-                <img src={SvgPath.rightVictor} alt="" />
-              </div>
-            </div>
-              <hr />
+
               <div className="productDetail-divs">
                 <p className="product-detail-para">Color</p>
                 <form className="productDetail-colors">
@@ -104,14 +108,15 @@ function ProductDetail() {
                         name="colr"
                         defaultChecked
                       />
-                      <label htmlFor={index}>
-                        <div style={{ background: i.color }}></div>
-                      </label>
+                      <label
+                        htmlFor={index}
+                        style={{ background: i.color }}
+                      ></label>
                     </Fragment>
                   ))}
                 </form>
               </div>
-              <hr />
+
               <div className="productDetail-divs">
                 <p className="product-detail-para">Size</p>
                 <div className="productDetail-size">
@@ -123,12 +128,16 @@ function ProductDetail() {
                   ))}
                 </div>
               </div>
-              <hr />
               <div className="productDetail-divs">
                 <p className="product-detail-para">Style name</p>
                 <div className="productDetail-style">
                   <div>
-                    <input type="radio" name="style" id="style1" defaultChecked />
+                    <input
+                      type="radio"
+                      name="style"
+                      id="style1"
+                      defaultChecked
+                    />
                     <label htmlFor="style1">GPS</label>
                   </div>
                   <div>
@@ -137,7 +146,6 @@ function ProductDetail() {
                   </div>
                 </div>
               </div>
-              <hr />
               <div className="productDetail-texes-div">
                 <div>
                   <h3>$320.00</h3>
@@ -154,13 +162,17 @@ function ProductDetail() {
                   </div>
                 </div>
               </div>
-              <div className="productDetail-readMore">
-                <p>10-day replacement only</p>
-                <Link style={{ color: "black" }}>Read more</Link>
-              </div>
-              <div className="productDetail-readMore">
-                <AllButtons name="Add to cart" />
-                <AllButtons name="Buy now" />
+              <p className="productDetail-readMore">
+                10-day replacement only
+                <Link style={{ color: "#1F292D" }}> Read more</Link>
+              </p>
+
+              <div className="productDetail-readMore product-Detail-btns">
+                <AllButtons
+                  name="Add to cart"
+                  class="product-detail-addToCart-btn"
+                />
+                <AllButtons name="Buy now" class="product-detial-buyNow-btn" />
               </div>
             </div>
           </div>

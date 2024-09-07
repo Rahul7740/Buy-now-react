@@ -21,7 +21,7 @@ function CustomerReviews() {
                                     <img src={SvgPath.star} alt="star" />
                                 </div>
                             </div>
-                            <hr />
+                            
                             <div className='rating-rangess'>
                                 {
                                     rangess.map((i, index) => (

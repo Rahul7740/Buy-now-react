@@ -21,13 +21,14 @@ function FAQ() {
                             className="filter-category"
                             open={openIndex === index}
                             onToggle={(e) => handleToggle(index, e.target.open)}
+                            style={{borderBottom: item.borderNONE && "none"}}
                         >
                             <summary className="filter-summary">
                                 <h3 className="filter-headings">{item.heading}</h3>
                                 {openIndex === index ? (
                                     <img src={SvgPath.upArrow} alt="upArrow" />
                                 ) : (
-                                    <img src={SvgPath.downArrowperpal} alt="downArrow" />
+                                    <img src={SvgPath.downArrow} alt="downArrow" />
                                 )}
                             </summary>
                             <p className="help-center-para">{item.p}</p>

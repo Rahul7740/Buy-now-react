@@ -70,7 +70,7 @@ function HelpCenter() {
                     {openIndex === index ? (
                       <img src={SvgPath.upArrow} alt="upArrow" />
                     ) : (
-                      <img src={SvgPath.downArrowperpal} alt="downArrow" />
+                      <img src={SvgPath.downArrow} alt="downArrow" />
                     )}
                   </summary>
                   <p className="help-center-para">{item.p}</p>

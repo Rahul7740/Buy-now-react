@@ -22,7 +22,8 @@
     },
     {
         "head":"Style",
-        "p":"GPS + Cellular"
+        "p":"GPS + Cellular",
+        "borderBottom":true
     }
 
 ]

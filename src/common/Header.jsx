@@ -21,7 +21,7 @@ function Header() {
   function showLanguagePopup() {
     setLanguagPopup(langaugPopup === false ? true : false);
   }
-  const { popup, setPopup } = usePopup()
+  const {setPopup } = usePopup()
 
   return (
     <>
