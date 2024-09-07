@@ -229,10 +229,14 @@ function TopDeals() {
                           type="radio"
                           name="asdf"
                         />
-                        <label style={{backgroundColor : i.color}} onClick={()=>{console.log(i.color);
-                        }} className="filter-color-label colors" htmlFor={i.id}>
-                          
-                        </label>
+                        <label
+                          style={{ backgroundColor: i.color }}
+                          onClick={() => {
+                            console.log(i.color);
+                          }}
+                          className="filter-color-label colors"
+                          htmlFor={i.id}
+                        ></label>
                       </Fragment>
                     ))}
                   </form>
@@ -282,7 +286,10 @@ function TopDeals() {
               </div>
               {/* =============Discount-filter============= */}
 
-              <div className="filter-all-container" style={{borderBottom:"none"}}>
+              <div
+                className="filter-all-container"
+                style={{ borderBottom: "none" }}
+              >
                 <div
                   onClick={(e) => {
                     heightControl(e);
