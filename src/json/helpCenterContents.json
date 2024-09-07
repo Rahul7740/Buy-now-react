@@ -23,6 +23,7 @@
     {
         "id":4,
         "heading":"Dignissim tortor vitae massa vel, id amet.",
-        "p":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora aut quasi molestiae aspernatur magnam assumenda odit beatae quisquam, at hic!"
+        "p":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora aut quasi molestiae aspernatur magnam assumenda odit beatae quisquam, at hic!",
+        "borderNONE":true
     }
 ]

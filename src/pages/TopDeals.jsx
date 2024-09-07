@@ -111,7 +111,7 @@ function TopDeals() {
                   }}
                   className={`display-none-block-1100 }`}
                 >
-                  <img src={SvgPath.closeBtn} alt="CLOSE" />
+                  <img src={require(`../assets/svg/filter-close-btn.svg`).default} alt="CLOSE" />
                 </button>
               </div>
               {/* =============top-deal-categorys-filter============= */}
@@ -337,7 +337,7 @@ function TopDeals() {
                       </span>
                     </h3>
                     <p>$ 600.00</p>
-                    <AllButtons name="BUY NOW" class="top-deal-but-btn" />
+                    <AllButtons name="BUY NOW" class="top-deal-buy-btn" />
                   </div>
                   <img
                     src={require("../assets/images/topDeal-img-1.png")}
@@ -346,8 +346,10 @@ function TopDeals() {
                 </div>
                 <div className=" topProduct-2 topDeal-top-Products-1">
                   <div>
-                    <h5>20% off</h5>
-                    <h6>$ 600.00</h6>
+                    <span>
+                      <h5>20% off</h5>
+                      <h6>$ 600.00</h6>
+                    </span>
                     <p>Jabra (Wireless Headsets)</p>
                   </div>
                   <img

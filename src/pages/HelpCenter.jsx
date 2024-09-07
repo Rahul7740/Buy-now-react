@@ -63,8 +63,9 @@ function HelpCenter() {
                   className="filter-category"
                   open={openIndex === index}
                   onToggle={(e) => handleToggle(index, e.target.open)}
+                  style={{borderBottom: item.borderNONE && "none"}}
                 >
-                  <summary className="filter-summary">
+                  <summary className="filter-summary" >
                     <h3 className="filter-headings">{item.heading}</h3>
                     {openIndex === index ? (
                       <img src={SvgPath.upArrow} alt="upArrow" />

@@ -107,7 +107,10 @@ function ProductsFilter() {
                   }}
                   className={`display-none-block-1100 }`}
                 >
-                  <img src={SvgPath.closeBtn} alt="CLOSE" />
+                  <img
+                    src={require(`../assets/svg/filter-close-btn.svg`).default}
+                    alt="CLOSE"
+                  />
                 </button>
               </div>
               {/* =============top-deal-categotys-filter============= */}

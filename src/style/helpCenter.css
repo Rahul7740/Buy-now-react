@@ -91,6 +91,19 @@
 .displannone {
   display: none;
 }
+/* ======details summary======= */
+.filter-category {
+  padding: 20px 34px 20px 16px;
+  border-bottom: 1px solid #f0eef2;
+}
+.filter-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  gap: 20px;
+}
+/* ==========media======= */
 @media (max-width: 650px) {
   .help-center-pages {
     justify-content: start;
