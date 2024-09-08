@@ -8,9 +8,10 @@
 }
 .stepper-label {
   font-size: 16px;
-  line-height: 24px;
-  color: #495f6a;
   font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  color: #495f6a;
   position: absolute;
   white-space: nowrap;
   text-align: center;
@@ -28,7 +29,7 @@
   height: 4px;
   background-color: #ece9ee;
 }
-.activeline{
+.activeline {
   background-color: #422659;
 }
 .stepper-line-container {
@@ -49,11 +50,17 @@
   border: 3px solid white;
   outline: 3px solid #422659;
 }
+.active-shadow {
+  border-radius: 40px;
+  box-shadow: 0px 5px 22px 4px #b0bec51f, 0px 12px 17px 2px #b0bec524,
+    0px 7px 8px -4px #b0bec533;
+}
 @media (max-width: 566px) {
   .stepper-label {
     white-space: wrap;
     font-size: 12px;
-    line-height: 15.92px;
+    line-height: 19.92px;
+    letter-spacing: 0.4000000059604645px;
   }
   .stepper {
     padding: 50px 30px 15px 15px;
@@ -62,6 +69,7 @@
 
 /* ======checkout login section======= */
 .checkOut-main-container {
+  margin-top: 40px;
   display: flex;
   align-items: start;
   gap: 24px;
@@ -81,7 +89,12 @@
   padding: 20px 30px;
   border: 1px solid #ebe9f3;
   border-radius: 20px;
+  transition: all 0.3s ease-in-out;
 }
+.checkout-login-types:hover {
+  transform: scale(1.02);
+}
+
 .checkout-login-types div {
   display: flex;
   align-items: center;
@@ -91,10 +104,14 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  text-align: left;
   color: #1f292d;
 }
 @media (max-width: 740px) {
   .checkOut-main-container {
+    margin-top: 20px;
+
     gap: 15px;
     flex-direction: column;
   }
@@ -104,8 +121,12 @@
   .checkout-login-types div h3 {
     font-size: 14px;
     line-height: 21.98px;
+    letter-spacing: 0.10000000149011612px;
   }
   .checkout-login-types div {
+    gap: 10px;
+  }
+  .checkOut-login-section {
     gap: 10px;
   }
 }

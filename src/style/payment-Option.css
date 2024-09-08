@@ -9,27 +9,37 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  max-width: 750px;
   width: 100%;
-  overflow: auto;
+  overflow-x: scroll;
 }
-.paymentOption-selectrs li::marker {
-  content: " ";
+.paymentOption-selectrs::-webkit-scrollbar {
+  display: none;
 }
+
 .paymentOption-selectrs li {
-  padding: 12px 8px;
+  list-style: none;
+  padding: 1px;
+  min-height: 48px;
 }
+
 .selectrs-Links {
-  padding: 12px 8px;
+  padding: 10px 8px;
   text-transform: uppercase;
   transition: all 0.3s;
   white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.4000000059604645px;
+  color: #495f6a;
+  border-bottom: 1px solid transparent;
 }
 .selectrs-Links:hover {
-  border-bottom: 1px solid #495f6a6e;
+  border-bottom: 1px solid #422659;
 }
-.selectrs-Links .active {
+.active-selector {
   color: #422659;
+  border-bottom: 1px solid #422659;
 }
 
 /* main-container */
@@ -103,6 +113,15 @@
   color: #c4cfd4;
   font-weight: 500;
 }
+.save-card-btns-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid #42265914;
+}
 
 .card-exp {
   display: flex;
@@ -135,5 +154,31 @@
 @media (max-width: 1100px) {
   .payment-option-main-container {
     flex-direction: column;
+  }
+  .paymentOption-selectrs-container {
+    margin-block: 40px;
+  }
+}
+@media (max-width: 700px) {
+  .paymentOption-selectrs-container {
+    margin-block: 30px;
+  }
+  .paymentOption-selectrs {
+    gap: 10px;
+  }
+  .otherCard-container {
+    gap: 10px;
+  }
+
+  .save-card-btns-container {
+    padding-top: 10px;
+  }
+  .credit-Debit-card-div {
+    gap: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .paymentOption-selectrs-container {
+    margin-block: 20px;
   }
 }

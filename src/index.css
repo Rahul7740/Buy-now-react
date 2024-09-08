@@ -67,10 +67,11 @@ body::-webkit-scrollbar-track {
 }
 .all-btns {
   border-radius: 30px;
-  padding: 8px 22px;
+  padding: 7px 22px;
   background-color: #422659;
   border: 1px solid transparent;
   transition: 0.3s ease-in-out;
+  text-align: center;
 }
 .all-btn-headings{
   font-size: 15px;
@@ -78,6 +79,7 @@ body::-webkit-scrollbar-track {
   font-family: "Inter", sans-serif;
   font-weight: 500;
   text-transform: uppercase;
+  text-align: center;
   line-height: 26px;
   letter-spacing: 0.46px;
   transition: 0.3s ease-in-out;

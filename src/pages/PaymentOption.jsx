@@ -28,18 +28,18 @@ function PaymentOption() {
                     </div>
                     <div className="stepper">
                         <div className="stepper-line-container">
-                            <Link to={"/deliveryAdress"} className="abcd">
+                            <Link to={"/deliveryAdress"} className="abcd active-shadow">
                                 <h4 className="stepper-label activeTxt">Delivery Address</h4>
                                 <div className="stepper-dots activeDot"></div>
                             </Link>
                             <div className="stepper-line activeline"></div>
-                            <Link to={"/orderSummary"} className="abcd">
+                            <Link to={"/orderSummary"} className="abcd active-shadow">
                                 <h4 className="stepper-label activeTxt">Order Summary</h4>
                                 <div className="stepper-dots activeDot"></div>
                             </Link>
                             <div className="stepper-line activeline"></div>
-                            <Link className="abcd">
-                                <h4 className="stepper-label activeTxt">Payment Option</h4>
+                            <Link className="abcd active-shadow">
+                                <h4 className="stepper-label activeTxt ">Payment Option</h4>
                                 <div className="stepper-dots activeDot"></div>
                             </Link>
                             <div className="stepper-line"></div>
@@ -53,28 +53,14 @@ function PaymentOption() {
                         <ul className="paymentOption-selectrs">
                             {selectorss.map((i, index) => (
                                 <li key={index}>
-                                    <NavLink onClick={()=>{setPath(index)}} className="all-para-14 selectrs-Links" activeclassname="active">{i.name}</NavLink>
+                                    <NavLink onClick={()=>{setPath(index)}} className={`selectrs-Links ${path===index && "active-selector"} `} activeclassname="active">{i.name}</NavLink>
                                 </li>
                             ))}
                         </ul>
-                        <img src={SvgPath.debitCredit} alt="debit" />
+                        <img className="display-block-none-700" src={SvgPath.debitCredit} alt="debit" />
                     </div>
                     <div className="payment-option-main-container">
-                        {/* <CardsDebitCredit /> */}
-                        {/* <UpiPayments /> */}
-                        {/* <NEtBanking /> */}
-                        {/* <Emi /> */}
-                        {/* <CashOnDelivery /> */}
-                        {
-                            // selectorss.map((item,index)=>(
-                            //     // item.path===path?<item.path />:""
-                            //     console.log(index)
-                                
-                            // ))
-
-                           
-                        }
-
+                        
                         {path===0?<CardsDebitCredit />:path===1?<UpiPayments />:path===2?<NEtBanking />:path===3?<Emi />:path===4?<CashOnDelivery />:""}
                 
                        

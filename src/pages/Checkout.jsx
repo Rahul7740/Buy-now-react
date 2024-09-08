@@ -22,7 +22,7 @@ function Checkout() {
                     </div>
                     <div className="stepper">
                         <div className="stepper-line-container">
-                            <div className="abcd">
+                            <div className="abcd active-shadow">
                                 <h4 className="stepper-label activeTxt">Sign In</h4>
                                 <div className="stepper-dots activeDot"></div>
                             </div>
@@ -52,7 +52,7 @@ function Checkout() {
                                             <img src={require(`../assets/svg/${i.img}`)} alt="logins" />
                                             <h3>{i.name}</h3>
                                         </div>
-                                        <img src={SvgPath.rightVictor} alt="right" />
+                                        <img src={require(`../assets/svg/right-victor-lite-perpul.svg`).default} alt="right" />
                                     </Link>
                                 ))
                             }

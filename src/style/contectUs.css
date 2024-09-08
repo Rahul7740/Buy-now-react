@@ -85,8 +85,7 @@
 }
 
 .contactUS-content input,
-.contactUS-content textarea,
-.contactUS-content .select {
+.contactUS-content textarea,.select {
   width: 100%;
   padding: 16px 20px;
   font-family: "Inter", sans-serif;

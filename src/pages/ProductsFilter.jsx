@@ -8,6 +8,8 @@ import RelatedItemYourSearch from "../snippets/RelatedItemYourSearch";
 import ProductCard from "../snippets/ProductCard";
 import NewsLetter from "../home/NewsLetter";
 import productCategorys from "../json/products-categorys.json";
+import sortByPopupData from "../json/short-by-popup.json";
+
 function ProductsFilter() {
   useEffect(() => {
     const elements = document.querySelectorAll(".filter-all-contents");
@@ -54,6 +56,10 @@ function ProductsFilter() {
         sibling.removeEventListener("transitionend", handler);
       });
     }
+  }
+  const [sortByPopup , setSortByPopup]=useState(false)
+  function changeSortBY() {
+    setSortByPopup(sortByPopup===false?true:false)
   }
 
   const [filter, setFilter] = useState(false);
@@ -290,10 +296,22 @@ function ProductsFilter() {
                     FILTER{" "}
                     <img src={SvgPath.downArrowperpal} alt="down-arrow" />
                   </button>
-                  <button className="sortBy-btn">
+                  <button onClick={changeSortBY} className="sortBy-btn">
                     SORT BY{" "}
-                    <img src={SvgPath.downArrowperpal} alt="down-arrow" />
+                    <img style={{transform:sortByPopup===true && "rotate(180deg)"}}  src={SvgPath.downArrowperpal} alt="down-arrow" />
                   </button>
+                  <div className={`sort-by-popup ${sortByPopup===true && "show-shortBy-popup"}`}>
+                    {sortByPopupData.map((item, index) => (
+                      <div key={index} className="sort-by-popup-contents">
+                        <h3>{item.heading}</h3>
+                        {item.btns.map((i, index) => (
+                          <button onClick={changeSortBY} key={index}>{i.btn}
+                            <img className="right-victor" src={require(`../assets/svg/right-victor-perpul.svg`).default} alt="go" />
+                          </button>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
               <div className="view-all-products-grid">

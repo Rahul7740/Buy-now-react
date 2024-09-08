@@ -16,7 +16,7 @@ function CardsDebitCredit() {
                             <img src={SvgPath.visa} alt="visa" />
                         </div>
                         <h6 className="credit-card-numbers">2356 2356 2356 2356</h6>
-                        <div className="credit-Debit-card-foot">
+                        <div className="credit-Debit-card-foot" style={{background:i.background}}>
                             <div>
                                 <p>Card Holder</p>
                                 <h3>{i.userName}</h3>
@@ -43,10 +43,9 @@ function CardsDebitCredit() {
                     <input className="delivery-a-inputs" placeholder="CVV" type="text" />
                     <input className="delivery-a-inputs" placeholder="Exp Date" type="date" />
                 </div>
-                <hr style={{ width: "100%" }} />
-                <div className="space-between">
+                <div className="space-between save-card-btns-container">
                     <button className="saveAddress-btn">Save card</button>
-                    <button>Cencel</button>
+                    <button className='cancel-btn'>CANCEL</button>
                 </div>
             </div>
         </div>

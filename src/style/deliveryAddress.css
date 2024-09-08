@@ -2,6 +2,7 @@
   display: flex;
   align-items: start;
   gap: 24px;
+  margin-top: 40px;
 }
 .deliveryAddress-container {
   max-width: 760px;
@@ -13,20 +14,44 @@
 }
 .deliveryAddress-container h3 {
   font-size: 16px;
-  line-height: 24px;
   font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  text-align: left;
+  color: #1f292d;
 }
 .delivery-a-inputs,
-select {
+.deliveryAddress-container .select {
   font-size: 16px;
   font-weight: 400;
-  font-family: "Inter", sans-serif;
   line-height: 24px;
-  padding: 16px 20px;
-  border: 1px solid #d8d6e8;
+  letter-spacing: 0.15000000596046448px;
+  font-family: "Inter", sans-serif;
+  padding: 15px 20px;
+  border: 1px solid #574b9b3b;
   border-radius: 30px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  color: #1f292d;
 }
+.delivery-a-inputs::placeholder,
+.deliveryAddress-container .select::placeholder,
+.delivery-a-inputs input::placeholder {
+  color: #495f6a;
+}
+.delivery-a-inputs input {
+  color: #1f292d;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  font-family: "Inter", sans-serif;
+  width: 100%;
+}
+
 .delivery-A-input-div {
   width: 100%;
   display: flex;
@@ -54,37 +79,59 @@ select {
   line-height: 24px;
   font-weight: 400;
   width: 100%;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ebe9f3;
+  padding-bottom: 29px;
+  border-bottom: 1px solid #574b9b1f;
+}
+.saveAddress-btn-container {
+  padding-top: 20px;
+  border-top: 1px solid #574b9b1f;
 }
 .saveAddress-btn {
-  font-size: 15px;
+  max-width: 201px;
+  width: 100%;
   color: #422659;
+  font-size: 15px;
   font-weight: 500;
   line-height: 26px;
-  padding: 8px 22px;
+  letter-spacing: 0.46px;
+  text-align: center;
+  padding: 7px 22px;
   border-radius: 30px;
   text-transform: uppercase;
   font-family: "Inter", sans-serif;
-  border: 1px solid #a093ac;
+  border: 1px solid #42265980;
+  background: #ffffff;
+  transition: all 0.5s ease-in-out;
 }
+
+.saveAddress-btn:hover {
+  background: linear-gradient(to right, #422659, #5b4a72);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0px 10px 20px rgba(66, 38, 89, 0.3);
+  border-color: #422659;
+}
+
 /* improtant noticee */
 .deliveryAdress-improtantNotice {
   padding-top: 40px;
-  border-top: 1px solid #ebe9f3;
+  border-top: 1px solid #574b9b1f;
   margin-top: 40px;
 }
 .deliveryAdress-improtantNotice h3 {
   font-size: 20px;
   font-weight: 500;
   line-height: 32px;
+  letter-spacing: 0.15000000596046448px;
+  color: #1f292d;
   font-family: "Heebo", sans-serif;
 }
 .deliveryAdress-improtantNotice p {
-  font-size: 16px;
   color: #495f6a;
+  font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
   padding: 20px 0;
 }
 .deliveryAdress-improtantNotice div {
@@ -92,10 +139,11 @@ select {
 }
 
 .deliveryAdress-improtantNotice button {
-  font-size: 16px;
   color: #422659;
+  font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
 }
 /* ========save-addess===== */
 
@@ -106,13 +154,13 @@ select {
   width: 100%;
 }
 .save-adress {
-  border: 1px solid #ebe9f3;
+  border: 1px solid #574b9b1f;
   border-radius: 20px;
   padding: 30px;
   display: flex;
   align-items: end;
   justify-content: space-between;
-  gap: 20px;
+  gap: 14px;
 }
 
 .save-adress-heading {
@@ -125,43 +173,160 @@ select {
   font-size: 20px;
   font-weight: 500;
   line-height: 32px;
+  letter-spacing: 0.15000000596046448px;
+
   font-family: "Heebo", sans-serif;
-  color: black;
+  color: #1f292d;
 }
 .save-adress-heading span {
   color: #ffffff;
-  font-size: 12px;
   font-family: "Inter", sans-serif;
-  line-height: 20px;
-  padding: 0 6.5px;
+  font-size: 12px;
   font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.14000000059604645px;
+  padding: 0 6.5px;
   background: #ffb900;
   border-radius: 50px;
 }
 .save-adress p {
-  font-size: 16px;
   color: #495f6a;
+  font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
 }
+
 .save-adress button {
   font-size: 15px;
-  line-height: 26px;
   font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0.46000000834465027px;
+  padding: 8px 11px;
   color: #422659;
+  white-space: nowrap;
   font-family: "Inter", sans-serif;
+}
+.cancel-btn {
+  font-family: "Inter";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0.46000000834465027px;
+  color: #422659;
+  padding: 8px 11px;
+  margin-left: 14px;
+  text-transform: uppercase;
 }
 
 /* media */
 @media (max-width: 830px) {
   .deliveryAdress-section {
     flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+  }
+  .deliveryAddress-container {
+    gap: 15px;
+  }
+  .rsponcv-delivery-inputs {
+    gap: 15px;
+  }
+  .deliveryAdress-improtantNotice h3 {
+    font-size: 16px;
+    line-height: 25.98px;
+    letter-spacing: 0.12px;
+  }
+  .deliveryAdress-improtantNotice p {
+    font-size: 15px;
+    line-height: 22.02px;
+    letter-spacing: 0.16px;
+  }
+  .delivery-A-input-div {
+    gap: 15px;
+  }
+  .save-adress-heading {
+    margin-bottom: 15px;
+  }
+  .save-adress-heading h3 {
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.16px;
+  }
+  .save-adress {
+    padding: 20px;
+  }
+  .save-adress p {
+    font-size: 15px;
+    line-height: 22.02px;
+    letter-spacing: 0.16000000178813934px;
   }
 }
 @media (max-width: 600px) {
+  .deliveryAdress-improtantNotice {
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+  .deliveryAddress-container {
+    gap: 10px;
+  }
   .rsponcv-delivery-inputs {
     flex-direction: column;
+    gap: 10px;
+  }
+  .deliveryAddress-container h3 {
+    font-size: 14px;
+    line-height: 21.98px;
+    letter-spacing: 0.10000000149011612px;
+  }
+  .delivery-a-checkbox-div {
+    padding-bottom: 19px;
+  }
+  .deliveryAdress-improtantNotice h3 {
+    font-size: 14px;
+    line-height: 21.98px;
+    letter-spacing: 0.10000000149011612px;
+  }
+  .deliveryAdress-improtantNotice p {
+    font-size: 14px;
+    line-height: 20.02px;
+    letter-spacing: 0.17000000178813934px;
+  }
+  .delivery-A-input-div {
+    gap: 10px;
+  }
+  .saveAddress-btn-container {
+    padding-top: 10px;
+  }
+  .save-adress-container {
+    gap: 10px;
+  }
+  .save-adress {
+    padding: 10px 15px;
+  }
+  .save-adress-heading {
+    margin-bottom: 10px;
+  }
+  .save-adress-heading h3 {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15000000596046448px;
+  }
+  .save-adress p {
+    font-size: 14px;
+    line-height: 20.02px;
+    letter-spacing: 0.17000000178813934px;
+  }
+
+  .save-adress {
+    flex-direction: column;
+    gap: 14px;
+    align-items: start;
+  }
+  .save-adress a {
+    text-align: end;
+    width: 100%;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 300px) {
 }

@@ -1,14 +1,22 @@
 [
     {
-        "head":"City,State",
-        "option1":"a",
-        "option2":"b",
-        "option3":"c"
+        "head": "City,State",
+        "options": [
+            {"btn": "New York"},
+            {"btn": "Los Angeles"},
+            {"btn": "Chicago"},
+            {"btn": "Houston"},
+            {"btn": "Phoenix"}
+        ]
     },
     {
-        "head":"Country",
-        "option1":"a",
-        "option2":"b",
-        "option3":"c"
+        "head": "Country",
+        "options": [
+            {"btn": "USA"},
+            {"btn": "Canada"},
+            {"btn": "Mexico"},
+            {"btn": "United Kingdom"},
+            {"btn": "Australia"}
+        ]
     }
 ]

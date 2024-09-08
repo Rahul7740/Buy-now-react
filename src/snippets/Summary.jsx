@@ -20,14 +20,14 @@ function Summary() {
             <div className="space-between summary-items-count">
                 <p style={{ color: "#1F292D" }}>2 Item</p>
                 <button>
-                    <p style={{ color: "#422659" }}>Edit</p>
+                    Edit
                 </button>
             </div>
             <div className="space-between">
                 <p style={{ color: "#1F292D" }}>Total amount</p>
                 <h4>$530.00</h4>
             </div>
-            <AllButtons name="Continue Payment" />
+            <AllButtons name="Continue Payment" class="summay-btn" />
         </div>
     )
 }
