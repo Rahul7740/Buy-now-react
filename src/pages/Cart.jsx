@@ -7,6 +7,19 @@ import RelatedItemYourSearch from "../snippets/RelatedItemYourSearch";
 
 function Cart() {
   const [quantity, setQuantity] = useState(1);
+  function quntityMinus(e) {
+    const pElement = e.currentTarget.nextElementSibling;
+    let currentQuantity = Number(pElement.innerHTML);
+    if (currentQuantity > 0) {
+      pElement.innerHTML = currentQuantity - 1;
+    }
+  }
+  function quntityPlus(e) {
+    const pElement = e.currentTarget.previousElementSibling;
+    let currentQuantity = Number(pElement.innerHTML);
+    pElement.innerHTML = currentQuantity + 1;
+  }
+
   return (
     <>
       <section className="all-sections">
@@ -68,17 +81,17 @@ function Cart() {
                     <div className="cart-products-quantity-cont">
                       <div className="cart-products-quantity">
                         <button
-                          onClick={() => {
-                            setQuantity(quantity - 1);
+                          onClick={(e) => {
+                            quntityMinus(e);
                           }}
                         >
                           <img src={SvgPath.minus} alt="minus" />
                         </button>
-                        <span>{quantity}</span>
+                        <span>0</span>
 
                         <button
-                          onClick={() => {
-                            setQuantity(quantity + 1);
+                          onClick={(e) => {
+                            quntityPlus(e);
                           }}
                         >
                           <img src={SvgPath.plus} alt="plus" />
@@ -88,6 +101,7 @@ function Cart() {
                     </div>
                   </div>
                 </div>
+                <span className="lineee"></span>
                 <div className="cart-products-price">
                   <h2>{i.price}</h2>
                   <button>Remove</button>

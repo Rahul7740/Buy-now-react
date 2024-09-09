@@ -6,7 +6,7 @@
     },
     {
         "name":"Account",
-        "to": "/account",
+        "to": "/myAccount",
         "img":"menu-profile-icon.svg",
         "clas":true
     },

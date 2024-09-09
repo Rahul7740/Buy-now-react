@@ -15,6 +15,7 @@ import Checkout from "./pages/Checkout";
 import DeliveryAdress from "./pages/DeliveryAdress";
 import OrderSummary from "./pages/OrderSummary";
 import PaymentOption from "./pages/PaymentOption";
+import MyAccount from "./pages/MyAccount";
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/deliveryAdress" element={<DeliveryAdress />} />
           <Route path="/orderSummary" element={<OrderSummary />} />
           <Route path="/paymentOption" element={<PaymentOption />} />
+          <Route path="/myAccount" element={<MyAccount />} />
         </Routes>
         <Footer />
       </BrowserRouter>

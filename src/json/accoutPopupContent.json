@@ -1,6 +1,7 @@
 [
     {
-        "name":"Account"
+        "name":"Account",
+        "to":"/myAccount"
     },
     {
         "name":"Orders  "

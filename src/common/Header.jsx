@@ -334,7 +334,7 @@ function Header() {
                   src={SvgPath.verticalLine20px}
                   alt="vertical"
                 />
-                <button className="header-user-btn">
+                <Link to={"/myAccount"} className="header-user-btn">
                   <svg
                     width="44"
                     height="44"
@@ -368,7 +368,7 @@ function Header() {
                     </div>
                     <div className="accoutPopup-contents">
                       {accoutPopu.map((item, index) => (
-                        <Link key={index}>
+                        <Link key={index} to={item.to}>
                           {item.name}
                           <img
                             className="right-arrrow"
@@ -388,7 +388,7 @@ function Header() {
                       <Link>SIGN UP</Link>
                     </div>
                   </div>
-                </button>
+                </Link>
                 <button
                   onClick={() => {
                     setMenu(true);

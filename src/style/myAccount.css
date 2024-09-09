@@ -1,0 +1,42 @@
+.myAccount-main-container {
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 24px;
+  width: 100%;
+}
+.my-account-sections {
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #574b9b1f;
+  border-radius: 20px;
+}
+.my-account-contents {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.my-account-contents div h3 {
+  font-family: "Heebo";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0.15000000596046448px;
+  color: #1f292d;
+  text-transform: capitalize;
+}
+.my-account-contents div p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  color: #495f6a;
+  margin-top: 10px;
+}
+@media (max-width:700px){
+.myAccount-main-container {
+}
+
+}
