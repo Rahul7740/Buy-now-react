@@ -1,0 +1,75 @@
+.myOrder-main-container {
+  border: 1px solid #574b9b1f;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.myOrder-content-head {
+  display: grid;
+  grid-template-columns: 233px 233px 233px 233px 160px;
+  align-items: center;
+  box-shadow: 0px -1px 0px 0px #574b9b1f inset;
+}
+.myOrder-content-head p {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.02px;
+  letter-spacing: 0.17000000178813934px;
+  color: #495f6a;
+}
+.myOrder-contents {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 233px 233px 233px 233px 160px;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.myOrder-contents:hover {
+  background-color: #4226590a;
+}
+.myOrder-contents h4 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.02px;
+  letter-spacing: 0.17000000178813934px;
+  color: #495f6a;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px;
+}
+.myOrder-contents p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21.98px;
+  letter-spacing: 0.10000000149011612px;
+  color: #495f6a;
+}
+.status-spans{
+  font-family: Inter;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.1599999964237213px;
+  color: gray;
+  padding: 3px 10px;
+  border: 1px solid ;
+  text-align: center;
+  border-radius: 30px;
+}
+.Delivered{
+    color: #2E7D32;
+    border-color: #2E7D3280;
+}
+.Cancelled{
+    color: #D32F2F;
+    border-color: #D32F2F80;
+}
+.Pending{
+    color: #FFB900;
+    border-color: #FFB90080;
+}

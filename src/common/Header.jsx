@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import SvgPath from "../assets/svg/SvgPath";
 import "../style/header.css";
-import "../style/all-popup.css"
+import "../style/all-popup.css";
 import menuLinks from "../json/menuLInks.json";
 import resMenuLInks from "../json/res-menuLinks.json";
 import { useState } from "react";
@@ -21,7 +21,7 @@ function Header() {
   function showLanguagePopup() {
     setLanguagPopup(langaugPopup === false ? true : false);
   }
-  const {setPopup } = usePopup()
+  const { setPopup } = usePopup();
 
   return (
     <>
@@ -69,9 +69,15 @@ function Header() {
                       to={i.to}
                       className="nav-link"
                       activeclassname="active"
-                      onMouseOver={() => { setPopup(i.popup) }}
-                      onMouseLeave={() => {setPopup(1)}}
-                      onClick={()=>{setPopup(1)}}
+                      onMouseOver={() => {
+                        setPopup(i.popup);
+                      }}
+                      onMouseLeave={() => {
+                        setPopup(1);
+                      }}
+                      onClick={() => {
+                        setPopup(1);
+                      }}
                     >
                       {i.name}
                     </NavLink>
@@ -82,13 +88,19 @@ function Header() {
             </div>
             <div className={`res-menu-bar  ${menu === true && "show-navbar"}`}>
               <div className="res-menu-header">
-                <div className="menu-user-div">
+                <Link
+                  to={"/profile"}
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                  className="menu-user-div"
+                >
                   <img src={SvgPath.menuUserImg} alt="user" />
                   <div>
                     <h3>Tiana Baptista</h3>
                     <p>tim.jennings@example.com</p>
                   </div>
-                </div>
+                </Link>
                 <button
                   onClick={() => {
                     setMenu(false);
@@ -143,8 +155,9 @@ function Header() {
                     onClick={() => {
                       setSearch(false);
                     }}
-                    className={`display-none-block-1100 ${search === false ? "serach-close-show" : ""
-                      }`}
+                    className={`display-none-block-1100 ${
+                      search === false ? "serach-close-show" : ""
+                    }`}
                   >
                     <img
                       style={{ paddingRight: "5px" }}
@@ -334,28 +347,30 @@ function Header() {
                   src={SvgPath.verticalLine20px}
                   alt="vertical"
                 />
-                <Link to={"/myAccount"} className="header-user-btn">
-                  <svg
-                    width="44"
-                    height="44"
-                    viewBox="0 0 44 44"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      className="user-icon-border"
-                      x="0.5"
-                      y="0.5"
-                      width="43"
-                      height="43"
-                      rx="21.5"
-                      strokeOpacity="0.08"
-                    />
-                    <path
-                      className="user-icon"
-                      d="M22 15.9C23.16 15.9 24.1 16.84 24.1 18C24.1 19.16 23.16 20.1 22 20.1C20.84 20.1 19.9 19.16 19.9 18C19.9 16.84 20.84 15.9 22 15.9ZM22 24.9C24.97 24.9 28.1 26.36 28.1 27V27.1C28.1 27.6523 27.6523 28.1 27.1 28.1H16.9C16.3477 28.1 15.9 27.6523 15.9 27.1V27C15.9 26.36 19.03 24.9 22 24.9ZM22 14C19.79 14 18 15.79 18 18C18 20.21 19.79 22 22 22C24.21 22 26 20.21 26 18C26 15.79 24.21 14 22 14ZM22 23C19.33 23 14 24.34 14 27V29C14 29.5523 14.4477 30 15 30H29C29.5523 30 30 29.5523 30 29V27C30 24.34 24.67 23 22 23Z"
-                    />
-                  </svg>
+                <div className="header-user-btn">
+                  <Link to={"/myAccount"}>
+                    <svg
+                      width="44"
+                      height="44"
+                      viewBox="0 0 44 44"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        className="user-icon-border"
+                        x="0.5"
+                        y="0.5"
+                        width="43"
+                        height="43"
+                        rx="21.5"
+                        strokeOpacity="0.08"
+                      />
+                      <path
+                        className="user-icon"
+                        d="M22 15.9C23.16 15.9 24.1 16.84 24.1 18C24.1 19.16 23.16 20.1 22 20.1C20.84 20.1 19.9 19.16 19.9 18C19.9 16.84 20.84 15.9 22 15.9ZM22 24.9C24.97 24.9 28.1 26.36 28.1 27V27.1C28.1 27.6523 27.6523 28.1 27.1 28.1H16.9C16.3477 28.1 15.9 27.6523 15.9 27.1V27C15.9 26.36 19.03 24.9 22 24.9ZM22 14C19.79 14 18 15.79 18 18C18 20.21 19.79 22 22 22C24.21 22 26 20.21 26 18C26 15.79 24.21 14 22 14ZM22 23C19.33 23 14 24.34 14 27V29C14 29.5523 14.4477 30 15 30H29C29.5523 30 30 29.5523 30 29V27C30 24.34 24.67 23 22 23Z"
+                      />
+                    </svg>
+                  </Link>
                   <div className="accout-popup">
                     <div className="welecome-text-accoutPopup">
                       <h3>WelCome</h3>
@@ -388,7 +403,7 @@ function Header() {
                       <Link>SIGN UP</Link>
                     </div>
                   </div>
-                </Link>
+                </div>
                 <button
                   onClick={() => {
                     setMenu(true);
@@ -400,7 +415,6 @@ function Header() {
               </div>
             </div>
           </div>
-          
         </div>
       </header>
     </>

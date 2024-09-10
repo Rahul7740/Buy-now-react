@@ -4,7 +4,8 @@
         "to":"/myAccount"
     },
     {
-        "name":"Orders  "
+        "name":"Orders",
+        "to":"/myOrders"
     },
     {
         "name":"Wishlist"
