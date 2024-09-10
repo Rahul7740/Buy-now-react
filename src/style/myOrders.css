@@ -25,7 +25,7 @@
   display: grid;
   grid-template-columns: 233px 233px 233px 233px 160px;
   align-items: center;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   border-radius: 10px;
 }
 .myOrder-contents:hover {
@@ -72,4 +72,25 @@
 .Pending{
     color: #FFB900;
     border-color: #FFB90080;
+}
+@media (max-width:1100px){
+    .myOrder-content-head {
+        grid-template-columns: repeat(5,1fr) ;
+    }
+    .myOrder-contents {
+        grid-template-columns: repeat(5,1fr) ;
+    }
+    .myOrder-main-container {
+        padding: 20px;
+        border-radius: 17px;
+        gap: 5px;
+    }
+
+}
+@media (max-width:700px){
+    .myOrder-main-container {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
 }

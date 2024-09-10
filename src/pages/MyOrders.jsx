@@ -28,7 +28,7 @@ function MyOrders() {
               ))}
             </div>
             {myOrderJson["contents"].map((i, index) => (
-              <div className="myOrder-contents">
+              <div key={index} className="myOrder-contents">
                 <h4>
                   <img
                     src={require(`../assets/svg/${i.img}`)}
