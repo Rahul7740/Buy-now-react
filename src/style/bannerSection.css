@@ -54,6 +54,8 @@
 .banner-btn-container {
   display: flex;
   align-items: center;
+  justify-content: start;
+  width: 100%;
   gap: 30px;
 }
 .banner-shop-now-btn {
@@ -132,9 +134,13 @@
     flex-direction: column;
     gap: 40px;
   }
-/* .banner-content {
-  align-items: center;
-} */
+  .banner-content,
+  .banner-btn-container,
+  .banner-content-child1 p {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
 
   .banner-content-benifit {
     font-size: 16px;
@@ -152,7 +158,6 @@
   .banner-content-benifit {
     display: none;
   }
-  
 }
 
 @media (max-width: 452px) {
@@ -172,5 +177,12 @@
     gap: 5px;
     padding: 9px 12px;
     font-size: 12px;
+  }
+  .banner-content,
+  .banner-btn-container,
+  .banner-content-child1 p {
+    align-items: center;
+    text-align: start;
+    justify-content: start;
   }
 }

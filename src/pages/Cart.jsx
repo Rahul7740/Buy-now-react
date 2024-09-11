@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import SvgPath from "../assets/svg/SvgPath";
 import "../style/cart.css";
@@ -6,7 +6,7 @@ import productss from "../json/cart-procuts.json";
 import RelatedItemYourSearch from "../snippets/RelatedItemYourSearch";
 
 function Cart() {
-  const [quantity, setQuantity] = useState(1);
+  // const [quantity, setQuantity] = useState(1);
   function quntityMinus(e) {
     const pElement = e.currentTarget.nextElementSibling;
     let currentQuantity = Number(pElement.innerHTML);
