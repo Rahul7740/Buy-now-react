@@ -9,18 +9,18 @@ function MyOrders() {
     <section className="all-sections">
       <div className="container">
         <div className="sections-header">
-          <h2>Top deals</h2>
+          <h2>My Orders</h2>
           <div className="pages-directions-div">
             <Link to={"/"}>Home</Link>
             <img src={SvgPath.arrowLIneRight} alt="forword" />
             <Link style={{ color: "#1F292D" }} to={"/myOrders"}>
               {}
-              MyOrders
+              Orders
             </Link>
           </div>
         </div>
         <div className="personal-Information-container">
-          <h3>Personal information</h3>
+          <h3>My Orders</h3>
           <div className="myOrder-main-container">
             <div className="myOrder-content-head">
               {myOrderJson["hedings"].map((item, index) => (
@@ -28,7 +28,7 @@ function MyOrders() {
               ))}
             </div>
             {myOrderJson["contents"].map((i, index) => (
-              <div key={index} className="myOrder-contents">
+              <Link to={"/orderDetails"} key={index} className="myOrder-contents">
                 <h4>
                   <img
                     src={require(`../assets/svg/${i.img}`)}
@@ -42,7 +42,7 @@ function MyOrders() {
                 <div>
                   <span className={`status-spans ${i.status}`}>{i.status}</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

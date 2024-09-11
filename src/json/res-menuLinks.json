@@ -18,7 +18,7 @@
     },
     {
         "name":"My Cart",
-        "to": "/myCart",
+        "to": "/cart",
         "img":"menu-cart-icon.svg",
         "clas":true
     },
@@ -45,7 +45,7 @@
     },
     {
         "name":"return policy",
-        "to": "/returnPlicy",
+        "to": "/returnOrder",
         "img":"menu-returnPolicy-icon.svg",
         "clas":true
     }

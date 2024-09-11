@@ -16,7 +16,10 @@ function NEtBanking() {
         {netBankingg.map((i, index) => (
           <label className="upi-methods" key={index} htmlFor={index}>
             <div>
-              <input type="radio" id={index} name="upi" />
+              <span className="checkbox">
+                <input type="radio" name="upi" id={index} />
+                <div></div>
+              </span>
               <h3 className="all-para-16">{i.name}</h3>
             </div>
             <img src={require(`../assets/svg/${i.img}`)} alt="payment" />

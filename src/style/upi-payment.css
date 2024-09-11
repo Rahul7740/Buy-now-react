@@ -12,7 +12,7 @@
   gap: 24px;
 }
 .upi-methods {
-  padding: 14px 20px;
+  padding:10px;
   border: 1px solid #ebe9f3;
   border-radius: 10px;
   display: flex;
@@ -24,7 +24,6 @@
 .upi-methods div {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 .add-upi {
   display: flex;

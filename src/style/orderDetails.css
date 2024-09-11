@@ -1,0 +1,43 @@
+.orderDetails-main-container {
+}
+.order-ID {
+  background-color: #67517a;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-radius: 10px;
+}
+.order-ID div{
+    display: flex;
+    align-items: center;
+    padding: 2px 0;
+    gap: 8px;
+}
+
+.order-ID h3 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.15000000596046448px;
+  color: #c4cfd4;
+}
+.order-ID p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  color: #ffffff;
+}
+.order-ID h4 {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.4000000059604645px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  padding: 8px 4px;
+}

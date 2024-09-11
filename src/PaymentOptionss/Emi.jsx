@@ -18,7 +18,10 @@ function Emi() {
         {emiMethodss.map((i, index) => (
           <label className="upi-methods" key={index} htmlFor={index}>
             <div>
-              <input type="radio" id={index} name="upi" />
+              <span className="checkbox">
+                <input type="radio" name="upi" id={index} />
+                <div></div>
+              </span>
               <h3 className="all-para-16">{i.name}</h3>
             </div>
             <img src={require(`../assets/svg/${i.img}`)} alt="payment" />
@@ -80,7 +83,10 @@ function Emi() {
         {emiPlans.map((i, index) => (
           <label htmlFor={i.id} key={index} className="emi-contents">
             <div>
-              <input type="radio" id={i.id} name="aa" />
+              <span className="checkbox">
+                <input type="radio" name="aa" id={i.id} />
+                <div></div>
+              </span>
               <p className="all-para-14">{i.price}</p>
             </div>
             <div>

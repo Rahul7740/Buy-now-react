@@ -18,6 +18,9 @@ import PaymentOption from "./pages/PaymentOption";
 import MyAccount from "./pages/MyAccount";
 import Profile from "./pages/Profile";
 import MyOrders from "./pages/MyOrders";
+import WishList from "./pages/WishList";
+import ReturnOrder from "./pages/ReturnOrder";
+import OrderDetail from "./pages/OrderDetail";
 
 function App() {
 
@@ -45,6 +48,9 @@ function App() {
           <Route path="/myAccount" element={<MyAccount />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/myOrders" element={<MyOrders />} />
+          <Route path="/wishList" element={<WishList />} />
+          <Route path="/returnOrder" element={<ReturnOrder />} />
+          <Route path="/orderDetails" element={<OrderDetail />} />
         </Routes>
         <Footer />
       </BrowserRouter>

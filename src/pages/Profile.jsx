@@ -18,7 +18,7 @@ function Profile() {
     <section className="all-sections">
       <div className="container">
         <div className="sections-header">
-          <h2>Top deals</h2>
+          <h2>My Account</h2>
           <div className="pages-directions-div">
             <Link to={"/"}>Home</Link>
             <img src={SvgPath.arrowLIneRight} alt="forword" />

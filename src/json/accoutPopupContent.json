@@ -8,7 +8,8 @@
         "to":"/myOrders"
     },
     {
-        "name":"Wishlist"
+        "name":"Wishlist",
+        "to":"/wishList"
     },
     {
         "name":"Logout"

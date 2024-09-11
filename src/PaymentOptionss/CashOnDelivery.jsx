@@ -8,7 +8,11 @@ function CashOnDelivery() {
         <div className='cash-on-delivery-main-container'>
             <label className='upi-methods'  htmlFor="pay1">
                 <div>
-                    <input type="radio" id="pay1" name='pay' />
+                    {/* <input type="radio" id="pay1" name='pay' /> */}
+                    <span className="checkbox">
+                    <input type="radio" name="pay" id="pay1" />
+                    <div></div>
+                  </span>
                     <h3 className='all-para-16'>Pay On Delivery</h3>
                 </div>
                 <p className='all-para-14'>Available</p>
