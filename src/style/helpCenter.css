@@ -115,7 +115,10 @@
     padding: 20px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 530px) {
+  .helpCenter-head{
+    align-items: start;
+  }
   .help-center-content {
     padding: 15px;
   }

@@ -10,8 +10,8 @@
   letter-spacing: 0.4000000059604645px;
 }
 
-.orderDetails-main-container {
-}
+/* .orderDetails-main-container {
+} */
 
 .order-ID {
   background-color: #67517a;
@@ -282,6 +282,10 @@
   }
   .orderDetails-detail {
     width: 100%;
+    gap: 10px;
+  }
+  .orderDetails-btns {
+    margin-top: 10px;
   }
 }
 @media (max-width: 600px) {

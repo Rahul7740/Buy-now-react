@@ -101,13 +101,12 @@ select {
   font-family: "Inter", sans-serif;
   border: 1px solid #42265980;
   background: #ffffff;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease;
 }
 
 .saveAddress-btn:hover {
   background: linear-gradient(to right, #422659, #5b4a72);
   color: #ffffff;
-  font-weight: 600;
   box-shadow: 0px 10px 20px rgba(66, 38, 89, 0.3);
   border-color: #422659;
 }

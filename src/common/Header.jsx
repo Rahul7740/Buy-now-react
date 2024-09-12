@@ -397,10 +397,10 @@ function Header() {
                       ))}
                     </div>
                     <div className="accoutPopup-login-btns">
-                      <Link style={{ background: "#422659", color: "#FFFFFF" }}>
+                      <Link to={"/login"} style={{ background: "#422659", color: "#FFFFFF" }}>
                         LOG IN
                       </Link>
-                      <Link>SIGN UP</Link>
+                      <Link to={"/register"}>SIGN UP</Link>
                     </div>
                   </div>
                 </div>
