@@ -89,7 +89,7 @@
 }
 
 .loginRegister-policy-forget {
-  animation: loginRegisterinputsAnima 0.5s  ease-in forwards;
+  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -112,7 +112,7 @@
 }
 .loginRegisterBtn {
   opacity: 0;
-  animation: loginRegisterinputsAnima 0.5s  ease-in forwards;
+  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
 }
 .loginRegister-other-accout-btns-container {
   width: 100%;
@@ -133,7 +133,7 @@
   letter-spacing: 0.17000000178813934px;
   color: #495f6a;
   opacity: 0;
-  animation: loginRegisterinputsAnima 0.5s  ease-in forwards;
+  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
 }
 .or span {
   max-width: 310.5px;
@@ -179,7 +179,7 @@
   text-transform: uppercase;
 }
 .bestExperience {
-  animation: loginRegisterinputsAnima 0.5s  ease-in forwards;
+  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
   opacity: 0;
   /* display: flex; */
   flex-direction: column;
@@ -195,6 +195,87 @@
 .loginRegister-Form .delivery-a-inputs:hover .eye path {
   fill-opacity: 1;
 }
+
+/* =======verify Email -css ============ */
+.verifyEmail-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.verifyEmail-contents {
+  max-width: 662px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.verifyEmail-contents h3 {
+  font-family: "Heebo";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0.15000000596046448px;
+  color: #1f292d;
+  margin-bottom: 20px;
+  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
+  opacity: 0;
+}
+.verifyEmail-contents p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  color: #495f6a;
+  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
+  opacity: 0;
+}
+.otp-Conform {
+  border: 1px solid #574b9b1f;
+  padding: 20px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  border-radius: 20px;
+  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
+  opacity: 0;
+}
+.otp-Conform input {
+  border: 1px solid #574b9b3b;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  color: #1f292d;
+  max-width: 56px;
+  width: 100%;
+  border-radius: 30px;
+  animation: loginRegisterinputsAnima 0.5s 0.3s ease-in forwards;
+  opacity: 0;
+}
+.otp-Conform input::placeholder {
+  color: #495f6a;
+}
+.verfy-email-btns {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 24px;
+}
+.verfy-email-btns div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.resendCOde {
+  cursor: pointer;
+}
+
+/* ===============Media================= */
 @media (max-width: 850px) {
   .loginRegister-imgs {
     display: none;
@@ -231,7 +312,47 @@
   .bestExperience {
     display: flex;
   }
+
+  .verifyEmail-contents {
+    gap: 20px;
+    max-width: 100%;
+  }
+
+  .verifyEmail-contents h3 {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15000000596046448px;
+    margin-bottom: 10px;
+  }
+
+  .verifyEmail-contents p {
+    font-size: 12px;
+    line-height: 19.92px;
+    letter-spacing: 0.4000000059604645px;
+  }
+  .verfy-email-btns {
+    gap: 15px;
+  }
+  .otp-Conform {
+    gap: 18px;
+    padding: 15px 0;
+  }
 }
+@media (max-width: 600px) {
+  .otp-Conform {
+    gap: 14px;
+    padding: 10px 0;
+    border-radius: 15px;
+  }
+  .otp-Conform input {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15000000596046448px;
+    padding: 7px 0;
+    max-width: 40px;
+  }
+}
+
 @media (max-width: 450px) {
   .loginRegister-other-accout-btns {
     gap: 10px;
@@ -241,5 +362,15 @@
   }
   .loginRegisterBtn {
     width: 100%;
+  }
+  .verfy-email-btns {
+    gap: 10px;
+    flex-direction: column;
+  }
+  .verfy-email-btns a {
+    width: 100%;
+  }
+  .otp-Conform {
+    gap: 11.2px;
   }
 }

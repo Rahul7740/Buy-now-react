@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -73,7 +77,7 @@ body::-webkit-scrollbar-track {
   transition: 0.3s ease-in-out;
   text-align: center;
 }
-.all-btn-headings{
+.all-btn-headings {
   font-size: 15px;
   color: white;
   font-family: "Inter", sans-serif;
@@ -87,16 +91,15 @@ body::-webkit-scrollbar-track {
 .all-btns:hover {
   background-color: white;
   border: 1px solid #422659;
-  box-shadow: 0px 0px 42px 0px #B0BEC533,  0px 22px 35px 3px #B0BEC524,  0px 10px 14px -4px #B0BEC533;
+  box-shadow: 0px 0px 42px 0px #b0bec533, 0px 22px 35px 3px #b0bec524,
+    0px 10px 14px -4px #b0bec533;
 }
 
-.all-btns:hover .all-btn-headings{
+.all-btns:hover .all-btn-headings {
   transform: scale(1.06);
   font-weight: 700;
   color: #422659;
 }
-
-
 
 .all-headings {
   font-size: 20px;
