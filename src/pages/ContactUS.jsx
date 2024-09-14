@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import SvgPath from "../assets/svg/SvgPath";
 import "../style/contectUs.css";
 import AllButtons from "../snippets/AllButtons";
-import contectUsSelect from "../json/contectUs-selector.json";
+import SelectTag from "../snippets/SelectTag";
 
 function ContactUS() {
-  const [selectText, setSelectText] = useState("Select an option...");
-  const [select, setSelect] = useState(false);
-  function updateSelect() {
-    setSelect(select === false ? true : false);
-  }
   return (
     <>
       <section className="all-sections">
@@ -30,45 +25,8 @@ function ContactUS() {
               <label htmlFor="name">Contact Us</label>
               <input type="text" id="name" placeholder="Name" required />
               <input type="text" placeholder="Email/Phone no." required />
-              <div className="select-container">
-                <div
-                  className="select"
-                  onClick={updateSelect}
-                  style={{ color:selectText==="Select an option..."? "#495F6A":"#1f292d" }}
-                >
-                  {selectText}
-                  <img
-                    style={{
-                      transform:
-                        select === true ? "rotate(180deg)" : "rotate(0deg)",
-                    }}
-                    src={
-                      require(`../assets/svg/down-arrow-lite-purpal.svg`)
-                        .default
-                    }
-                    alt="down-arrow"
-                  />
-                </div>
-                <div
-                  className={`select-content ${
-                    select === true ? "update-select-content" : ""
-                  }`}
-                >
-                  {contectUsSelect.map((item, index) => (
-                    <button
-                      onClick={() => {
-                        setSelectText(item.name);
-                        setSelect(false)
-                      }}
-                      type="button"
-                      key={index}
-                      defaultValue={item.name}
-                    >
-                      {item.name}
-                    </button>
-                  ))}
-                </div>
-              </div>
+
+              <SelectTag name="Select an option..." />
 
               <textarea
                 name=""
@@ -87,7 +45,7 @@ function ContactUS() {
               <AllButtons name="send message" class="contect-submit-btn" />
             </form>
             <img
-            className="contentUs-banner"
+              className="contentUs-banner"
               src={require("../assets/images/contectUs-banner.png")}
               alt="contact us"
             />

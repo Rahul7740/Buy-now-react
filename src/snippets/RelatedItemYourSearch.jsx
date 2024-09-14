@@ -38,6 +38,7 @@ const RelatedItemYourSearch = (props) => {
           </div>
           <Swiper
             ref={swiperRef}
+            loop={true}
             pagination={false}
             navigation={false}
             autoplay={{

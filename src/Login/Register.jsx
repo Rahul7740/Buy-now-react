@@ -3,6 +3,7 @@ import "../style/loginRegister.css";
 import jsonData from "../json/LoginRegister-content.json";
 import AllButtons from "../snippets/AllButtons";
 import { Link } from "react-router-dom";
+import Checkbox from "../snippets/Checkbox";
 
 function Register() {
   // change password type function
@@ -52,10 +53,7 @@ function Register() {
                 ))}
                 <div className="loginRegister-policy-forget">
                   <div>
-                    <span className="checkbox">
-                      <input type="radio" name="policy" id="policy1" required />
-                      <div></div>
-                    </span>
+                    <Checkbox name="policy" id="policy1" type="checkbox" />
                     <label htmlFor="policy1">
                       By continuing, you agree to <span>Buynow</span> policy
                     </label>

@@ -148,18 +148,15 @@
 }
 /* =====style name========= */
 .productDetail-style {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  
 }
 .productDetail-style div {
-  max-width: 277px;
-  width: 100%;
   display: flex;
   align-items: center;
-  gap: 11px;
-  padding: 9px 11px;
 }
 .productDetail-style div label {
   font-size: 16px;

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SvgPath from "../assets/svg/SvgPath";
 import AllButtons from "../snippets/AllButtons";
 import labelsJson from "../json/Return-Information-labels.json";
+import Checkbox from "../snippets/Checkbox";
 
 function ReturnOrder() {
   return (
@@ -44,10 +45,7 @@ function ReturnOrder() {
             <div className="returnInformation-contents">
               {labelsJson.map((item, index) => (
                 <div key={index}>
-                  <span className="checkbox">
-                    <input type="radio" name="jad" id={item.id} />
-                    <div></div>
-                  </span>
+                  <Checkbox name="jad" id={item.id} />
                   <label htmlFor={item.id}>{item.name}</label>
                 </div>
               ))}

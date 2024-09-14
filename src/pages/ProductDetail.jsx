@@ -13,6 +13,7 @@ import ProductDetailss from "../productDetails/ProductDetailss";
 import CustomerReviews from "../productDetails/CustomerReviews";
 import FAQ from "../productDetails/FAQ";
 import RelatedItemYourSearch from "../snippets/RelatedItemYourSearch";
+import Checkbox from "../snippets/Checkbox";
 
 function ProductDetail() {
   return (
@@ -131,19 +132,15 @@ function ProductDetail() {
               <div className="productDetail-divs">
                 <p className="product-detail-para">Style name</p>
                 <div className="productDetail-style">
-                  <div>
-                    <input
-                      type="radio"
-                      name="style"
-                      id="style1"
-                      defaultChecked
-                    />
-                    <label htmlFor="style1">GPS</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="style" id="style2" />
-                    <label htmlFor="style2">GPS + Cellular</label>
-                  </div>
+                  {[
+                    { name: "GPS", id: "a1" },
+                    { name: "GPS + Cellular", id: "a2" },
+                  ].map((i, index) => (
+                    <div key={index}>
+                      <Checkbox name="style" id={i.id} />
+                      <label htmlFor={i.id}>{i.name}</label>
+                    </div>
+                  ))}
                 </div>
               </div>
               <div className="productDetail-texes-div">

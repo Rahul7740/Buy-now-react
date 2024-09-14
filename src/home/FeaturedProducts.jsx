@@ -35,6 +35,7 @@ const FeaturedProducts = (props) => {
           </div>
           <Swiper
             ref={swiperRef}
+            loop={true}
             pagination={false}
             navigation={false}
             autoplay={{

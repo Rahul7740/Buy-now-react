@@ -73,13 +73,11 @@ select {
 .delivery-a-checkbox-div {
   display: flex;
   align-items: center;
-  padding: 9px;
-  gap: 10px;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
   width: 100%;
-  padding-bottom: 29px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #574b9b1f;
 }
 .saveAddress-btn-container {
@@ -279,7 +277,7 @@ select {
     letter-spacing: 0.10000000149011612px;
   }
   .delivery-a-checkbox-div {
-    padding-bottom: 19px;
+    padding-bottom: 10px;
   }
   .deliveryAdress-improtantNotice h3 {
     font-size: 14px;

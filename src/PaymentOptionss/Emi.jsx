@@ -1,27 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import "../style/upi-payment.css";
 import "../style/emi.css";
 import emiMethodss from "../json/emiMethods.json";
 import emiHeadings from "../json/emi-section-headings.json";
 import emiPlans from "../json/emiPlans.json";
-import contectUsSelect from "../json/contectUs-selector.json";
+import Checkbox from "../snippets/Checkbox";
+import SelectTag from "../snippets/SelectTag";
+
+
 
 function Emi() {
-  const [selectText, setSelectText] = useState("HDFC bank credit card");
-  const [select, setSelect] = useState(false);
-  function updateSelect() {
-    setSelect(select === false ? true : false);
-  }
   return (
     <div className="upiPayment-container">
       <div className="upiPayment-methods-div">
         {emiMethodss.map((i, index) => (
           <label className="upi-methods" key={index} htmlFor={index}>
             <div>
-              <span className="checkbox">
-                <input type="radio" name="upi" id={index} />
-                <div></div>
-              </span>
+              <Checkbox name="upi" id={index} />
               <h3 className="all-para-16">{i.name}</h3>
             </div>
             <img src={require(`../assets/svg/${i.img}`)} alt="payment" />
@@ -32,44 +27,7 @@ function Emi() {
         <h3 style={{ color: "#1F292D" }} className="all-para-16">
           No Cost EMI
         </h3>
-        <div className="select-container">
-          <div
-            className="select"
-            onClick={updateSelect}
-            style={{
-              color:
-                selectText === "Select an option..." ? "#495F6A" : "#1f292d",
-            }}
-          >
-            {selectText}
-            <img
-              style={{
-                transform: select === true ? "rotate(180deg)" : "rotate(0deg)",
-              }}
-              src={require(`../assets/svg/down-arrow-lite-purpal.svg`).default}
-              alt="down-arrow"
-            />
-          </div>
-          <div
-            className={`select-content ${
-              select === true ? "update-select-content" : ""
-            }`}
-          >
-            {contectUsSelect.map((item, index) => (
-              <button
-                onClick={() => {
-                  setSelectText(item.name);
-                  setSelect(false);
-                }}
-                type="button"
-                key={index}
-                defaultValue={item.name}
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-        </div>
+        <SelectTag name="HDFC bank credit card" />
       </div>
       <div className="emi-main-container">
         <h2 className="all-para-14">EMI Plan</h2>
@@ -83,10 +41,7 @@ function Emi() {
         {emiPlans.map((i, index) => (
           <label htmlFor={i.id} key={index} className="emi-contents">
             <div>
-              <span className="checkbox">
-                <input type="radio" name="aa" id={i.id} />
-                <div></div>
-              </span>
+              <Checkbox name="aa" id={i.id} />
               <p className="all-para-14">{i.price}</p>
             </div>
             <div>

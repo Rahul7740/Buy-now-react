@@ -30,6 +30,7 @@ const TopProducts = () => {
           </div>
           <Swiper
             ref={swiperRef}
+            loop={true}
             pagination={false}
             navigation={false}
             modules={[Pagination, Navigation]}

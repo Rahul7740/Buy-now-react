@@ -6,19 +6,15 @@ import "../style/contectUs.css";
 import Summary from "../snippets/Summary";
 import selects from "../json/deliveryAdress-selects.json";
 import saveAdresss from "../json/saveAdress.json";
+import SelectTag from "../snippets/SelectTag";
+import { Fragment } from "react";
+import TextInputs from "../snippets/TextInputs";
 // import contectUsSelect from "../json/contectUs-selector.json";
+import Checkbox from "./../snippets/Checkbox";
 
 function DeliveryAdress() {
   const [Address, setAddress] = useState(false);
   const [show, setshow] = useState(false);
-
-  const [indexx, setIndexx] = useState(0);
-
-  // const [selectText, setSelectText] = useState("Select an option...");
-  const [select, setSelect] = useState(false);
-  function updateSelect() {
-    setSelect(select === false ? true : false);
-  }
   return (
     <>
       <section className="all-sections">
@@ -101,81 +97,21 @@ function DeliveryAdress() {
                 </h3>
 
                 <div className="delivery-A-input-div rsponcv-delivery-inputs">
-                  <input
-                    className="delivery-a-inputs"
-                    placeholder="First Name"
-                    type="text"
-                  />
-                  <input
-                    className="delivery-a-inputs"
-                    placeholder="Mobile Number"
-                    type="tel"
-                  />
+                  <TextInputs name="First Name" />
+                  <TextInputs name="Mobile Number" type="tel" />
                 </div>
                 <div className="delivery-A-input-div rsponcv-delivery-inputs">
-                  <input
-                    className="delivery-a-inputs"
-                    placeholder="Email Address"
-                    type="text"
-                  />
-                  <input
-                    className="delivery-a-inputs"
-                    placeholder="PIN Code"
-                    type="number"
-                  />
+                  <TextInputs name="Email Address" />
+                  <TextInputs name="PIN Code" type="number" />
                 </div>
                 <div className="delivery-A-input-div">
-                  {selects.map((item, index) => (
-                    <div key={index} className="select-container">
-                      <div
-                        className="select"
-                        onClick={() => {
-                          updateSelect();
-                          setIndexx(index);
-                        }}
-                        style={{
-                          color: "#495F6A",
-                        }}
-                      >
-                        {item.head}
-                        <img
-                          style={{
-                            transform:
-                              indexx === index && select === true
-                                ? "rotate(180deg)"
-                                : "rotate(0deg)",
-                          }}
-                          src={
-                            require(`../assets/svg/down-small-arrow.svg`)
-                              .default
-                          }
-                          alt="down-arrow"
-                        />
-                      </div>
-                      <div
-                        className={`select-content ${
-                          indexx === index && select === true
-                            ? "update-select-content"
-                            : ""
-                        }`}
-                      >
-                        {item.options.map((i, index) => (
-                          <button
-                            onClick={() => {
-                              item.head = i.btn;
-                              setSelect(false);
-                            }}
-                            type="button"
-                            key={index}
-                            defaultValue={i.btn}
-                          >
-                            {i.btn}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
+                  {selects.map((i, index) => (
+                    <Fragment key={index}>
+                      <SelectTag name={i.head} content={i.options} />
+                    </Fragment>
                   ))}
                 </div>
+
                 <div className="delivery-a-inputs">
                   <input placeholder="Address 1" type="text" />
                   <button>
@@ -185,13 +121,10 @@ function DeliveryAdress() {
                     />
                   </button>
                 </div>
-                <input
-                  className="delivery-a-inputs"
-                  placeholder="Address 2"
-                  type="text"
-                />
+                <TextInputs name="Address 2" />
+
                 <div className="delivery-a-checkbox-div">
-                  <input id="checkss" type="checkbox" />
+                  <Checkbox id="checkss" type="checkbox" />
                   <label htmlFor="checkss" style={{ color: "#1F292D" }}>
                     Business Address
                   </label>

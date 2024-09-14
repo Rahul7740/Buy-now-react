@@ -1,17 +1,14 @@
 import React from "react";
 import "../style/emi.css";
 import "../style/upi-payment.css";
+import Checkbox from "../snippets/Checkbox";
 
 function CashOnDelivery() {
   return (
     <div className="cash-on-delivery-main-container">
       <label className="upi-methods" htmlFor="pay1">
         <div>
-          {/* <input type="radio" id="pay1" name='pay' /> */}
-          <span className="checkbox">
-            <input type="radio" name="pay" id="pay1" />
-            <div></div>
-          </span>
+          <Checkbox name="pay" id="pay1" type="checkbox" />
           <h3 className="all-para-16">Pay On Delivery</h3>
         </div>
         <p className="all-para-14">Available</p>
