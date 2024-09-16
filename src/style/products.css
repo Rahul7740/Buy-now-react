@@ -15,6 +15,9 @@
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
+.product-card a {
+  cursor: pointer;
+}
 
 .product-card .product-img {
   background-color: #fef9f9;
@@ -26,7 +29,6 @@
   width: 100%;
   padding: 20px;
   transition: all 0.3s ease-in-out;
-  cursor: pointer;
 }
 .product-card:hover .product-img {
   transform: scale(1.05);
@@ -70,6 +72,65 @@
   top: 6%;
   right: 4%;
 }
+.like-btn-svg{
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  z-index: 999999;
+}
+.like-btn-path {
+  transition: all 0.1s ease-in;
+}
+.like-btn-svg:hover .like-btn-path {
+  stroke: #ff00008a;
+}
+
+.changeLIke {
+  fill: red;
+  animation: scale 0.5s ease;
+}
+.dislike-anima{
+  animation: scale1 0.5s ease;
+}
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  30%{
+    transform: scale(0.8);
+
+  }
+  50% {
+    transform: scale(1.2 );
+  }
+  70%{
+    transform: scale(1.25 );
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scale1 {
+  0% {
+    transform: scale(1);
+  }
+  30%{
+    transform: scale(0.8);
+
+  }
+  50% {
+    transform: scale(1.2 );
+  }
+  70%{
+    transform: scale(1.25 );
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.changeLIke path {
+  stroke: red;
+}
+
 .new {
   background-color: #ed6c02;
   color: white;
@@ -134,11 +195,10 @@
   text-align: left;
   color: #495f6a;
 }
-.product-card:hover .instock-product-img img{
+.product-card:hover .instock-product-img img {
   transform: scale(1.05);
-
 }
-.instock-product-img img{
+.instock-product-img img {
   transition: all 0.3s ease-in-out;
 }
 .instock-product-img {
@@ -151,7 +211,6 @@
   width: 100%;
   padding: 20px;
   transition: all 0.3s ease-in-out;
-  cursor: pointer;
 }
 .instock-product-content {
   background-color: white;
@@ -227,7 +286,6 @@
   padding: 20px;
   border-radius: 20px;
   overflow: hidden;
-  cursor: pointer;
   background-color: #f8f9f9;
 }
 .product-card1-img img {
