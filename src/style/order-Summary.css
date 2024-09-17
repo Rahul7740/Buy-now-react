@@ -33,7 +33,7 @@
   gap: 6px;
 }
 .orderSummary-prdt-details div h3 {
-  font-family: "Heebo";
+  font-family: "Heebo", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 32px;

@@ -236,7 +236,7 @@
 }
 
 .instock-price-ratting p {
-  font-family: "Heebo";
+  font-family: "Heebo", sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 32.02px;

@@ -39,7 +39,7 @@
 }
 
 .my-account-contents div h3 {
-  font-family: "Heebo";
+  font-family: "Heebo", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 32px;
@@ -93,7 +93,7 @@
   gap: 20px;
 }
 .personal-Information-container h3 {
-  font-family: "Heebo";
+  font-family: "Heebo", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 32px;
@@ -124,6 +124,7 @@
   width: 100%;
 }
 
+
 /* ======media===== */
 @media (max-width: 1000px) {
   .myAccount-main-container {
@@ -145,6 +146,8 @@
     line-height: 26.98px;
     letter-spacing: 0.13px;
   }
+
+
   .personal-Information-container .delivery-A-input-div {
     gap: 15px;
   }

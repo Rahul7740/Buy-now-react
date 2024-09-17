@@ -109,7 +109,7 @@
   padding: 30px 30px 20px 30px;
 }
 .top-deal-popup-show-btn-section div h3 {
-  font-family: "Heebo";
+  font-family: "Heebo", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 32px;
@@ -148,7 +148,7 @@
   width: 100%;
 }
 .topDeal-popup-product h4 {
-  font-family: "Heebo";
+  font-family: "Heebo", sans-serif;
   font-size: 34px;
   font-weight: 500;
   line-height: 41.99px;
@@ -166,7 +166,7 @@
   margin: 15px 0;
 }
 .topDeal-popup-product h3 {
-  font-family: "Heebo";
+  font-family: "Heebo", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 32px;

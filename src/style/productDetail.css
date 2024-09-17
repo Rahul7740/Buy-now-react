@@ -39,7 +39,7 @@
 }
 /* =======product-detail-content====== */
 .product-detail-name {
-  font-family: "Heebo";
+  font-family: "Heebo", sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 32.02px;
@@ -178,7 +178,7 @@
   gap: 8px;
 }
 .productDetail-texes-div h3 {
-  font-family: "Heebo";
+  font-family: "Heebo", sans-serif;
   font-size: 34px;
   font-weight: 500;
   line-height: 41.99px;

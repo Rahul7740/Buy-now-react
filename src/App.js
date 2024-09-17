@@ -24,6 +24,9 @@ import OrderDetail from "./pages/OrderDetail";
 import Register from "./Login/Register";
 import Login from "./Login/Login";
 import VerifyEmail from "./Login/VerifyEmail";
+import ResetPassword from "./Login/ResetPassword";
+import PasswordResetOtp from "./Login/PasswordResetOtp";
+import EnterNewPassword from "./Login/EnterNewPassword";
 
 function App() {
   return (
@@ -56,6 +59,9 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/verifyEmail" element={<VerifyEmail />} />
+          <Route path="/resetPassword" element={<ResetPassword />} />
+          <Route path="/passwordResetOtp" element={<PasswordResetOtp />} />
+          <Route path="/enterNewPassword" element={<EnterNewPassword />} />
         </Routes>
         <Footer />
       </BrowserRouter>

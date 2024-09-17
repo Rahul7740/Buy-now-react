@@ -154,7 +154,7 @@
   width: 100%;
 }
 .orderDetails-product-contents h3 {
-  font-family: "Heebo";
+  font-family: "Heebo", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 32px;
@@ -183,7 +183,7 @@
   color: #495f6a;
 }
 .orderDetails-product-contents h2 {
-  font-family: "Heebo";
+  font-family: "Heebo", sans-serif;
   font-size: 34px;
   font-weight: 500;
   line-height: 41.99px;
@@ -201,7 +201,7 @@
   border-radius: 20px;
 }
 .shippingAddress-container h3 {
-  font-family: "Heebo";
+  font-family: "Heebo", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 32px;

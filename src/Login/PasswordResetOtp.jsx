@@ -3,7 +3,7 @@ import "../style/loginRegister.css";
 import { Link } from "react-router-dom";
 import AllButtons from "../snippets/AllButtons";
 
-function VerifyEmail() {
+function PasswordResetOtp() {
   function cnageee(e) {
     const sibling = e.currentTarget.nextElementSibling;
     const prsibling = e.currentTarget.previousElementSibling;
@@ -25,10 +25,13 @@ function VerifyEmail() {
         <div className="verifyEmail-container">
           <div className="verifyEmail-contents">
             <div>
-              <h3 className=" ">Please Check Your Email!</h3>
-              {/* <h6 className="bg-black text-cyan-300 sm:bg-red-700 sm:text-[12px] md:text-[15px] lg:text-[24px] xl:bg-green-800 xl:text-[30px] 2xl:text-[40px]">
-                Please Check Your Email
-              </h6> */}
+              <h3 className=" ">
+                Please Check your Email! 
+                 <span className="resetPasswordOtp-heading-span">
+                  (Reset Password OTP)
+                </span>
+              </h3>
+
               <p>
                 Please check your email, 6-digit confirmation code to
                 Tim.@example, please enter the confirmation code to verify your
@@ -50,7 +53,7 @@ function VerifyEmail() {
               ))}
             </div>
             <div className="verfy-email-btns">
-              <Link to={"/login"}>
+              <Link to={"/enterNewPassword"}>
                 <AllButtons
                   type="submit"
                   name="Verify"
@@ -77,4 +80,4 @@ function VerifyEmail() {
   );
 }
 
-export default VerifyEmail;
+export default PasswordResetOtp;

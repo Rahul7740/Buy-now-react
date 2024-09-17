@@ -1,4 +1,3 @@
-
 .optInputs[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
@@ -198,6 +197,9 @@
   color: #495f6a;
   display: none;
 }
+.eye{
+  cursor: pointer;
+}
 .loginRegister-Form .delivery-a-inputs:hover .eye path {
   fill-opacity: 1;
 }
@@ -217,7 +219,7 @@
   gap: 40px;
 }
 .verifyEmail-contents h3 {
-  font-family: "Heebo";
+  font-family: "Heebo", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 32px;
@@ -280,7 +282,57 @@
 .resendCOde {
   cursor: pointer;
 }
+.reset-password-input {
+  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
+}
+.resetPasswordOtp-heading-span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  color: #495f6a;
+  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
+  opacity: 0;
+  margin-left: 5px;
+}
+.forgot-passowrd-btn {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  text-align: left;
+  color: #1f292d;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease-in;
+}
+.forgot-passowrd-btn:hover {
+  color: #422659;
+}
 
+.forgot-passowrd-btn::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: #422659;
+  transition: all 0.4s ease-in-out;
+}
+.forgot-passowrd-btn:hover.forgot-passowrd-btn::before {
+  width: 100%;
+}
+
+.newPassword-inputs h5 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.4000000059604645px;
+  color: #495f6a;
+  margin: 3px 0 20px 0;
+  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
+}
 /* ===============Media================= */
 @media (max-width: 850px) {
   .loginRegister-imgs {
@@ -336,12 +388,26 @@
     line-height: 19.92px;
     letter-spacing: 0.4000000059604645px;
   }
+  .resetPasswordOtp-heading-span {
+    font-size: 14px;
+    line-height: 20.02px;
+    letter-spacing: 0.17000000178813934px;
+    margin-left: 4px;
+  }
   .verfy-email-btns {
     gap: 15px;
   }
   .otp-Conform {
     gap: 18px;
     padding: 15px 0;
+  }
+  .newPassword-inputs h5 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.4000000059604645px;
+    color: #495f6a;
+    margin: 3px 0 10px 0;
   }
 }
 @media (max-width: 600px) {
@@ -378,5 +444,12 @@
   }
   .otp-Conform {
     gap: 11.2px;
+  }
+  .loginRegister-policy-forget {
+    flex-direction: column;
+    align-items: start;
+  }
+  .forgot-passowrd-btn {
+    align-self: flex-end;
   }
 }
