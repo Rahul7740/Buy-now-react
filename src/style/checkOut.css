@@ -129,4 +129,7 @@
   .checkOut-login-section {
     gap: 10px;
   }
+  .checkout-login-types:hover {
+    transform: scale(1.02);
+  }
 }

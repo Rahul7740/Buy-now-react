@@ -58,10 +58,11 @@ function TopDeals() {
       });
     }
   }
-  const [sortByPopup , setSortByPopup]=useState(false)
+  const [sortByPopup, setSortByPopup] = useState(false);
   function changeSortBY() {
-    setSortByPopup(sortByPopup===false?true:false)
+    setSortByPopup(sortByPopup === false ? true : false);
   }
+  
 
   const [filter, setFilter] = useState(false);
   const [categorys, setCategorys] = useState(8);
@@ -330,15 +331,33 @@ function TopDeals() {
                   </button>
                   <button onClick={changeSortBY} className="sortBy-btn">
                     SORT BY{" "}
-                    <img style={{transform:sortByPopup===true && "rotate(180deg)"}}  src={SvgPath.downArrowperpal} alt="down-arrow" />
+                    <img
+                      style={{
+                        transform: sortByPopup === true && "rotate(180deg)",
+                      }}
+                      src={SvgPath.downArrowperpal}
+                      alt="down-arrow"
+                    />
                   </button>
-                  <div className={`sort-by-popup ${sortByPopup===true && "show-shortBy-popup"}`}>
+                  <div
+                    className={`sort-by-popup ${
+                      sortByPopup === true && "show-shortBy-popup"
+                    }`}
+                  >
                     {sortByPopupData.map((item, index) => (
                       <div key={index} className="sort-by-popup-contents">
                         <h3>{item.heading}</h3>
                         {item.btns.map((i, index) => (
-                          <button onClick={changeSortBY} key={index}>{i.btn}
-                            <img className="right-victor" src={require(`../assets/svg/right-victor-perpul.svg`).default} alt="go" />
+                          <button onClick={changeSortBY} key={index}>
+                            {i.btn}
+                            <img
+                              className="right-victor"
+                              src={
+                                require(`../assets/svg/right-victor-perpul.svg`)
+                                  .default
+                              }
+                              alt="go"
+                            />
                           </button>
                         ))}
                       </div>

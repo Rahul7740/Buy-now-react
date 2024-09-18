@@ -26,7 +26,7 @@ function VerifyEmail() {
           <div className="verifyEmail-contents">
             <div>
               <h3 className=" ">Please Check Your Email!</h3>
-              {/* <h6 className="bg-black text-cyan-300 sm:bg-red-700 sm:text-[12px] md:text-[15px] lg:text-[24px] xl:bg-green-800 xl:text-[30px] 2xl:text-[40px]">
+              {/* <h6 className="bg-black text-cyan-300 sm:bg-red-700 sm:text-[12px] md:text-[15px] lg:text-[24px] xl:bg-green-800 xl:text-[30px] 2xl:text-[40px]  font-sans">
                 Please Check Your Email
               </h6> */}
               <p>

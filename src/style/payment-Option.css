@@ -64,6 +64,10 @@
   align-items: center;
   gap: 24px;
 }
+.credit-Debit-card-div::-webkit-scrollbar {
+  display: none;
+}
+
 .credit-Debit-card {
   display: flex;
   flex-direction: column;
