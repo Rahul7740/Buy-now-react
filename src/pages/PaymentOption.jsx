@@ -11,7 +11,7 @@ import Emi from "../PaymentOptionss/Emi";
 import CashOnDelivery from "../PaymentOptionss/CashOnDelivery";
 function PaymentOption() {
     const[path,setPath]=useState(0)
-    
+    const [imgs,setImg] =useState("debitCredit.svg")
 
 
     return (
@@ -52,18 +52,17 @@ function PaymentOption() {
                     <div className="paymentOption-selectrs-container">
                         <ul className="paymentOption-selectrs">
                             {selectorss.map((i, index) => (
-                                <li key={index}>
+                                <li key={index} onClick={()=>{setImg(i.imges)}}>
                                     <NavLink onClick={()=>{setPath(index)}} className={`selectrs-Links ${path===index && "active-selector"} `} activeclassname="active">{i.name}</NavLink>
                                 </li>
                             ))}
                         </ul>
-                        <img className="display-block-none-700" src={SvgPath.debitCredit} alt="debit" />
+                        <img className="display-block-none-700" src={require(`../assets/svg/${imgs}`)} alt="debit" />
                     </div>
                     <div className="payment-option-main-container">
                         
                         {path===0?<CardsDebitCredit />:path===1?<UpiPayments />:path===2?<NEtBanking />:path===3?<Emi />:path===4?<CashOnDelivery />:""}
-                
-                       
+
                         <Summary />
 
                     </div>
