@@ -27,6 +27,7 @@ import VerifyEmail from "./Login/VerifyEmail";
 import ResetPassword from "./Login/ResetPassword";
 import PasswordResetOtp from "./Login/PasswordResetOtp";
 import EnterNewPassword from "./Login/EnterNewPassword";
+import ScrollToTop from "./snippets/ScrollToTop";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
       <RouterProvider router={router} /> */}
 
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
