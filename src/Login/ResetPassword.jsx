@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../style/loginRegister.css";
 import { Link } from "react-router-dom";
 import AllButtons from "../snippets/AllButtons";
-import TextInput from "../snippets/TextInputs";
 import { toast } from "react-toastify";
 
 function ResetPassword() {
@@ -40,6 +39,7 @@ function ResetPassword() {
 
       if (response.ok) {
         toast.success("Valid email");
+        localStorage.setItem("email", formData.email);
         setTimeout(() => {
           window.location.href = "/passwordResetOtp";
         }, 1000);

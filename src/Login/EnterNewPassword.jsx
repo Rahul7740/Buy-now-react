@@ -31,8 +31,9 @@ function EnterNewPassword() {
   }
 
   // ====backend=========
+  let email = localStorage.getItem("email");
   const intidata = {
-    email: "",
+    email: email,
     newPassword: "",
   };
 
@@ -91,15 +92,6 @@ function EnterNewPassword() {
               <p>New Password Must Be Different From Previous Used Password.</p>
             </div>
             <div className="newPassword-inputs">
-              <input
-                type="email"
-                name="email"
-                className="delivery-a-inputs"
-                placeholder="Email"
-                value={formData.email}
-                onChange={handleChange}
-                autoComplete="email"
-              />
               <input
                 type="password"
                 className="delivery-a-inputs pass"
