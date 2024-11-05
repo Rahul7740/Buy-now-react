@@ -1,29 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../style/loginRegister.css";
-import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import AllButtons from "../snippets/AllButtons";
 
 function PasswordResetOtp() {
-  function cnageee(e) {
-    const sibling = e.currentTarget.nextElementSibling;
-    const prsibling = e.currentTarget.previousElementSibling;
-    if (e.target.value.length === 1 && sibling instanceof HTMLInputElement) {
-      sibling.focus();
-    } else if (
-      e.target.value.length === 0 &&
-      prsibling instanceof HTMLInputElement
-    ) {
-      prsibling.focus();
+  const [checkOTP, setCheckOTP] = useState("");
+  const [otp, setOtp] = useState("");
+  const [otpResendTrigger, setOtpResendTrigger] = useState(false);
+
+  // Generate OTP on load and whenever resend is triggered
+  useEffect(() => {
+    const generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+    console.log("Generated OTP:", generatedOtp); // Debugging purpose
+    setOtp(generatedOtp);
+  }, [otpResendTrigger]);
+
+  // Handle OTP input
+  const handleInputChange = (e, index) => {
+    const inputs = document.querySelectorAll(".optInputs");
+
+    if (e.nativeEvent.data === null) {
+      setCheckOTP((prev) => prev.slice(0, -1));
+      if (index > 0) inputs[index - 1].focus();
+    } else if (e.target.value) {
+      setCheckOTP(checkOTP + e.target.value);
+      if (index < 5) inputs[index + 1].focus();
     }
-    if (e.target.value.length > 1) {
-      e.target.value = e.target.value.slice(0, 1);
+    e.target.value = e.target.value.slice(0, 1);
+  };
+
+  const handlePaste = (e) => {
+    e.preventDefault();
+    const pasteData = e.clipboardData.getData("Text").slice(0, 6);
+    setCheckOTP(pasteData);
+
+    document.querySelectorAll(".optInputs").forEach((input, i) => {
+      input.value = pasteData[i] || "";
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (checkOTP === otp) {
+      toast.success("OTP verified successfully!");
+      setTimeout(() => {
+        window.location.href = "/enterNewPassword";
+        const inputs = document.querySelectorAll(".optInputs");
+        inputs.forEach((i) => {
+          i.value = "";
+        });
+      }, 1000);
+    } else {
+      toast.error("Invalid OTP. Please try again.");
+      const inputs = document.querySelectorAll(".optInputs");
+      inputs.forEach((i) => {
+        i.value = "";
+      });
     }
-  }
+  };
+
   return (
     <section className="all-sections">
       <div className="container">
         <div className="verifyEmail-container">
-          <div className="verifyEmail-contents">
+          <form className="verifyEmail-contents" onSubmit={handleSubmit}>
             <div>
               <h3 className=" ">
                 Please Check your Email! 
@@ -39,27 +79,24 @@ function PasswordResetOtp() {
               </p>
             </div>
             <div className="otp-Conform">
-              {[1, 2, 3, 4, 5, 6].map((index) => (
+              {[...Array(6)].map((_, index) => (
                 <input
-                  onChange={(e) => {
-                    cnageee(e);
-                  }}
                   key={index}
-                  type="number"
+                  type="text"
                   maxLength="1"
                   placeholder="0"
                   className="optInputs"
+                  onChange={(e) => handleInputChange(e, index)}
+                  onPaste={handlePaste}
                 />
               ))}
             </div>
             <div className="verfy-email-btns">
-              <Link to={"/enterNewPassword"}>
                 <AllButtons
                   type="submit"
                   name="Verify"
                   class="loginRegisterBtn"
                 />
-              </Link>
               <div>
                 <p>Don’t have a code? </p>
                 <p style={{ color: "#422659" }} className="resendCOde">
@@ -67,7 +104,7 @@ function PasswordResetOtp() {
                 </p>
               </div>
             </div>
-          </div>
+          </form>
           <div className="loginRegister-imgs">
             <img
               src={require(`../assets/images/emailVerify-img.png`)}

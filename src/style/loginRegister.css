@@ -56,13 +56,9 @@
   line-height: 32px;
   letter-spacing: 0.15000000596046448px;
   color: #1f292d;
-  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
 }
 
-.loginRegister-Form .delivery-a-inputs {
-  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
-  opacity: 0;
-}
+
 
 .loginRegister-imgs {
   animation: loginRegisterImgAnima 0.5s ease-in-out forwards;
@@ -94,12 +90,10 @@
 }
 
 .loginRegister-policy-forget {
-  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  opacity: 0;
 }
 .loginRegister-policy-forget div {
   display: flex;
@@ -114,10 +108,6 @@
 }
 .loginRegister-policy-forget div label span {
   color: #67517a;
-}
-.loginRegisterBtn {
-  opacity: 0;
-  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
 }
 .loginRegister-other-accout-btns-container {
   width: 100%;
@@ -137,8 +127,6 @@
   line-height: 20.02px;
   letter-spacing: 0.17000000178813934px;
   color: #495f6a;
-  opacity: 0;
-  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
 }
 .or span {
   max-width: 310.5px;
@@ -162,8 +150,6 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  opacity: 0;
-  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
 }
 .loginRegister-other-accout-btns button {
   display: flex;
@@ -184,8 +170,6 @@
   text-transform: uppercase;
 }
 .bestExperience {
-  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
-  opacity: 0;
   /* display: flex; */
   flex-direction: column;
   gap: 10px;
@@ -226,8 +210,6 @@
   letter-spacing: 0.15000000596046448px;
   color: #1f292d;
   margin-bottom: 20px;
-  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
-  opacity: 0;
 }
 .verifyEmail-contents p {
   font-size: 16px;
@@ -235,8 +217,6 @@
   line-height: 24px;
   letter-spacing: 0.15000000596046448px;
   color: #495f6a;
-  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
-  opacity: 0;
 }
 .otp-Conform {
   border: 1px solid #574b9b1f;
@@ -247,8 +227,6 @@
   justify-content: center;
   gap: 30px;
   border-radius: 20px;
-  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
-  opacity: 0;
 }
 .otp-Conform input {
   border: 1px solid #574b9b3b;
@@ -262,8 +240,6 @@
   max-width: 56px;
   width: 100%;
   border-radius: 30px;
-  animation: loginRegisterinputsAnima 0.5s 0.3s ease-in forwards;
-  opacity: 0;
 }
 .otp-Conform input::placeholder {
   color: #495f6a;
@@ -282,17 +258,13 @@
 .resendCOde {
   cursor: pointer;
 }
-.reset-password-input {
-  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
-}
+
 .resetPasswordOtp-heading-span {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.15000000596046448px;
   color: #495f6a;
-  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
-  opacity: 0;
   margin-left: 5px;
 }
 .forgot-passowrd-btn {
@@ -331,7 +303,6 @@
   letter-spacing: 0.4000000059604645px;
   color: #495f6a;
   margin: 3px 0 20px 0;
-  animation: loginRegisterinputsAnima 0.5s ease-in forwards;
 }
 /* ===============Media================= */
 @media (max-width: 850px) {

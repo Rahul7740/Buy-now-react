@@ -1,42 +1,127 @@
 import React, { useState } from "react";
 import "../style/loginRegister.css";
-import { Link } from "react-router-dom";
 import AllButtons from "../snippets/AllButtons";
-import TextInputs from "../snippets/TextInputs";
+import { toast } from "react-toastify";
 
 function EnterNewPassword() {
   const [eye, setEye] = useState(false);
+  const [passMatch, setPassMatch] = useState(false);
+
+  const passCheck = () => {
+    const pass = document.querySelector(".pass").value;
+    const confirmPass = document.querySelector(".confirm-pass").value;
+    if (pass === confirmPass && pass !== "") {
+      setPassMatch(true);
+    } else {
+      setPassMatch(false);
+    }
+  };
+
   function changeType(e) {
     const sibling = e.currentTarget.previousElementSibling;
+    const firstPass = document.querySelector(".pass");
     if (sibling.type === "password") {
       sibling.type = "text";
+      firstPass.type = "text";
     } else {
       sibling.type = "password";
+      firstPass.type = "password";
     }
     setEye(eye === false ? true : false);
   }
+
+  // ====backend=========
+  const intidata = {
+    email: "",
+    newPassword: "",
+  };
+
+  const [formData, setFormData] = useState(intidata);
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(!loading);
+
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/user/passupdate",
+        {
+          method: "put",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        toast.success("Forget successfully");
+        // setFormData(intidata); // Reset form after success
+        setTimeout(() => {
+          window.location.href = "/login";
+        }, 1000);
+      } else {
+        const errorData = await response.json();
+        toast.error(`${errorData.error || "Unknown error"}`);
+      }
+    } catch (error) {
+      toast.error("Error submitting the form");
+    } finally {
+      setLoading(!loading);
+    }
+  };
 
   return (
     <section className="all-sections">
       <div className="container">
         <div className="verifyEmail-container">
-          <div className="verifyEmail-contents">
+          <form className="verifyEmail-contents" onSubmit={handleSubmit}>
             <div>
               <h3 className=" ">Enter New Password</h3>
 
               <p>New Password Must Be Different From Previous Used Password.</p>
             </div>
             <div className="newPassword-inputs">
-              <TextInputs
-                name="Password"
+              <input
+                type="email"
+                name="email"
+                className="delivery-a-inputs"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                autoComplete="email"
+              />
+              <input
                 type="password"
-                class="reset-password-input"
+                className="delivery-a-inputs pass"
+                placeholder="Password"
+                onChange={(e) => {
+                  passCheck();
+                }}
+                autoComplete="new-password"
               />
               <h5>Password Must Be 8 Characters</h5>
               <div className="delivery-a-inputs reset-password-input">
-                <input
+              <input
+                  onChange={(e) => {
+                    passCheck();
+                    handleChange(e);
+                  }}
+                  autoComplete="new-password"
+                  name="newPassword"
+                  value={formData.newPassword}
                   type="password"
-                  placeholder="Confirm Password"
+                  placeholder="Confirm password"
+                  className="confirm-pass"
                   required
                 />
                 {eye === false ? (
@@ -95,15 +180,13 @@ function EnterNewPassword() {
             </div>
 
             <div className="verfy-email-btns">
-              <Link to={"/login"}>
-                <AllButtons
-                  type="submit"
-                  name="Change Password"
-                  class="loginRegisterBtn"
-                />
-              </Link>
+              <AllButtons
+                type="submit"
+                name={loading?"Wait":"Change Password"}
+                class={`loginRegisterBtn ${passMatch ? "opacity-100":"opacity-50"}`}
+              />
             </div>
-          </div>
+          </form>
           <div className="loginRegister-imgs">
             <img
               src={require(`../assets/images/newPassword-img.png`)}

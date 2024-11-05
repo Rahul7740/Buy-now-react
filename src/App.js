@@ -28,6 +28,8 @@ import ResetPassword from "./Login/ResetPassword";
 import PasswordResetOtp from "./Login/PasswordResetOtp";
 import EnterNewPassword from "./Login/EnterNewPassword";
 import ScrollToTop from "./snippets/ScrollToTop";
+import { ToastContainer, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -36,6 +38,19 @@ function App() {
       <RouterProvider router={router} /> */}
 
       <BrowserRouter>
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Bounce}
+        />
         <ScrollToTop />
         <Header />
         <Routes>

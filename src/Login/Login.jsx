@@ -4,6 +4,8 @@ import jsonData from "../json/LoginRegister-content.json";
 import AllButtons from "../snippets/AllButtons";
 import { Link } from "react-router-dom";
 import Checkbox from "../snippets/Checkbox";
+import { toast } from "react-toastify";
+
 
 function Login() {
   
@@ -19,6 +21,55 @@ function Login() {
     }
     setEye(eye === false ? true : false);
   }
+  
+  // ========backend=======
+  const intidata = {
+    email: "",
+    password: "",
+  };
+
+  const [formData, setFormData] = useState(intidata);
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(!loading);
+
+    try {
+      const response = await fetch("http://localhost:5000/api/user/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast.success("Login successfully");
+        setTimeout(()=>{
+          window.location.href = "/"
+        },1000)
+        // setFormData(intidata); // Reset form after success
+      } else {
+        const errorData = await response.json();
+        toast.error(`${errorData.error || "Unknown error"}`);
+        
+      }
+    } catch (error) {
+      toast.error("Error submitting the form");
+    } finally {
+      setLoading(!loading);
+    }
+  };
+
   return (
     <section className="all-sections">
       <div className="container">
@@ -29,13 +80,31 @@ function Login() {
               <Link to={"/register"}>Register</Link>
             </div>
             {jsonData["login"].map((item, index) => (
-              <form key={index} className="loginRegister-Form loginForm">
-                <h3>{item.heading}</h3>
-                {item.inputs.map((i, index) => (
-                  <div key={index} className="delivery-a-inputs">
-                    <input type={i.type} placeholder={i.name} required />
-                    {i.eye &&
-                      (eye === false ? (
+              <form key={index} className="loginRegister-Form loginForm" onSubmit={handleSubmit}>
+              <h3>Log in to buynow</h3>
+              <input
+                type="email"
+                name="email"
+                className="delivery-a-inputs"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                autoComplete="email"
+              />
+              <div className="delivery-a-inputs">
+                <input
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
+                  name="password"
+                  value={formData.password}
+                  type="password"
+                  placeholder="Confirm password"
+                  className="confirm-pass"
+                  autoComplete="new-password"
+                  required
+                />
+                    {(eye === false ? (
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -88,7 +157,7 @@ function Login() {
                         </svg>
                       ))}
                   </div>
-                ))}
+                
                 <div className="loginRegister-policy-forget">
                   <div>
                     <Checkbox name="policy" id="policy1" type="checkbox" />
@@ -100,13 +169,11 @@ function Login() {
                     Forgot?
                   </Link>
                 </div>
-                <Link to={"/"}>
                   <AllButtons
                     type="submit"
-                    name={item.btnName}
+                    name={loading ? "wait":item.btnName}
                     class="loginRegisterBtn"
                   />
-                </Link>
               </form>
             ))}
             <div className="loginRegister-other-accout-btns-container">
