@@ -9,6 +9,7 @@ import ProductCard from "../snippets/ProductCard";
 import NewsLetter from "../home/NewsLetter";
 import productCategorys from "../json/products-categorys.json";
 import sortByPopupData from "../json/short-by-popup.json";
+import BackendCards from "../snippets/BackendCards";
 
 function ProductsFilter() {
   useEffect(() => {
@@ -57,9 +58,9 @@ function ProductsFilter() {
       });
     }
   }
-  const [sortByPopup , setSortByPopup]=useState(false)
+  const [sortByPopup, setSortByPopup] = useState(false);
   function changeSortBY() {
-    setSortByPopup(sortByPopup===false?true:false)
+    setSortByPopup(sortByPopup === false ? true : false);
   }
 
   const [filter, setFilter] = useState(false);
@@ -75,6 +76,22 @@ function ProductsFilter() {
   const handleSliderChange = (event) => {
     setValue(event.target.value);
   };
+
+  useEffect(() => {
+    try {
+      fetch("http://localhost:5000/api/products/get", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((json) => setData(json));
+    } catch (error) {}
+  }, []);
+  const [data, setData] = useState([]);
+  console.log(data, "<=====================");
+
   return (
     <>
       <div
@@ -298,15 +315,33 @@ function ProductsFilter() {
                   </button>
                   <button onClick={changeSortBY} className="sortBy-btn">
                     SORT BY{" "}
-                    <img style={{transform:sortByPopup===true && "rotate(180deg)"}}  src={SvgPath.downArrowperpal} alt="down-arrow" />
+                    <img
+                      style={{
+                        transform: sortByPopup === true && "rotate(180deg)",
+                      }}
+                      src={SvgPath.downArrowperpal}
+                      alt="down-arrow"
+                    />
                   </button>
-                  <div className={`sort-by-popup ${sortByPopup===true && "show-shortBy-popup"}`}>
+                  <div
+                    className={`sort-by-popup ${
+                      sortByPopup === true && "show-shortBy-popup"
+                    }`}
+                  >
                     {sortByPopupData.map((item, index) => (
                       <div key={index} className="sort-by-popup-contents">
                         <h3>{item.heading}</h3>
                         {item.btns.map((i, index) => (
-                          <button onClick={changeSortBY} key={index}>{i.btn}
-                            <img className="right-victor" src={require(`../assets/svg/right-victor-perpul.svg`).default} alt="go" />
+                          <button onClick={changeSortBY} key={index}>
+                            {i.btn}
+                            <img
+                              className="right-victor"
+                              src={
+                                require(`../assets/svg/right-victor-perpul.svg`)
+                                  .default
+                              }
+                              alt="go"
+                            />
                           </button>
                         ))}
                       </div>
@@ -315,7 +350,7 @@ function ProductsFilter() {
                 </div>
               </div>
               <div className="view-all-products-grid">
-                {filterProducts.map((i, index) => (
+                {/* {filterProducts.map((i, index) => (
                   <Fragment key={index}>
                     <ProductCard
                       img={i.img}
@@ -324,6 +359,18 @@ function ProductsFilter() {
                       ratting={i.ratting}
                       new={i.new}
                       instock={i.instock}
+                    />
+                  </Fragment>
+                ))} */}
+                {data.map((item, index) => (
+                  <Fragment key={index}>
+                    <BackendCards
+                      img={item.img}
+                      name={item.name}
+                      price={item.price}
+                      ratting={item.ratting}
+                      new={item.new}
+                      instock={item.instock}
                     />
                   </Fragment>
                 ))}
